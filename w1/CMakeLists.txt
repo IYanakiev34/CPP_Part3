@@ -10,6 +10,8 @@ add_executable(set1
     src/1/source1.cc
     )
 
+add_executable(ex4 src/4/main.cc)
+
 target_compile_options(set1 PUBLIC -std=c++20 -g -O2 -Wall -Werror)
 
 target_include_directories(set1
