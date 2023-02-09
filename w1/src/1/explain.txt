@@ -1,0 +1,10 @@
+In order to verify that although we instantiate
+the add template into two source files but end up
+with the same function we need to point and print
+to the function address. We create a union called
+PointerUnion which will instantiate the template
+for type int and keep its address. Thus in main
+we can see we call both fun and instantiate the
+add template again. So we have 2 instantiations
+in 2 source files but yet the output shows the
+same function address.
