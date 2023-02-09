@@ -1,0 +1,20 @@
+Two abstract types, the source and the target. Target is 
+initialized in <> on call, and the compiler handles the 
+type of source. I use a forwarding reference to preserve 
+source exactly as I pass it on to the static cast. There 
+shouldn't be a function call in instantiation since target 
+is just decided by whatever is in the <>. I found the provided 
+main seems to work as expected.
+
+I also conducted the following tests, and found that they 
+all work as expected (from cpp page about static casts):
+    1. static downcast
+    2. lvalue to xvalue
+    3. initializing conversion
+    4. discarded-value expression
+    5. inverse of implicit conversion
+    6. array-to-pointer followed by upcast
+    7. scoped enum to int
+    8. int to enum, enum to another enum
+    9. pointer to member upcast
+    10. void* to any type

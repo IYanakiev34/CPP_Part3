@@ -1,0 +1,7 @@
+#include <iostream>
+#include <vector>
+
+template <typename Target, typename Source>
+inline Target as(Source &&value);
+
+void test();
