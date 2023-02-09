@@ -4,6 +4,9 @@
 #include "1/pu.h"
 #include "2/as.h"
 #include "3/rawCapacity.h"
+#include "5/storage.h"
+#include "5/tcp_udp.h"
+#include "5/icmp.h"
 
 void fun();
 
@@ -39,5 +42,9 @@ int main(int argc, char **argv)
     operator delete(arr);
     */
 
+    // Exercise 5
+    Storage storage({1,2,3,4});
+
+    std::cout << storage[Icmp::SRC] << "\n";
     return 0;
 }

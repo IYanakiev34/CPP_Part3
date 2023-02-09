@@ -1,0 +1,7 @@
+In order to make a generic index operator
+we need to parameterize the index that we pass
+in. We can utilize the template mechanism to do
+just that. We also need to perform a static_cast
+on the template parameter since it is not known
+until runtime, but at compile time when know that
+we will need a size_t value.
