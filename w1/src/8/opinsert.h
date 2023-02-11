@@ -30,3 +30,4 @@ OptInsert &operator<<(OptInsert &obj, Ins const &ins)
 void setVerbose(std::ostream &out);
 OptInsert &verbose();
 #endif
+

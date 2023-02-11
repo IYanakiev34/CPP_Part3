@@ -2,5 +2,5 @@
 
 OptInsert::OptInsert()
     : d_insert(false),
-      d_out(nullptr)
+      d_out(0)
 {}
