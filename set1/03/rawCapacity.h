@@ -3,6 +3,8 @@
 
 #include <memory>
 
+                          // Returns a typed pointer to raw memory holding
+                          // capcity elements of ReturnType.
 template <typename ReturnType>
 ReturnType *rawCapacity(size_t capacity)
 {

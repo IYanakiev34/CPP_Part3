@@ -5,11 +5,14 @@
 #include <sstream>
 #include <exception>
 
+                        // Exception class whose what() message can be
+                        // modified via <<.
 class Exception: public std::exception
 {
     template <typename OutType>
     friend Exception &&operator<<(Exception &&in, OutType const &out);
 
+                            // Store what() output in d_what
     std::string d_what;
 
     public:

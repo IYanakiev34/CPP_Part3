@@ -1,8 +1,9 @@
 #ifndef SET1_TEMPLATE_H
 #define SET1_TEMPLATE_H
 
+                            // Template function for demo. purposes
 template <typename Type>
-Type templateFun(Type const &param1)
+Type templateFun(Type param1)
 {
   return param1;
 }
