@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/set1.dir/main.cc.o"
-  "CMakeFiles/set1.dir/main.cc.o.d"
   "CMakeFiles/set1.dir/sourceFun1.cc.o"
   "CMakeFiles/set1.dir/sourceFun1.cc.o.d"
   "CMakeFiles/set1.dir/sourceFun2.cc.o"

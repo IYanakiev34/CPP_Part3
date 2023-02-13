@@ -129,30 +129,6 @@ set1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set1.dir/build.make CMakeFiles/set1.dir/build
 .PHONY : set1/fast
 
-main.o: main.cc.o
-.PHONY : main.o
-
-# target to build an object file
-main.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set1.dir/build.make CMakeFiles/set1.dir/main.cc.o
-.PHONY : main.cc.o
-
-main.i: main.cc.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set1.dir/build.make CMakeFiles/set1.dir/main.cc.i
-.PHONY : main.cc.i
-
-main.s: main.cc.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set1.dir/build.make CMakeFiles/set1.dir/main.cc.s
-.PHONY : main.cc.s
-
 sourceFun1.o: sourceFun1.cc.o
 .PHONY : sourceFun1.o
 
@@ -210,9 +186,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... set1"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... sourceFun1.o"
 	@echo "... sourceFun1.i"
 	@echo "... sourceFun1.s"

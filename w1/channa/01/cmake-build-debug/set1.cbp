@@ -91,12 +91,6 @@
 		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/cmake-build-debug">
 			<Option target="set1"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/main.cc">
-			<Option target="set1"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/main.ih">
-			<Option target="set1"/>
-		</Unit>
 		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/pointerunion.h">
 			<Option target="set1"/>
 		</Unit>
@@ -110,6 +104,9 @@
 			<Option target="set1"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/tempFun.h">
+			<Option target="set1"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/tests">
 			<Option target="set1"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/CMakeLists.txt">

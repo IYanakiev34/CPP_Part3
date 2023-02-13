@@ -16,6 +16,9 @@ std::ostream &operator<<(std::ostream &out, std::set<ElemT> const &toOut)
     if (prevItemExists)
       out << ", ";
 
+                    // If out is a subset, then the template will be recursively
+                    // called, otherwise the default << for this type will be
+                    // used.
     out << elem;
 
     prevItemExists = true;

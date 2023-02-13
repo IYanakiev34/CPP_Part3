@@ -2,7 +2,7 @@
 
 void sourceFun1()
 {
-  PointerUnion pu = { templateFun };
+  PointerUnion const pu = { templateFun };
   cout << "Address of instantiated template function in sourceFun1: "
     << pu.vp << '\n';
 }

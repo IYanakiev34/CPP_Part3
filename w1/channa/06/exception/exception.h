@@ -21,8 +21,11 @@ class Exception: public std::exception
 template <typename OutType>
 inline Exception &&operator<<(Exception &&in, OutType const &out)
 {
-  std::stringstream ss;
+                      // Use string stream to take care out conversions from
+                      // int to string, etc.
+  std::stringstream const ss;
   ss << out;
+                      // Extend current d_what
   in.d_what += ss.str();
 
   return std::move(in);

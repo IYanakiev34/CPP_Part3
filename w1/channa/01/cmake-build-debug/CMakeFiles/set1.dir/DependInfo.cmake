@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/main.cc" "CMakeFiles/set1.dir/main.cc.o" "gcc" "CMakeFiles/set1.dir/main.cc.o.d"
   "/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/sourceFun1.cc" "CMakeFiles/set1.dir/sourceFun1.cc.o" "gcc" "CMakeFiles/set1.dir/sourceFun1.cc.o.d"
   "/mnt/c/Users/cdper/repos/cpp3/w1/channa/01/sourceFun2.cc" "CMakeFiles/set1.dir/sourceFun2.cc.o" "gcc" "CMakeFiles/set1.dir/sourceFun2.cc.o.d"
   )
