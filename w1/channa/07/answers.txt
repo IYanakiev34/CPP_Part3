@@ -1,0 +1,8 @@
+Why should the operator<< function template (in printSet) not specify the
+second operand as &&?
+    1) Because universe / subsets is a const object, and std::set<ElemT> is not
+        a const parameter type, there can be no match.
+    2) If you try to match the whole set, i.e:
+        std::ostream &operator<<(std::ostream &out, SetT const &toOut)
+        this will actually overload the existing << operator on ostreams,
+        leading to ambiguities.
