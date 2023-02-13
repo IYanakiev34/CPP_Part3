@@ -1,2 +1,2 @@
 Set: Set Z
-Authors: Channa Dias Perera, Robin Guichelaar, Alexandra Stan
+Authors: Channa Dias Perera, Alex Swaters, Ivan Yanakiev

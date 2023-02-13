@@ -36,7 +36,7 @@ do
   folderName=$leadingZero$i
   
   echo "Making order.txt for $folderName/"
-  cd $i
+  cd $folderName
   find -type f -not -path "./.idea/*" -not -path "./cmake-build-debug/*" \
   -not -path "./order.txt" -not -path "./CMakeLists.txt" \
   -not -path "./tests/*" \
