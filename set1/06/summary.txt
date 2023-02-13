@@ -1,0 +1,2 @@
+This exercise extends an existing Exception class to be able to have any
+out-insertable types be "inserted" to the exception.

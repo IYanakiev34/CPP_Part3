@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.22)
+project(set1)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
+
+FILE(GLOB SOURCES
+        *
+)
+
+add_executable(set1 ${SOURCES})

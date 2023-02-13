@@ -1,0 +1,5 @@
+#include "../as.h"
+
+#include <iostream>
+
+using namespace std;
