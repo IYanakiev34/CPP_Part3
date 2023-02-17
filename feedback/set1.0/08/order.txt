@@ -1,0 +1,7 @@
+summary.txt
+OptInsert/OptInsert.h
+OptInsert/insert.f
+OptInsert/OptInsert.ih
+OptInsert/OptInsert.cc
+OptInsert/rdbuf.cc
+OptInsert/verboseFuns.cc
