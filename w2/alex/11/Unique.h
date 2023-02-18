@@ -36,8 +36,6 @@ Unique<Type>::Unique(Type value)
 {
     s_actual++;
     s_count++;
-    s_globalCount++;
-    s_globalActual++;
 }
 
 template<typename Type>
@@ -46,8 +44,6 @@ Unique<Type>::Unique(Type *ptr)
 {
     s_actual++;
     s_count++;
-    s_globalCount++;
-    s_globalActual++;
 }
 
 template<typename Type>
@@ -56,8 +52,6 @@ Unique<Type>::Unique(const Unique<Type> &other)
 {
     s_actual++;
     s_count++;
-    s_globalCount++;
-    s_globalActual++;
 }
 
 template<typename Type>
@@ -65,8 +59,6 @@ Unique<Type> &Unique<Type>::operator=(const Unique &other)
 {
     s_actual++;
     s_count++;
-    s_globalCount++;
-    s_globalActual++;
     Type *ptr = other.d_ptr ? new Type{*other.d_ptr} : nullptr;
     d_ptr.reset(ptr);
     return *this;
@@ -101,22 +93,18 @@ Unique<Type>::Unique()
 {
     s_actual++;
     s_count++;
-    s_globalCount++;
-    s_globalActual++;
 }
 
 template<typename Type>
 Unique<Type>::Unique(Unique<Type> &&other) noexcept
 {
     s_count++;
-    s_globalCount++;
 }
 
 template<typename Type>
 Unique<Type> &Unique<Type>::operator=(Unique &&other) noexcept
 {
     s_count++;
-    s_globalCount++;
     if (this != &other)
     {
         d_ptr = std::move(other.d_ptr);

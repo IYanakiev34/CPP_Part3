@@ -9,12 +9,14 @@
 
 class Base
 {
+public:
+    Base();
+    virtual ~Base();
+    static size_t globalCount();
+    static size_t globalActual();
 protected:
     static size_t s_globalCount;
     static size_t s_globalActual;
-public:
-    static size_t globalCount();
-    static size_t globalActual();
 };
 
 inline size_t Base::globalCount()
