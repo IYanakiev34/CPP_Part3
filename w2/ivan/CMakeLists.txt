@@ -23,4 +23,5 @@ target_include_directories(set2
     PRIVATE "${CMAKE_SOURCE_DIR}/src/9/"
     PRIVATE "${CMAKE_SOURCE_DIR}/src/10/"
     PRIVATE "${CMAKE_SOURCE_DIR}/src/11/"
+    PRIVATE "${CMAKE_SOURCE_DIR}/src/12/"
     )

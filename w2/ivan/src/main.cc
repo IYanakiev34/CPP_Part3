@@ -7,7 +7,10 @@
 // #include "Unique2.h"
 
 // Exercise 11
-#include "Unique3.h"
+// #include "Unique3.h"
+
+// Exercise 12
+#include "simple.h"
 
 int main(int argc, char **argv)
 {
@@ -53,6 +56,7 @@ int main(int argc, char **argv)
     */
 
     // 11
+    /*
     Unique<int> value{42};
     Unique<int> second{value};
 
@@ -80,5 +84,13 @@ int main(int argc, char **argv)
 
     std::cout << "Global count: " << Unique<std::string>::getGlobalCount()
               << ", Actual: " << Unique<std::string>::getGlobalActual() << '\n';
+    */
+
+    // 12
+    Simple<int> sim1;
+    std::cout << sim1.get() << '\n';
+    int val = 12;
+    Simple<int *> sim2{&val};
+    std::cout << sim2.get() << '\n';
     return 0;
 }
