@@ -13,11 +13,14 @@
 // #include "simple.h"
 
 // Exercise 14
-#include "14/storage.h"
-#include <algorithm>
-#include <vector>
-#include <functional>
-#include <iterator>
+// #include "14/storage.h"
+// #include <algorithm>
+// #include <vector>
+// #include <functional>
+// #include <iterator>
+
+// Exercise 15
+#include "15/base.h"
 
 int main(int argc, char **argv)
 {
@@ -112,5 +115,18 @@ int main(int argc, char **argv)
     std::vector<std::string *> data{ivan, alex, channa};
     Storage<std::string> storage{data};
     */
+
+    // 15
+
+    using FuncPtr = int (Derived::*)(double);
+    FuncPtr arr[] = {&Derived::nc};
+
+    Derived obj;
+    for (auto ptr : arr)
+    {
+        int result = (obj.*ptr)(3.14);
+        std::cout << "result: " << result << std::endl;
+    }
+
     return 0;
 }
