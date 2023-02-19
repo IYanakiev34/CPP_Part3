@@ -197,16 +197,87 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/12/simple.h
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/14/storage.h \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc \
+  /usr/include/c++/12/iterator \
+  /usr/include/c++/12/bits/stream_iterator.h \
+  /usr/include/c++/12/utility \
+  /usr/include/c++/12/bits/stl_relops.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/uniform_int_dist.h \
+  /usr/include/c++/12/bits/ranges_algo.h \
+  /usr/include/c++/12/bits/ranges_algobase.h \
+  /usr/include/c++/12/bits/ranges_util.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
+  /usr/include/c++/12/functional \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/std_function.h \
+  /usr/include/c++/12/unordered_map \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/bits/hashtable.h \
+  /usr/include/c++/12/bits/hashtable_policy.h \
+  /usr/include/c++/12/bits/enable_special_members.h \
+  /usr/include/c++/12/bits/node_handle.h \
+  /usr/include/c++/12/bits/unordered_map.h \
+  /usr/include/c++/12/bits/erase_if.h \
+  /usr/include/c++/12/array
 
+
+/usr/include/c++/12/array:
+
+/usr/include/c++/12/bits/erase_if.h:
+
+/usr/include/c++/12/bits/unordered_map.h:
+
+/usr/include/c++/12/bits/enable_special_members.h:
+
+/usr/include/c++/12/ext/aligned_buffer.h:
+
+/usr/include/c++/12/unordered_map:
+
+/usr/include/c++/12/functional:
+
+/usr/include/c++/12/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/12/bits/ranges_algobase.h:
+
+/usr/include/c++/12/bits/stl_tempbuf.h:
+
+/usr/include/c++/12/bits/stl_heap.h:
+
+/usr/include/c++/12/bits/algorithmfwd.h:
+
+/usr/include/c++/12/bits/stream_iterator.h:
+
+/usr/include/c++/12/bits/stl_bvector.h:
+
+/usr/include/c++/12/bits/stl_vector.h:
+
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/14/storage.h:
+
+/usr/include/c++/12/vector:
 
 /usr/include/c++/12/bits/streambuf_iterator.h:
 
 /usr/include/c++/12/cwctype:
 
+/usr/include/c++/12/tuple:
+
 /usr/include/c++/12/bits/ostream.tcc:
 
 /usr/include/c++/12/bits/locale_facets.h:
+
+/usr/include/c++/12/pstl/execution_defs.h:
 
 /usr/include/c++/12/bits/basic_ios.h:
 
@@ -234,6 +305,8 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
+/usr/include/c++/12/bits/stl_uninitialized.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
@@ -249,6 +322,8 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/c++/12/bits/hashtable.h:
 
 /usr/include/endian.h:
 
@@ -322,6 +397,8 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/usr/include/c++/12/bits/stl_algo.h:
+
 /usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
@@ -342,6 +419,8 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/c++/12/bits/ptr_traits.h:
 
+/usr/include/c++/12/bits/hashtable_policy.h:
+
 /usr/include/c++/12/numbers:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
@@ -350,9 +429,13 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/c++/12/exception:
 
+/usr/include/c++/12/bits/uniform_int_dist.h:
+
 /usr/include/c++/12/bits/std_abs.h:
 
 /usr/include/c++/12/debug/assertions.h:
+
+/usr/include/c++/12/algorithm:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -367,8 +450,6 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 /usr/include/c++/12/type_traits:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h:
-
-/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/12/simple.h:
 
 /usr/include/c++/12/bits/locale_classes.tcc:
 
@@ -402,7 +483,11 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
+/usr/include/c++/12/bits/uses_allocator.h:
+
 /usr/include/c++/12/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/12/utility:
 
 /usr/include/c++/12/bits/move.h:
 
@@ -438,6 +523,8 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/c++/12/ios:
 
+/usr/include/c++/12/bits/ranges_algo.h:
+
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
@@ -456,11 +543,17 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
+/usr/include/c++/12/bits/node_handle.h:
+
+/usr/include/c++/12/bits/stl_relops.h:
+
 /usr/include/c++/12/cstdint:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h:
 
 /usr/include/wchar.h:
+
+/usr/include/c++/12/iterator:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
@@ -582,11 +675,17 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 
 /usr/include/c++/12/bits/new_allocator.h:
 
+/usr/include/c++/12/bits/vector.tcc:
+
 /usr/include/c++/12/bits/invoke.h:
 
 /usr/include/c++/12/bits/predefined_ops.h:
 
 /usr/include/c++/12/bits/functexcept.h:
+
+/usr/include/c++/12/bits/std_function.h:
+
+/usr/include/c++/12/bits/ranges_util.h:
 
 /usr/include/c++/12/bits/stl_function.h:
 

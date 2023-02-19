@@ -198,5 +198,38 @@ CMakeFiles/set2.dir/src/main.cc.o
  /usr/include/c++/12/bits/ostream.tcc
  /usr/include/c++/12/istream
  /usr/include/c++/12/bits/istream.tcc
- /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/12/simple.h
+ /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/14/storage.h
+ /usr/include/c++/12/vector
+ /usr/include/c++/12/bits/stl_uninitialized.h
+ /usr/include/c++/12/bits/stl_vector.h
+ /usr/include/c++/12/bits/stl_bvector.h
+ /usr/include/c++/12/bits/vector.tcc
+ /usr/include/c++/12/iterator
+ /usr/include/c++/12/bits/stream_iterator.h
+ /usr/include/c++/12/utility
+ /usr/include/c++/12/bits/stl_relops.h
+ /usr/include/c++/12/algorithm
+ /usr/include/c++/12/bits/stl_algo.h
+ /usr/include/c++/12/bits/algorithmfwd.h
+ /usr/include/c++/12/bits/stl_heap.h
+ /usr/include/c++/12/bits/stl_tempbuf.h
+ /usr/include/c++/12/bits/uniform_int_dist.h
+ /usr/include/c++/12/bits/ranges_algo.h
+ /usr/include/c++/12/bits/ranges_algobase.h
+ /usr/include/c++/12/bits/ranges_util.h
+ /usr/include/c++/12/pstl/glue_algorithm_defs.h
+ /usr/include/c++/12/pstl/execution_defs.h
+ /usr/include/c++/12/functional
+ /usr/include/c++/12/tuple
+ /usr/include/c++/12/bits/uses_allocator.h
+ /usr/include/c++/12/bits/std_function.h
+ /usr/include/c++/12/unordered_map
+ /usr/include/c++/12/ext/aligned_buffer.h
+ /usr/include/c++/12/bits/hashtable.h
+ /usr/include/c++/12/bits/hashtable_policy.h
+ /usr/include/c++/12/bits/enable_special_members.h
+ /usr/include/c++/12/bits/node_handle.h
+ /usr/include/c++/12/bits/unordered_map.h
+ /usr/include/c++/12/bits/erase_if.h
+ /usr/include/c++/12/array
 

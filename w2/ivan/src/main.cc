@@ -10,7 +10,14 @@
 // #include "Unique3.h"
 
 // Exercise 12
-#include "simple.h"
+// #include "simple.h"
+
+// Exercise 14
+#include "14/storage.h"
+#include <algorithm>
+#include <vector>
+#include <functional>
+#include <iterator>
 
 int main(int argc, char **argv)
 {
@@ -87,10 +94,23 @@ int main(int argc, char **argv)
     */
 
     // 12
+    /*
     Simple<int> sim1;
     std::cout << sim1.get() << '\n';
     int val = 12;
     Simple<int *> sim2{&val};
     std::cout << sim2.get() << '\n';
+    */
+
+    // 14
+    // not sure if it works
+    /*
+    auto *ivan = new std::string{"ivan"};
+    auto *alex = new std::string{"alex"};
+    auto *channa = new std::string{"channa"};
+
+    std::vector<std::string *> data{ivan, alex, channa};
+    Storage<std::string> storage{data};
+    */
     return 0;
 }
