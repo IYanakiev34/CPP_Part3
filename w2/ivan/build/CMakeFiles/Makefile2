@@ -64,29 +64,46 @@ CMAKE_BINARY_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build
 
 # The main recursive "all" target.
 all: CMakeFiles/set2.dir/all
+all: src/11/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: src/11/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/set2.dir/clean
+clean: src/11/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/11
+
+# Recursive "all" directory target.
+src/11/all: src/11/CMakeFiles/COUNTER.dir/all
+.PHONY : src/11/all
+
+# Recursive "preinstall" directory target.
+src/11/preinstall:
+.PHONY : src/11/preinstall
+
+# Recursive "clean" directory target.
+src/11/clean: src/11/CMakeFiles/COUNTER.dir/clean
+.PHONY : src/11/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/set2.dir
 
 # All Build rule for target.
-CMakeFiles/set2.dir/all:
+CMakeFiles/set2.dir/all: src/11/CMakeFiles/COUNTER.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set2.dir/build.make CMakeFiles/set2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set2.dir/build.make CMakeFiles/set2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=1,2 "Built target set2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=5,6 "Built target set2"
 .PHONY : CMakeFiles/set2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/set2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/set2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles 0
 .PHONY : CMakeFiles/set2.dir/rule
@@ -99,6 +116,32 @@ set2: CMakeFiles/set2.dir/rule
 CMakeFiles/set2.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set2.dir/build.make CMakeFiles/set2.dir/clean
 .PHONY : CMakeFiles/set2.dir/clean
+
+#=============================================================================
+# Target rules for target src/11/CMakeFiles/COUNTER.dir
+
+# All Build rule for target.
+src/11/CMakeFiles/COUNTER.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=1,2,3,4 "Built target COUNTER"
+.PHONY : src/11/CMakeFiles/COUNTER.dir/all
+
+# Build rule for subdir invocation for target.
+src/11/CMakeFiles/COUNTER.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/CMakeFiles/COUNTER.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles 0
+.PHONY : src/11/CMakeFiles/COUNTER.dir/rule
+
+# Convenience name for target.
+COUNTER: src/11/CMakeFiles/COUNTER.dir/rule
+.PHONY : COUNTER
+
+# clean rule for target.
+src/11/CMakeFiles/COUNTER.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/clean
+.PHONY : src/11/CMakeFiles/COUNTER.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
