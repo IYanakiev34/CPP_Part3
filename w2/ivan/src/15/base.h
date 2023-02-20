@@ -8,6 +8,7 @@ class Base
 {
 public:
     using FuncPtr = Ret (Derived::*)(Args...);
+    // Same for const funcptr
 
     Ret nc(Args... args) { return static_cast<Derived *>(this)->nc_impl(args...); }
 };

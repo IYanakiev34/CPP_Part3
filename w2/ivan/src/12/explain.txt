@@ -1,0 +1,7 @@
+In this exercise we were tasked to solve the issue
+with passing pointer types to the Simple class since
+the get method would return a pointer rather than a
+reference. This was solved by specializing the class
+template. To avoid the specialization the author
+of the class could have provided a member template
+function for this case. 

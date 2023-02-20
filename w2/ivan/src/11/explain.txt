@@ -1,0 +1,6 @@
+In order to count all the object we would
+need to decouple the counting from the specific
+template instantiation. One way that this could
+be achived is to have a base class that would be
+inherited by the template class. The counter class
+would then manage the counting of the objects.

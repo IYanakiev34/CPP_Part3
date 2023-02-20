@@ -12,6 +12,11 @@
 // Exercise 12
 // #include "simple.h"
 
+// Exercise 13
+// #include "13/Data.h"
+// #include <iterator>
+// #include <algorithm>
+
 // Exercise 14
 // #include "14/storage.h"
 // #include <algorithm>
@@ -103,6 +108,12 @@ int main(int argc, char **argv)
     int val = 12;
     Simple<int *> sim2{&val};
     std::cout << sim2.get() << '\n';
+    */
+
+    // 13
+    /*
+    Data data;
+    std::copy(std::istream_iterator<std::string>(std::cin), std::istream_iterator<std::string>(), std::back_inserter(data));
     */
 
     // 14
