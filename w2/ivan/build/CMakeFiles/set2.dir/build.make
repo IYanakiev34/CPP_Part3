@@ -92,6 +92,7 @@ set2_EXTERNAL_OBJECTS =
 
 set2: CMakeFiles/set2.dir/src/main.cc.o
 set2: CMakeFiles/set2.dir/build.make
+set2: src/11/libCOUNTER.a
 set2: CMakeFiles/set2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable set2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/set2.dir/link.txt --verbose=$(VERBOSE)

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCOUNTER.a CMakeFiles/COUNTER.dir/ctor.cc.o CMakeFiles/COUNTER.dir/dtor.cc.o CMakeFiles/COUNTER.dir/data.cc.o
+/usr/bin/ranlib libCOUNTER.a

@@ -129,6 +129,19 @@ set2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/set2.dir/build.make CMakeFiles/set2.dir/build
 .PHONY : set2/fast
 
+#=============================================================================
+# Target rules for targets named COUNTER
+
+# Build rule for target.
+COUNTER: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 COUNTER
+.PHONY : COUNTER
+
+# fast build rule for target.
+COUNTER/fast:
+	$(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/build
+.PHONY : COUNTER/fast
+
 src/main.o: src/main.cc.o
 .PHONY : src/main.o
 
@@ -161,6 +174,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... COUNTER"
 	@echo "... set2"
 	@echo "... src/main.o"
 	@echo "... src/main.i"

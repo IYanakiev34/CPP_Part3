@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src
+CXX_INCLUDES = -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/9 -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/10 -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11 -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/12 -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/14 -I/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/15
 
 CXX_FLAGS = -Wall -Werror -std=c++20 -g -O2
 

@@ -156,4 +156,5 @@ CMakeFiles/set2.dir/src/main.cc.o: \
  /usr/include/c++/12/bits/locale_facets.tcc \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc
+ /usr/include/c++/12/bits/istream.tcc \
+ /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/15/base.h
