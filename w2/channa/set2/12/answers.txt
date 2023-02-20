@@ -1,0 +1,2 @@
+To avoid having to provide a specialization for Simple, the author for it could
+develop specialized member template functions taking care of pointers.

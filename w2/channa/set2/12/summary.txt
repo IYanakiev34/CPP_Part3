@@ -1,0 +1,3 @@
+In this exercise, we extend Simple to SimplePointer which can hold
+either a pointer or a value, but the `get` returns the value pointed by the
+pointer, as opposed to the pointer value, in the latter.

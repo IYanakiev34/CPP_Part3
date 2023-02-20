@@ -1,0 +1,25 @@
+Convince yourself that the s_count / s_actual results are correct.
+
+In main.cc we observe the effects of destruction / construction of
+(sometimes non-) anonymous objects. The output of running the compiled program
+is as follows:
+
+    Inside scoped block
+    int count: 2, int actual: 2
+    string count: 2, string actual: 1
+
+    Outside scoped block
+    int count: 2, int actual: 0
+    string count: 2, string actual: 0
+
+Inside the scoped block, we see that for ints, count and actual are both 2. This
+makes sense since we have the original object and a copy, so both are
+created and still exist.
+
+However, for string, we see that count is 2 (one for text, and one for the
+anonymous object) but actual is 1 since the anon. obj. gets immediately
+deallocated and text is the only object remaining.
+
+Outside the scope block, all objects inside the scoped block are destructed,
+meaning actual should be 0 for both int and string (which is what the output
+shows).

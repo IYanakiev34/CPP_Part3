@@ -1,0 +1,2 @@
+In this exercise we design a class that acts like a container that can
+be used with the back_insertor function template.
