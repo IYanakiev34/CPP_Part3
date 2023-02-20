@@ -1,0 +1,87 @@
+inline DLX::ColumnHeaderNode * const DLX::Node::control() const
+{
+    return static_cast<ColumnHeaderNode *>(d_control);
+}
+
+inline void DLX::Node::insert_on_left(Node * const other)
+{
+    d_dims[Horizontal]->insert_back(other->d_dims[Horizontal]);
+}
+
+inline void DLX::Node::insert_above(Node * const other)
+{
+    d_dims[Vertical]->insert_back(other->d_dims[Vertical]);
+}
+
+inline void DLX::Node::insert_on_right(Node * const other)
+{
+    d_dims[Horizontal]->insert_front(other->d_dims[Horizontal]);
+}
+
+inline void DLX::Node::insert_below(Node * const other)
+{
+    d_dims[Vertical]->insert_front(other->d_dims[Vertical]);
+}
+
+inline DLX::Node * const DLX::Node::left() const
+{
+    return static_cast<Node *>(d_dims[Horizontal]->prev()->owner());
+}
+
+inline DLX::Node * const DLX::Node::right() const
+{
+    return static_cast<Node *>(d_dims[Horizontal]->next()->owner());
+}
+
+inline DLX::Node * const DLX::Node::up() const
+{
+    return static_cast<Node *>(d_dims[Vertical]->prev()->owner());
+}
+
+inline DLX::Node * const DLX::Node::down() const
+{
+    return static_cast<Node *>(d_dims[Vertical]->next()->owner());
+}
+
+// Multi-line functions inlined for convenience of swapping them in and out.
+
+inline void DLX::Node::cover_lr() const
+{
+    d_dims[Horizontal]->cover();
+}
+
+inline void DLX::Node::uncover_lr()
+{
+    d_dims[Horizontal]->uncover();
+}
+
+
+inline void DLX::Node::cover_ud() const
+{
+    d_dims[Vertical]->cover();
+    d_control->decrease_count();
+}
+
+inline void DLX::Node::uncover_ud()
+{
+    d_dims[Vertical]->uncover();
+    d_control->increase_count();
+}
+
+inline void DLX::Node::cover_rest_of_row() const
+{}
+
+inline void DLX::Node::uncover_rest_of_row() const
+{}
+
+
+inline DLX::Node::Node(ColumnHeaderNode *control)
+    :
+    d_control(control)
+{
+    d_dims[Horizontal]->insert_back(d_dims[Horizontal]);
+    d_dims[Horizontal]->insert_front(d_dims[Horizontal]);
+    d_dims[Vertical]->insert_back(d_dims[Vertical]);
+    d_dims[Vertical]->insert_front(d_dims[Vertical]);
+    d_control->increase_count();
+}

@@ -1,0 +1,30 @@
+
+class DLX::ColumnHeaderNode: public Node
+{
+    //DontFixMe: public inheritance, yet no virtual destructor.
+    size_t d_nr_ones = 0;
+    size_t d_name_nr;
+public:
+    ColumnHeaderNode(size_t name_nr);
+    void cover(); // Covers the entire column, not just the header.
+    void uncover();
+    size_t count() const;
+    void increase_count();
+    void decrease_count();
+    ColumnHeaderNode * const left() const;
+    ColumnHeaderNode * const right() const;
+    size_t name_number() const;
+private:
+    // Headers are only ever covered left-right, not up-down. So
+    // simplify interface for DLX, and prevent further public inheritance.
+    using Node::cover_lr;
+    using Node::uncover_lr;
+    using Node::cover_ud;
+    using Node::uncover_ud;
+};
+/*
+  DLX::ColumnHeaderNode inherits publicly from DLX::Node. This allows pointers
+  to Node to point to ControlHeaderNode, which simplifies the algorithm. Yet we
+  use no virtual destructor, to avoid vtables. We get away with this by careful
+  use of static_cast.
+ */

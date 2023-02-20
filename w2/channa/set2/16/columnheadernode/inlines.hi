@@ -1,0 +1,30 @@
+
+inline std::size_t DLX::ColumnHeaderNode::name_number() const
+{
+    return d_name_nr;
+}
+
+inline DLX::ColumnHeaderNode * const DLX::ColumnHeaderNode::left() const
+{
+    return static_cast<ColumnHeaderNode * const>(Node::left());
+}
+
+inline DLX::ColumnHeaderNode * const DLX::ColumnHeaderNode::right() const
+{
+    return static_cast<ColumnHeaderNode * const>(Node::right());
+}
+
+inline std::size_t DLX::ColumnHeaderNode::count() const
+{
+    return d_nr_ones;
+}
+
+inline void DLX::ColumnHeaderNode::increase_count()
+{
+    ++d_nr_ones;
+}
+
+inline void DLX::ColumnHeaderNode::decrease_count()
+{
+    --d_nr_ones;
+}
