@@ -1,0 +1,5 @@
+In order to use the as stated by the Annotations
+we must provide 2 public using declarations. One
+for the value_type and one for the const_reference
+type. After we have provided those the implementation
+using the istream_iterator is trivial.
