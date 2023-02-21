@@ -1,0 +1,5 @@
+#include "../Simple/Simple.h"
+#include "../Simple/SimplePointer.h"
+#include <iostream>
+
+using namespace std;

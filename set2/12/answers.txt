@@ -1,0 +1,5 @@
+To avoid having to provide a specialization for Simple, the author for it could
+specialize the constructor for Simple. One specialization would be for
+simple values, in which we assign d_value to the argument. The other
+specialization would be for pointer values, in which we assign d_value to the
+value the pointer is pointing to.

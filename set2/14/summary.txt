@@ -1,0 +1,1 @@
+In this exericse, we define an iterator for a Storage class.

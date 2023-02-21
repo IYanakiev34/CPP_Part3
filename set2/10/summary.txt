@@ -1,0 +1,2 @@
+We also keep track of object constructions / instances via static variables
+(with each pair of static variables tied to its template instantiation).
