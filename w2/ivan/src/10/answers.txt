@@ -1,0 +1,13 @@
+Output explanation:
+
+We create 2 object of Unique<int> type so we would
+expect to have currently 2 actul and global objects.
+After that we create a scoped block and create 2 more
+object of type Unique<std::string>. They are two since
+we have one lvalue and one rvalue object. When we
+print we expect to see that we have 4 global object and
+currently 3 active instances. As the output suggests this
+is the case. After that we leave the scoped block so the
+last string instances should be destructed and we should
+expect to have 4 global object,2 active, 2 strings globally,
+0 actual ones. After printing this is exactly what we get.
