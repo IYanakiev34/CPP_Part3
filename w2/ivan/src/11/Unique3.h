@@ -5,9 +5,10 @@
 #include <memory>
 
 template <typename T>
-class Unique : public Counter
+class Unique
 {
     std::unique_ptr<T> d_data;
+    Counter d_counter;
 
 public:
     static std::size_t s_count;

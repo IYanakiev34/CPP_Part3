@@ -7,7 +7,7 @@
 // #include "Unique2.h"
 
 // Exercise 11
-// #include "Unique3.h"
+#include "Unique3.h"
 
 // Exercise 12
 // #include "simple.h"
@@ -25,7 +25,7 @@
 // #include <iterator>
 
 // Exercise 15
-#include "15/base.h"
+// #include "15/base.h"
 
 int main(int argc, char **argv)
 {
@@ -71,7 +71,7 @@ int main(int argc, char **argv)
     */
 
     // 11
-    /*
+
     Unique<int> value{42};
     Unique<int> second{value};
 
@@ -87,8 +87,8 @@ int main(int argc, char **argv)
         std::cout << text.get() << '\n';
         std::cout << "Count strings: " << Unique<std::string>::s_count
                   << ", Actual: " << Unique<std::string>::s_actual << '\n';
-        std::cout << "Global count: " << Unique<std::string>::getGlobalCount()
-                  << ", Actual: " << Unique<std::string>::getGlobalActual() << '\n';
+        std::cout << "Global count: " << Counter::getGlobal()
+                  << ", Actual: " << Counter::getActual() << '\n';
     }
     std::cout << "Count strings: " << Unique<std::string>::s_count
               << ", Actual: " << Unique<std::string>::s_actual << '\n';
@@ -97,9 +97,8 @@ int main(int argc, char **argv)
         << "Count int: " << Unique<int>::s_count << ", Actual: "
         << Unique<int>::s_actual << '\n';
 
-    std::cout << "Global count: " << Unique<std::string>::getGlobalCount()
-              << ", Actual: " << Unique<std::string>::getGlobalActual() << '\n';
-    */
+    std::cout << "Global count: " << Counter::getGlobal()
+              << ", Actual: " << Counter::getActual() << '\n';
 
     // 12
     /*
@@ -128,7 +127,7 @@ int main(int argc, char **argv)
     */
 
     // 15
-
+    /*
     using FuncPtr = int (Derived::*)(double);
     FuncPtr arr[] = {&Derived::nc};
 
@@ -138,6 +137,7 @@ int main(int argc, char **argv)
         int result = (obj.*ptr)(3.14);
         std::cout << "result: " << result << std::endl;
     }
+    */
 
     return 0;
 }
