@@ -45,7 +45,6 @@ void DLX::add_row(set_t const &subset, DLX::header_map_t const &header_map)
         if (it == start)
         {
             header->insert_above(first); // Torus, so above is 'end' of column.
-            auto node = header;
         }
         else
         {

@@ -74,7 +74,7 @@ private:
 
 #include "columnheadernode/columnheadernode.hi" // both
 
-#include "node/inlines.hi.1" // without template
+#include "node/inlines.hi" // without template
 // Switch between prev and next include
 //#include "solution/inlines.hi" // with template
 
