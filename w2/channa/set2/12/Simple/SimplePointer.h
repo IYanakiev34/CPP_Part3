@@ -17,19 +17,19 @@ class Simple<Data *>
 };
 
 template <typename Data>
-Simple<Data *>::Simple(Data &data)
+inline Simple<Data *>::Simple(Data &data)
   :
   d_ptr(&data)
 {}
 
 template <typename Data>
-Simple<Data *>::Simple(Data *const other)
+inline Simple<Data *>::Simple(Data *const other)
   :
   d_ptr(other)
 {}
 
 template <typename Data>
-Data &Simple<Data *>::get()
+inline Data &Simple<Data *>::get()
 {
   return *d_ptr;
 }

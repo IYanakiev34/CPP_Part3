@@ -14,13 +14,13 @@ class Simple
 };
 
 template <typename Type>
-Simple<Type>::Simple(const Type &value)
+inline Simple<Type>::Simple(const Type &value)
   :
   d_value(value)
 {}
 
 template <typename Type>
-Type &Simple<Type>::get()
+inline Type &Simple<Type>::get()
 {
   return d_value;
 }
