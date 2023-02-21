@@ -1,0 +1,13 @@
+Modeled rawCapacity based on the use of placement new on
+page 250 of annotations, just changing string to T. Then
+I reserve the capacity for 10 strings and use placement new
+to insert a string at the fourth spot. I print the value at
+the fourth spot and confirm output:
+    This is what I want to print
+Placement new is unique in that you have to manually call
+the destructors of objects placed there if said objects have
+side effects and string does allocate memory. Hence, I
+explicitly call the destructor of the string I placed, then
+use operator delete. With these two considerations, the
+peculiarities of placement new (page 227) are handled and
+valgrind reports no leaks.

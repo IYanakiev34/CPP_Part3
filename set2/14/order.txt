@@ -1,3 +1,3 @@
-./summary.txt
-./Storage/Storage.h
-./Storage/Iterator.h
+summary.txt
+Storage/Storage.h
+Storage/Iterator.h

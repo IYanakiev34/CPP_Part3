@@ -1,0 +1,2 @@
+This exercise involves writing a function template that can be used like
+static_cast (internally using static_cast).

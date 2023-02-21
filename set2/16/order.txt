@@ -1,16 +1,16 @@
-./summary.txt
+summary.txt
 
-./Node1D/Node1D.h
-./Node1D/Node1D.ih
-./Node1D/Node1D.cc
-./Node1D/insert_back.cc
-./Node1D/insert_front.cc
-./Node1D/cover.cc
-./Node1D/uncover.cc
+Node1D/Node1D.h
+Node1D/Node1D.ih
+Node1D/Node1D.cc
+Node1D/insert_back.cc
+Node1D/insert_front.cc
+Node1D/cover.cc
+Node1D/uncover.cc
 
-./NodeND/NodeND.h
-./NodeND/dtor.f
-./NodeND/NodeND.f
+NodeND/NodeND.h
+NodeND/dtor.f
+NodeND/NodeND.f
 
-./node/node.h
-./node/inlines.hi
+node/node.h
+node/inlines.hi

@@ -1,0 +1,16 @@
+In order to create the function forwarder
+we will need to make sure we have 2 things
+present. A typename for the function that we
+will pass in. Also we will need the parameters.
+This could be done as follows:
+
+template <typename Function,typename Params&&...>
+We pass the params as univesal reference in order
+to accomodate the variables as needed. We then
+just need to invoke the function passed in
+and forward the parameters to it. One more
+tricky thing is the return type of the function
+since it depends on the function that we pass in.
+One thing that we could do is to use:
+
+decltype(auto) for return type

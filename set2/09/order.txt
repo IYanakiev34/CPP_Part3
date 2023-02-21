@@ -1,2 +1,2 @@
-./summary.txt
-./Unique.h
+summary.txt
+Unique.h
