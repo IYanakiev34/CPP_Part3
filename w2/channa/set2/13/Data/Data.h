@@ -11,6 +11,7 @@ class Data
 
   public:
     using value_type = std::string;
+    using const_reference = value_type const &;
 
     void push_back(std::string const &str);
 };
