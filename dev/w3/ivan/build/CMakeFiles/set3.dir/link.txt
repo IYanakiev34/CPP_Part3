@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/set3.dir/src/main.cc.o -o set3 

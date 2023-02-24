@@ -1,0 +1,3 @@
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/build/CMakeFiles/set3.dir
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/build/CMakeFiles/edit_cache.dir
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/build/CMakeFiles/rebuild_cache.dir
