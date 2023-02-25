@@ -6,6 +6,12 @@
 // Exercise 18
 // #include "18/Bit.h"
 
+// Exercise 19
+// #include "19/Chars.h"
+
+// Exercise 24
+#include "24/I2C.h"
+
 int main(int argc, char **argv)
 {
     // 17
@@ -23,5 +29,15 @@ int main(int argc, char **argv)
     */
 
     // 19
+    /*
+    std::cout << Chars<'h', 'e', 'l', 'l', 'o'>() << '\n';
+    std::cout << Chars<'m', 'e', 't', 'a'>() << '\n';
+    std::cout << Chars<>() << '\n';
+    */
+
+    // 24
+    std::cout << I2C<123>::s_ntbs << '\n';
+    std::cout << I2C<0>::s_ntbs << '\n';
+    std::cout << I2C<15937>::s_ntbs << '\n';
     return 0;
 }
