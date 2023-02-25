@@ -4,10 +4,7 @@
 // #include "17/nrtrait.h"
 
 // Exercise 18
-#include "18/Bit.h"
-
-// Exercise 19
-// #include "19/chars.h"
+// #include "18/Bit.h"
 
 int main(int argc, char **argv)
 {
@@ -20,8 +17,10 @@ int main(int argc, char **argv)
     */
 
     // 18
+    /*
     std::cout << Bin<5>::value << "\n";
     std::cout << Bin<27>::value << "\n";
+    */
 
     // 19
     return 0;
