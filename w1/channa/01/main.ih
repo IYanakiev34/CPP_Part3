@@ -1,9 +1,0 @@
-#include "tempFun.h"
-#include "pointerunion.h"
-
-#include <iostream>
-
-using namespace std;
-
-void sourceFun1();
-void sourceFun2();

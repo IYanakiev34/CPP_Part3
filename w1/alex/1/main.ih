@@ -1,5 +1,0 @@
-#include "template.h"
-#include <iostream>
-
-void one();
-void two();

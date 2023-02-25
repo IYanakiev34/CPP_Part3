@@ -1,2 +1,0 @@
-This exercise extends a defined Storage class so that it can be indexed with
-any type that can be casted to size_t.

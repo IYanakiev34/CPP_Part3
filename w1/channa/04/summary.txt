@@ -1,2 +1,0 @@
-This exercise involves writing a forwarder function which essentially forwards
-the arguments it receives to a function it also receives.

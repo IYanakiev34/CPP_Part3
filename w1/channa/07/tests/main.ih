@@ -1,5 +1,0 @@
-#include "../printSet.h"
-#include <iostream>
-#include <set>
-
-using namespace std;

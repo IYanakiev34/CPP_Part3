@@ -1,2 +1,0 @@
-This exercise involves implementing OptInsert to correctly be able to optionally
-allow output to a given output stream.

@@ -1,4 +1,0 @@
-#include "../rawCapacity.h"
-#include <iostream>
-
-using namespace std;

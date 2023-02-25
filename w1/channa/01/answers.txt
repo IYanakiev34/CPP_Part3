@@ -1,8 +1,0 @@
-The output of running the compiled project:
-
-    Address of instantiated template function in sourceFun1: 0x561940f86312
-    Address of instantiated template function in sourceFun2: 0x561940f86312
-
-Observe that even though we compiled source1, source2 separately (and thus
-contain their own instantiations of tempFun<int>), the address of this function
-is the same.

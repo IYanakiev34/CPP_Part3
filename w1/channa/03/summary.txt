@@ -1,3 +1,0 @@
-This exercise involves designing a function that returns a pointer to
-raw memory (but the pointer refers to the type of memory that the memory will be
-used for).

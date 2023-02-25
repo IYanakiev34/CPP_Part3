@@ -1,8 +1,0 @@
-#include "forwarder.h"
-
-#include <iostream>
-#include <vector>
-#include <functional>
-#include <string>
-
-using namespace std;

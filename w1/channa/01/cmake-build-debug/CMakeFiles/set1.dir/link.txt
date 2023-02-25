@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Werror -g CMakeFiles/set1.dir/sourceFun1.cc.o CMakeFiles/set1.dir/sourceFun2.cc.o -o set1 

@@ -1,3 +1,0 @@
-/mnt/c/Users/cdper/repos/cpp3/w1/channa/08/cmake-build-debug/CMakeFiles/set1.dir
-/mnt/c/Users/cdper/repos/cpp3/w1/channa/08/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/cdper/repos/cpp3/w1/channa/08/cmake-build-debug/CMakeFiles/rebuild_cache.dir

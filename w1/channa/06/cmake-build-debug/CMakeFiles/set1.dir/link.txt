@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Werror -g CMakeFiles/set1.dir/exception/what.cc.o CMakeFiles/set1.dir/tests/main.cc.o -o set1 
