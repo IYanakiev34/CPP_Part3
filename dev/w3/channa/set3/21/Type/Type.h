@@ -12,7 +12,7 @@ struct Type<Needle, Head, Rest...>
   enum
   {
     index = Type<Needle, Rest...>::located,
-    located = index == 0 ? 0 : Type<Needle, Rest...>::located + 1
+    located = index == 0 ? 0 : index + 1
   };
 };
 
