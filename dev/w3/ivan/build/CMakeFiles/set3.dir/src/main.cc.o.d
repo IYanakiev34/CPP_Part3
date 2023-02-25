@@ -153,5 +153,5 @@ CMakeFiles/set3.dir/src/main.cc.o: \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
- /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/17/nrtrait.h \
+ /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/18/Bit.h \
  /usr/include/c++/12/cstddef

@@ -190,9 +190,11 @@ CMakeFiles/set3.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/17/nrtrait.h \
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/18/Bit.h \
   /usr/include/c++/12/cstddef
 
+
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/18/Bit.h:
 
 /usr/include/c++/12/bits/streambuf_iterator.h:
 
@@ -237,8 +239,6 @@ CMakeFiles/set3.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 /usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/select2.h:
-
-/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/17/nrtrait.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
