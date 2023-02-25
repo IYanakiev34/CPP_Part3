@@ -4,7 +4,7 @@
 template<char ...chars>
 class Chars
 {
-  static constexpr char const d_str[] = {chars..., '\0'};
+  static constexpr char const s_str[] = {chars..., '\0'};
   public:
     Chars() = default;
     constexpr operator char const *() const;
@@ -13,7 +13,7 @@ class Chars
 template <char ...chars>
 inline constexpr Chars<chars...>::operator char const *() const
 {
-  return d_str;
+  return s_str;
 }
 #include "convertToNTBS.f"
 
