@@ -1,5 +1,5 @@
+#include "Unique2.h" //JB: FIRST (IY : fixed it)
 #include <iostream>
-#include "Unique2.h" //JB: FIRST
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
         text = Unique<std::string>{"hello world(2)"};
 
         std::cout << text.get() << "\n";
-        //JB: CTR
+        // JB: CTR
         std::cout << "Count strings: " << Unique<std::string>::s_count
                   << ", Actual: " << Unique<std::string>::s_actual << "\n";
     }

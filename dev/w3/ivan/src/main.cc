@@ -9,8 +9,11 @@
 // Exercise 19
 // #include "19/Chars.h"
 
+// Exercise 20
+// #include "20/Merge.h"
+
 // Exercise 24
-#include "24/I2C.h"
+// #include "24/I2C.h"
 
 int main(int argc, char **argv)
 {
@@ -35,9 +38,13 @@ int main(int argc, char **argv)
     std::cout << Chars<>() << '\n';
     */
 
+    // 20
+
     // 24
+    /*
     std::cout << I2C<123>::s_ntbs << '\n';
     std::cout << I2C<0>::s_ntbs << '\n';
     std::cout << I2C<15937>::s_ntbs << '\n';
+    */
     return 0;
 }

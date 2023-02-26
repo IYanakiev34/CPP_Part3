@@ -53,10 +53,10 @@ RM = /snap/cmake/1216/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan
+CMAKE_SOURCE_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build
+CMAKE_BINARY_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build
 
 # Include any dependencies generated for this target.
 include src/11/CMakeFiles/COUNTER.dir/depend.make
@@ -70,46 +70,46 @@ include src/11/CMakeFiles/COUNTER.dir/progress.make
 include src/11/CMakeFiles/COUNTER.dir/flags.make
 
 src/11/CMakeFiles/COUNTER.dir/ctor.cc.o: src/11/CMakeFiles/COUNTER.dir/flags.make
-src/11/CMakeFiles/COUNTER.dir/ctor.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/ctor.cc
+src/11/CMakeFiles/COUNTER.dir/ctor.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/ctor.cc
 src/11/CMakeFiles/COUNTER.dir/ctor.cc.o: src/11/CMakeFiles/COUNTER.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/11/CMakeFiles/COUNTER.dir/ctor.cc.o"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/11/CMakeFiles/COUNTER.dir/ctor.cc.o -MF CMakeFiles/COUNTER.dir/ctor.cc.o.d -o CMakeFiles/COUNTER.dir/ctor.cc.o -c /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/ctor.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/11/CMakeFiles/COUNTER.dir/ctor.cc.o"
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/11/CMakeFiles/COUNTER.dir/ctor.cc.o -MF CMakeFiles/COUNTER.dir/ctor.cc.o.d -o CMakeFiles/COUNTER.dir/ctor.cc.o -c /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/ctor.cc
 
 src/11/CMakeFiles/COUNTER.dir/ctor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COUNTER.dir/ctor.cc.i"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/ctor.cc > CMakeFiles/COUNTER.dir/ctor.cc.i
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/ctor.cc > CMakeFiles/COUNTER.dir/ctor.cc.i
 
 src/11/CMakeFiles/COUNTER.dir/ctor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COUNTER.dir/ctor.cc.s"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/ctor.cc -o CMakeFiles/COUNTER.dir/ctor.cc.s
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/ctor.cc -o CMakeFiles/COUNTER.dir/ctor.cc.s
 
 src/11/CMakeFiles/COUNTER.dir/dtor.cc.o: src/11/CMakeFiles/COUNTER.dir/flags.make
-src/11/CMakeFiles/COUNTER.dir/dtor.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/dtor.cc
+src/11/CMakeFiles/COUNTER.dir/dtor.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/dtor.cc
 src/11/CMakeFiles/COUNTER.dir/dtor.cc.o: src/11/CMakeFiles/COUNTER.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/11/CMakeFiles/COUNTER.dir/dtor.cc.o"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/11/CMakeFiles/COUNTER.dir/dtor.cc.o -MF CMakeFiles/COUNTER.dir/dtor.cc.o.d -o CMakeFiles/COUNTER.dir/dtor.cc.o -c /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/dtor.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/11/CMakeFiles/COUNTER.dir/dtor.cc.o"
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/11/CMakeFiles/COUNTER.dir/dtor.cc.o -MF CMakeFiles/COUNTER.dir/dtor.cc.o.d -o CMakeFiles/COUNTER.dir/dtor.cc.o -c /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/dtor.cc
 
 src/11/CMakeFiles/COUNTER.dir/dtor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COUNTER.dir/dtor.cc.i"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/dtor.cc > CMakeFiles/COUNTER.dir/dtor.cc.i
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/dtor.cc > CMakeFiles/COUNTER.dir/dtor.cc.i
 
 src/11/CMakeFiles/COUNTER.dir/dtor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COUNTER.dir/dtor.cc.s"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/dtor.cc -o CMakeFiles/COUNTER.dir/dtor.cc.s
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/dtor.cc -o CMakeFiles/COUNTER.dir/dtor.cc.s
 
 src/11/CMakeFiles/COUNTER.dir/data.cc.o: src/11/CMakeFiles/COUNTER.dir/flags.make
-src/11/CMakeFiles/COUNTER.dir/data.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/data.cc
+src/11/CMakeFiles/COUNTER.dir/data.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/data.cc
 src/11/CMakeFiles/COUNTER.dir/data.cc.o: src/11/CMakeFiles/COUNTER.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/11/CMakeFiles/COUNTER.dir/data.cc.o"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/11/CMakeFiles/COUNTER.dir/data.cc.o -MF CMakeFiles/COUNTER.dir/data.cc.o.d -o CMakeFiles/COUNTER.dir/data.cc.o -c /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/data.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/11/CMakeFiles/COUNTER.dir/data.cc.o"
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/11/CMakeFiles/COUNTER.dir/data.cc.o -MF CMakeFiles/COUNTER.dir/data.cc.o.d -o CMakeFiles/COUNTER.dir/data.cc.o -c /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/data.cc
 
 src/11/CMakeFiles/COUNTER.dir/data.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COUNTER.dir/data.cc.i"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/data.cc > CMakeFiles/COUNTER.dir/data.cc.i
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/data.cc > CMakeFiles/COUNTER.dir/data.cc.i
 
 src/11/CMakeFiles/COUNTER.dir/data.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COUNTER.dir/data.cc.s"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/data.cc -o CMakeFiles/COUNTER.dir/data.cc.s
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/data.cc -o CMakeFiles/COUNTER.dir/data.cc.s
 
 # Object files for target COUNTER
 COUNTER_OBJECTS = \
@@ -125,19 +125,19 @@ src/11/libCOUNTER.a: src/11/CMakeFiles/COUNTER.dir/dtor.cc.o
 src/11/libCOUNTER.a: src/11/CMakeFiles/COUNTER.dir/data.cc.o
 src/11/libCOUNTER.a: src/11/CMakeFiles/COUNTER.dir/build.make
 src/11/libCOUNTER.a: src/11/CMakeFiles/COUNTER.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libCOUNTER.a"
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && $(CMAKE_COMMAND) -P CMakeFiles/COUNTER.dir/cmake_clean_target.cmake
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/COUNTER.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libCOUNTER.a"
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && $(CMAKE_COMMAND) -P CMakeFiles/COUNTER.dir/cmake_clean_target.cmake
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/COUNTER.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/11/CMakeFiles/COUNTER.dir/build: src/11/libCOUNTER.a
 .PHONY : src/11/CMakeFiles/COUNTER.dir/build
 
 src/11/CMakeFiles/COUNTER.dir/clean:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 && $(CMAKE_COMMAND) -P CMakeFiles/COUNTER.dir/cmake_clean.cmake
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 && $(CMAKE_COMMAND) -P CMakeFiles/COUNTER.dir/cmake_clean.cmake
 .PHONY : src/11/CMakeFiles/COUNTER.dir/clean
 
 src/11/CMakeFiles/COUNTER.dir/depend:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11 /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11 /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11/CMakeFiles/COUNTER.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11 /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11 /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11/CMakeFiles/COUNTER.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/11/CMakeFiles/COUNTER.dir/depend
 

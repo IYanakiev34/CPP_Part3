@@ -1,13 +1,13 @@
 #include <iostream>
 
 // Exercise 9
-// #include "Unique.h"
+#include "Unique.h"
 
 // Exercise 10
 // #include "Unique2.h"
 
 // Exercise 11
-#include "Unique3.h"
+// #include "Unique3.h"
 
 // Exercise 12
 // #include "simple.h"
@@ -30,7 +30,7 @@
 int main(int argc, char **argv)
 {
     // 9
-    /*
+
     Unique<int> value{42};
     Unique<int> second{value};
 
@@ -43,11 +43,10 @@ int main(int argc, char **argv)
     text = Unique<std::string>{"hello world(2)"};
 
     std::cout << text.get() << "\n";
-    */
 
     // 10
     // 11
-
+    /*
     Unique<int> value{42};
     Unique<int> second{value};
 
@@ -75,7 +74,7 @@ int main(int argc, char **argv)
 
     std::cout << "Global count: " << Counter::getGlobal()
               << ", Actual: " << Counter::getActual() << '\n';
-
+    */
     // 12
     /*
     Simple<int> sim1;

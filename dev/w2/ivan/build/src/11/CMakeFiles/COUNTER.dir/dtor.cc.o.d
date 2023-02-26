@@ -1,7 +1,7 @@
 src/11/CMakeFiles/COUNTER.dir/dtor.cc.o: \
- /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/dtor.cc \
+ /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/dtor.cc \
  /usr/include/stdc-predef.h \
- /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11/Counter.h \
+ /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11/Counter.h \
  /usr/include/c++/12/cstddef \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \

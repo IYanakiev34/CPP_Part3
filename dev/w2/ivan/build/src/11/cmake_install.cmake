@@ -1,4 +1,4 @@
-# Install script for directory: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/src/11
+# Install script for directory: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/11
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

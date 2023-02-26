@@ -57,10 +57,10 @@ RM = /snap/cmake/1216/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan
+CMAKE_SOURCE_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build
+CMAKE_BINARY_DIR = /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/src/11//CMakeFiles/progress.marks
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build/CMakeFiles 0
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/CMakeFiles /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/src/11//CMakeFiles/progress.marks
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/clean
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/preinstall
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/preinstall
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/11/CMakeFiles/COUNTER.dir/rule:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/CMakeFiles/COUNTER.dir/rule
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/11/CMakeFiles/COUNTER.dir/rule
 .PHONY : src/11/CMakeFiles/COUNTER.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ COUNTER: src/11/CMakeFiles/COUNTER.dir/rule
 
 # fast build rule for target.
 COUNTER/fast:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/build
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/build
 .PHONY : COUNTER/fast
 
 ctor.o: ctor.cc.o
@@ -135,7 +135,7 @@ ctor.o: ctor.cc.o
 
 # target to build an object file
 ctor.cc.o:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/ctor.cc.o
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/ctor.cc.o
 .PHONY : ctor.cc.o
 
 ctor.i: ctor.cc.i
@@ -143,7 +143,7 @@ ctor.i: ctor.cc.i
 
 # target to preprocess a source file
 ctor.cc.i:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/ctor.cc.i
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/ctor.cc.i
 .PHONY : ctor.cc.i
 
 ctor.s: ctor.cc.s
@@ -151,7 +151,7 @@ ctor.s: ctor.cc.s
 
 # target to generate assembly for a file
 ctor.cc.s:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/ctor.cc.s
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/ctor.cc.s
 .PHONY : ctor.cc.s
 
 data.o: data.cc.o
@@ -159,7 +159,7 @@ data.o: data.cc.o
 
 # target to build an object file
 data.cc.o:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/data.cc.o
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/data.cc.o
 .PHONY : data.cc.o
 
 data.i: data.cc.i
@@ -167,7 +167,7 @@ data.i: data.cc.i
 
 # target to preprocess a source file
 data.cc.i:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/data.cc.i
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/data.cc.i
 .PHONY : data.cc.i
 
 data.s: data.cc.s
@@ -175,7 +175,7 @@ data.s: data.cc.s
 
 # target to generate assembly for a file
 data.cc.s:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/data.cc.s
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/data.cc.s
 .PHONY : data.cc.s
 
 dtor.o: dtor.cc.o
@@ -183,7 +183,7 @@ dtor.o: dtor.cc.o
 
 # target to build an object file
 dtor.cc.o:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/dtor.cc.o
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/dtor.cc.o
 .PHONY : dtor.cc.o
 
 dtor.i: dtor.cc.i
@@ -191,7 +191,7 @@ dtor.i: dtor.cc.i
 
 # target to preprocess a source file
 dtor.cc.i:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/dtor.cc.i
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/dtor.cc.i
 .PHONY : dtor.cc.i
 
 dtor.s: dtor.cc.s
@@ -199,7 +199,7 @@ dtor.s: dtor.cc.s
 
 # target to generate assembly for a file
 dtor.cc.s:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/dtor.cc.s
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(MAKE) $(MAKESILENT) -f src/11/CMakeFiles/COUNTER.dir/build.make src/11/CMakeFiles/COUNTER.dir/dtor.cc.s
 .PHONY : dtor.cc.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/w2/ivan/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
