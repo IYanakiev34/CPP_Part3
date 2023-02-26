@@ -1,32 +1,18 @@
 #ifndef SET3_I2C_H
 #define SET3_I2C_H
 
-#include <cstddef>
+#include "I2CAux.h"
 
-template <size_t num, bool cont, size_t largestPow, size_t ...otherPow>
-struct I2CAux
-{
-  static constexpr char const *s_chars =
-    I2CAux<num, (num > largestPow), largestPow*10, largestPow, otherPow...>
-      ::s_chars;
-};
-
-template <size_t num, size_t largest, size_t nextLargest, size_t ...pows>
-struct I2CAux<num, false, largest, nextLargest, pows...>
-{
-  static constexpr char const s_chars[] = {
-    ('0' + (num / pows % 10))...,
-    0
-  };
-
-};
-
+                                    // I2C essentially acts as a wrapper for
+                                    // I2CAux, which is the workhorse.
 template <size_t num>
 struct I2C
 {
   static constexpr char const *s_ntbs = I2CAux<num, true, 1>::s_chars;
 };
 
+                                  // Manually handle the case where num == 0
+                                  // since I2CAux uses that as a sentinel value
 template <>
 struct I2C<0>
 {

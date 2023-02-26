@@ -1,0 +1,4 @@
+In this exercise, we create a template class Type which contains a member
+'located', which tells the 1-index'd location in the parameter argument list
+(starting from argument 2) of the first type in the parameter argument
+list.

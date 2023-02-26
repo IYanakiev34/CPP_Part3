@@ -3,12 +3,14 @@
 
 #include <cstddef>
 
-template <size_t num, size_t radix>
+                              // Basically checks if the remainder needs to
+                              // written as a letter or whether a "normal"
+                              // number would suffix
+template <size_t rem, size_t radix>
 struct Rep
 {
   enum
   {
-    rem = num % radix,
     alpha = rem > 9,
     rep = alpha ? 'a' + rem - 10 : '0' + rem
   };

@@ -1,0 +1,2 @@
+In this exercise, we design a template class that contains the binary
+representation of a size_t value passed to it via its template parameter.
