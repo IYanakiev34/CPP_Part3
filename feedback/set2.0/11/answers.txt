@@ -1,0 +1,9 @@
+You could create a Counter class, which the template type has a member
+variable. The Counter class contains static variables, and its default
+constructor increments the `count` / `actual` variables, and its destructor
+decrements the `actual` variable.
+
+Then, any construction of any template class instantiation results in the
+variables being incremented and a destruction results in a decrement of the
+`actual` variable. This way, we do not tie our tracking to a specific
+instantiation.

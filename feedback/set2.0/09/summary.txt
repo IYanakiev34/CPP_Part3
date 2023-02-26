@@ -1,0 +1,2 @@
+We design a basic template class that is essentially a wrapper for a
+unique_ptr.

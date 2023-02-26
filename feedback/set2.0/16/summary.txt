@@ -1,0 +1,2 @@
+In this exercise we refactor existing code for an algorithm involving a 2D
+linked list net, to reduce code duplication of insertion into the net.

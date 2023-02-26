@@ -1,0 +1,7 @@
+The idea behind the base class is to implement the CRTP principle in order to
+be able to call a pointer to a member function from a derived class. We
+need to have the function return type and its parameters, this could be
+abstracted away by using template parameter types for the base class. If we
+want to test the code we could create a typedef for a function pointer in main.
+Fill it with member of the derived class and then call them in a for loop
+through the abstraction that we have created with the CRTP.
