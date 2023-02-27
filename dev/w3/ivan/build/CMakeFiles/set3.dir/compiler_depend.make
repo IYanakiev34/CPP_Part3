@@ -191,7 +191,8 @@ CMakeFiles/set3.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
   /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/20/Merge.h \
-  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/19/Chars.h
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/19/Chars.h \
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/20/OneChar.h
 
 
 /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/19/Chars.h:
@@ -521,6 +522,8 @@ CMakeFiles/set3.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w3/ivan/src/20/OneChar.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 

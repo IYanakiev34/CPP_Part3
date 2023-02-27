@@ -10,7 +10,7 @@
 // #include "19/Chars.h"
 
 // Exercise 20
-// #include "20/Merge.h"
+#include "20/Merge.h"
 
 // Exercise 24
 // #include "24/I2C.h"
@@ -39,7 +39,9 @@ int main(int argc, char **argv)
     */
 
     // 20
-
+    std::cout << Merge<Chars<'1', '2', '3'>,
+                       Merge<Chars<'4', '5'>, OneChar<'6'>>::CP>::CP{}
+              << '\n';
     // 24
     /*
     std::cout << I2C<123>::s_ntbs << '\n';
