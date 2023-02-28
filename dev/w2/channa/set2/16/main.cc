@@ -33,6 +33,9 @@ int main()
 
         cout << "Created a Dancing Links object:\n"
              << dancer << '\n';
+
+        NodeND<2> node;
+        auto node2 = node;
     }
     catch (exception const &ex) // Display any info we can.
     {

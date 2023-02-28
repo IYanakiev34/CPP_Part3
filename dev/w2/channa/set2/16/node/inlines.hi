@@ -8,69 +8,66 @@ inline DLX::ColumnHeaderNode * const DLX::Node::control() const
                                         // not other itself
 inline void DLX::Node::insert_on_left(Node * const other)
 {
-    d_dims[Horizontal]->insert_back(other->d_dims[Horizontal]);
+    insert_back(*other, Horizontal);
 }
 
 inline void DLX::Node::insert_above(Node * const other)
 {
-    d_dims[Vertical]->insert_back(other->d_dims[Vertical]);
+    insert_back(*other, Vertical);
 }
 
 inline void DLX::Node::insert_on_right(Node * const other)
 {
-    d_dims[Horizontal]->insert_front(other->d_dims[Horizontal]);
+    insert_front(*other, Horizontal);
 }
 
 inline void DLX::Node::insert_below(Node * const other)
 {
-    d_dims[Vertical]->insert_front(other->d_dims[Vertical]);
+    insert_front(*other, Vertical);
 }
 
-                                // We have to return the "owner" of the
-                                // internal nodes, since that's the actual node
-                                // that is needed
 inline DLX::Node * const DLX::Node::left() const
 {
-    return static_cast<Node *>(d_dims[Horizontal]->prev()->owner());
+    return static_cast<Node*>(prev(Horizontal));
 }
 
 inline DLX::Node * const DLX::Node::right() const
 {
-    return static_cast<Node *>(d_dims[Horizontal]->next()->owner());
+    return static_cast<Node*>(next(Horizontal));
 }
 
 inline DLX::Node * const DLX::Node::up() const
 {
-    return static_cast<Node *>(d_dims[Vertical]->prev()->owner());
+    return static_cast<Node*>(prev(Vertical));
 }
 
 inline DLX::Node * const DLX::Node::down() const
 {
-    return static_cast<Node *>(d_dims[Vertical]->next()->owner());
+    return static_cast<Node*>(next(Vertical));
 }
 
 // Multi-line functions inlined for convenience of swapping them in and out.
 
 inline void DLX::Node::cover_lr() const
 {
-    d_dims[Horizontal]->cover();
+    cover(Horizontal);
 }
 
 inline void DLX::Node::uncover_lr()
 {
-    d_dims[Horizontal]->uncover();
+    uncover(Horizontal);
 }
 
 
 inline void DLX::Node::cover_ud() const
 {
-    d_dims[Vertical]->cover();
+    cover(Vertical);
     d_control->decrease_count();
 }
 
 inline void DLX::Node::uncover_ud()
 {
-    d_dims[Vertical]->uncover();
+    uncover(Vertical);
     d_control->increase_count();
 }
 
@@ -87,9 +84,9 @@ inline DLX::Node::Node(ColumnHeaderNode *control)
 {
                                     // Attach internal nodes to be circular
                                     // lists (that are independent)
-    d_dims[Horizontal]->insert_back(d_dims[Horizontal]);
-    d_dims[Horizontal]->insert_front(d_dims[Horizontal]);
-    d_dims[Vertical]->insert_back(d_dims[Vertical]);
-    d_dims[Vertical]->insert_front(d_dims[Vertical]);
+    insert_back(*this, Horizontal);
+    insert_front(*this, Horizontal);
+    insert_back(*this, Vertical);
+    insert_front(*this, Vertical);
     d_control->increase_count();
 }
