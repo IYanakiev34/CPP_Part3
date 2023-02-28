@@ -25,4 +25,6 @@ inline Type &Simple<Type>::get()
   return d_value;
 }
 
+#include "SimplePointer.h"
+
 #endif //SET2_SIMPLE_H
