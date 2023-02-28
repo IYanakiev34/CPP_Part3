@@ -1,0 +1,6 @@
+In this exercise we create a class template
+that could output a value into its binary form.
+For this we can recursively shift the value to the
+right by one and determine the bit value. Once the
+value is 0 we know we have collected allt he bits and
+can output them by using the unpack operator.

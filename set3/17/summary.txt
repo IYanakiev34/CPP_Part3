@@ -1,0 +1,3 @@
+In this exercise we design a simple trait class for size_t values. It documents
+the value passed to it, whether its divisible by 2 or 3, and the number of
+digits in its decimal representation.

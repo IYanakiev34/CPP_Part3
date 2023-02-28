@@ -1,0 +1,6 @@
+In order to represent arbitrary numbers as character
+we can just take the characters one by one and use them
+in a variadic template. After all characters are taken
+we could simply store all the charcaters in a static array,
+which could then be printed to std::cout or passed to a string
+and then print the std::string value.

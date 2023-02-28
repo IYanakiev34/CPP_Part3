@@ -1,0 +1,5 @@
+In this exercise we have to output the characters
+inserted into a variadic template. This could be
+achievd by using hte unpack operator to store the
+characters in a static constexpr array and then
+output them using the operator const char*().

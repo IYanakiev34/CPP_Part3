@@ -1,0 +1,7 @@
+We did not use a support class in 21, but did 
+something similar by specializing Type. In this 
+exercise, we nested one of our implemenations of 
+21 within Type privately, hiding it from the rest 
+of the implemenation. Then, we make a public enum 
+with located defined by the located of the nested 
+class.

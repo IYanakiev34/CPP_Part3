@@ -20,7 +20,7 @@
 // Exercise 14
 // #include "14/storage.h"
 // #include <algorithm>
-// #include <vector>
+#include <vector>
 // #include <functional>
 // #include <iterator>
 
