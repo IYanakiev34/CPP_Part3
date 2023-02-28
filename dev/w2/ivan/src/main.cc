@@ -25,12 +25,13 @@
 // #include <iterator>
 
 // Exercise 15
-// #include "15/base.h"
+#include "15/base.h"
+#include "15/derived.h"
 
 int main(int argc, char **argv)
 {
     // 9
-
+    /*
     Unique<int> value{42};
     Unique<int> second{value};
 
@@ -43,7 +44,7 @@ int main(int argc, char **argv)
     text = Unique<std::string>{"hello world(2)"};
 
     std::cout << text.get() << "\n";
-
+    */
     // 10
     // 11
     /*
@@ -102,17 +103,14 @@ int main(int argc, char **argv)
     */
 
     // 15
-    /*
-    using FuncPtr = int (Derived::*)(double);
-    FuncPtr arr[] = {&Derived::nc};
+    auto var = {&Derived::nc<int, double>};
 
     Derived obj;
-    for (auto ptr : arr)
+    for (auto ptr : var)
     {
         int result = (obj.*ptr)(3.14);
         std::cout << "result: " << result << std::endl;
     }
-    */
 
     return 0;
 }
