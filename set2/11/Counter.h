@@ -13,14 +13,7 @@ public:
     Counter();
     ~Counter();
 
-    static std::size_t getGlobal()
-    {
-        return s_globalCount;
-    }
-
-    static std::size_t getActual()
-    {
-        return s_actualCount;
-    }
+    static std::size_t getGlobal();
+    static std::size_t getActual();
 };
 #endif
