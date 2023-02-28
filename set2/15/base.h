@@ -1,8 +1,6 @@
 #ifndef BASE_INCLUDED_H
 #define BASE_INCLUDED_H
 
-#include <iostream>
-
 template <typename Derived>
 class Base
 {

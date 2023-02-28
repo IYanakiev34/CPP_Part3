@@ -246,8 +246,13 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
   /usr/include/c++/12/bits/ranges_algobase.h \
   /usr/include/c++/12/bits/uses_allocator_args.h \
   /usr/include/c++/12/pstl/glue_memory_defs.h \
-  /usr/include/c++/12/pstl/execution_defs.h
+  /usr/include/c++/12/pstl/execution_defs.h \
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/15/base.h \
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/15/derived.h \
+  /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/15/base.h
 
+
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/15/base.h:
 
 /usr/include/c++/12/bits/ranges_algobase.h:
 
@@ -342,6 +347,8 @@ CMakeFiles/set2.dir/src/main.cc.o: /home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3
 /usr/include/c++/12/bits/stl_uninitialized.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/home/ivanyanakiev1/Desktop/Uni2022/CPP_Part3/dev/w2/ivan/src/15/derived.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
