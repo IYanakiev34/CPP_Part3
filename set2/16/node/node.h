@@ -11,13 +11,7 @@ class DLX::Node : NodeND<2>
       Vertical
     };
 
-    //TODO: left-right and up-down actions are really the same thing.
-    //TODO: So replace with non-repetitive template code.
-    Node *d_left = 0;
-    Node *d_right = 0;
-    Node *d_up = 0;
-    Node *d_down = 0;
-    ColumnHeaderNode *d_control = 0;
+    ColumnHeaderNode *d_control = nullptr;
 public:
     Node(ColumnHeaderNode *control);
     Node(Node const &other) = delete;

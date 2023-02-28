@@ -16,7 +16,6 @@ class Storage
 
 public:
     Storage() = default;
-    Storage(std::vector<Data *> storage);
 
     class iterator;
     using reverse_iterator = std::reverse_iterator<iterator>;
@@ -38,7 +37,7 @@ struct Storage<Data>::iterator
     using pointer = value_type *;
     using reference = value_type &;
 
-    // random access interface
+    // random access iterator interface
     iterator &operator++();
     iterator operator++(int);
     iterator &operator--();
@@ -80,12 +79,6 @@ template <typename Data>
 typename Storage<Data>::reverse_iterator Storage<Data>::rend()
 {
     return reverse_iterator(begin());
-}
-
-template <typename Data>
-Storage<Data>::Storage(std::vector<Data *> storage)
-    : d_storage(std::move(storage))
-{
 }
 
 template <typename Data>
@@ -177,7 +170,6 @@ typename Storage<Data>::iterator &Storage<Data>::iterator::operator=(
 template <typename Data>
 Storage<Data>::iterator::iterator(iterator const &other)
     : d_it(other.d_it)
-{
-}
+{}
 
 #endif //INC_14_STORAGE_H

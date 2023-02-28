@@ -1,41 +1,45 @@
 #ifndef SET2_NODE1D_H
 #define SET2_NODE1D_H
 
+#include "../OwnerNode/OwnerNode.h"
+
 #include <cstddef>
 
 class Node1D
 {
-  Node1D *d_owner = 0;
+                            // An 1D node in this data structure is always
+                            // owned by NodeND node. The NodeND is an OwnerNode
+  OwnerNode *d_owner = nullptr;
 
-  Node1D *d_prev = 0;
-  Node1D *d_next = 0;
+  Node1D *d_prev = nullptr;
+  Node1D *d_next = nullptr;
 
   public:
     Node1D() = default;
-    Node1D(Node1D * owner);
+    Node1D(OwnerNode * owner);
 
-    Node1D *owner();
-    Node1D *prev();
-    Node1D *next();
+    OwnerNode *owner() const;
+    Node1D *prev() const;
+    Node1D *next() const;
 
     void insert_front(Node1D * const other);
     void insert_back(Node1D * const other);
 
-    void cover();
+    void cover() const;
     void uncover();
 };
 
-inline Node1D *Node1D::owner()
+inline OwnerNode *Node1D::owner() const
 {
   return d_owner;
 }
 
-inline Node1D *Node1D::prev()
+inline Node1D *Node1D::prev() const
 {
   return d_prev;
 }
 
-inline Node1D *Node1D::next()
+inline Node1D *Node1D::next() const
 {
   return d_next;
 }
