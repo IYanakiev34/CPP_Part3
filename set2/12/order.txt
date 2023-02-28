@@ -1,4 +1,4 @@
-summary.txt
-Simple/Simple.h
-Simple/SimplePointer.h
-answers.txt
+./summary.txt
+./Simple/Simple.h
+./Simple/SimplePointer.h
+./answers.txt
