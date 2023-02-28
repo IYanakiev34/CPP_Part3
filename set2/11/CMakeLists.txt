@@ -1,8 +1,14 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.22)
+project(set2)
 
-add_library(COUNTER 
-        ctor.cc
-        dtor.cc
-        data.cc)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
-target_compile_options(COUNTER PRIVATE -Wall -Werror -std=c++20 -g -O2)
+FILE(GLOB SOURCES
+        tests/*
+        Unique/*
+        Counter/*
+        *
+)
+
+add_executable(set2 ${SOURCES})

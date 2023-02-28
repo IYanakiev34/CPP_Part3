@@ -5,11 +5,10 @@
 
 class Counter
 {
+  static std::size_t s_globalCount;
+  static std::size_t s_actualCount;
 
-    static std::size_t s_globalCount;
-    static std::size_t s_actualCount;
-
-public:
+  public:
     Counter();
     ~Counter();
 
