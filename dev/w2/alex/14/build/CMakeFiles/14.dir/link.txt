@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/14.dir/main.cpp.o -o 14 

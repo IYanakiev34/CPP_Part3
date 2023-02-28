@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "Storage.h"
 
 using namespace std;
@@ -12,15 +13,14 @@ int main()
     Storage<string> storage{strings};
 
     sort(storage.begin(), storage.end());
-    for (auto & it : storage)
+    for (auto &it : storage)
     {
         cout << it << '\n';
     }
 
     sort(storage.rbegin(), storage.rend());
-    for (auto & it : storage)
+    for (auto &it : storage)
     {
         cout << it << '\n';
     }
-
 }

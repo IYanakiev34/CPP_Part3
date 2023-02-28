@@ -49,13 +49,11 @@ int main(int argc, char **argv)
     */
 
     // 24
-    /*
     std::cout << I2C<123>::s_ntbs << '\n';
     std::cout << I2C<0>::s_ntbs << '\n';
     std::cout << I2C<15937>::s_ntbs << '\n';
     std::string value{I2C<15937>::s_ntbs};
     std::cout << value << '\n';
-    */
 
     return 0;
 }
