@@ -24,7 +24,7 @@ public:
 
 template <typename T>
 Unique<T>::Unique(T type)
-    : d_data(std::make_unique<T>(std::move(type)))
+    : d_data(new T(type))
 {
 }
 

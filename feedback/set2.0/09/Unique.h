@@ -1,4 +1,4 @@
-//JB: ?
+// JB: ?
 #ifndef UNIQUE_INCLUDED_H
 #define UNIQUE_INCLUDED_H
 
@@ -10,7 +10,7 @@ class Unique
     std::unique_ptr<T> d_data;
 
 public:
-    Unique() = default; //JB: 
+    Unique() = default; // JB:
     Unique(T type);
     Unique(T *tPtr);
     Unique(Unique &&tmp) = default;
@@ -25,9 +25,7 @@ public:
 
 template <typename T>
 Unique<T>::Unique(T type)
-    : d_data(std::make_unique<T>(std::move(type)))
-      //JB: Can you use a plain constructor instead of letting make_unique do
-      //JB: the work for you?
+    : d_data(new T(type))
 {
 }
 
@@ -46,7 +44,7 @@ Unique<T>::Unique(Unique<T> const &other)
 template <typename T>
 Unique<T> &Unique<T>::operator=(Unique<T> const &other)
 {
-    //JB: Fair enough...
+    // JB: Fair enough...
     d_data.reset(other.d_data ? std::make_unique<T>(*other.d_data) : nullptr);
 }
 
