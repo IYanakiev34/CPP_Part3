@@ -1,0 +1,18 @@
+In order to create the Insertable struct
+with an arbitrary container type we need to
+have 2 template parameters one of which would
+be template template parameter, otherwise we
+will not be able to use std::vector since we
+need also std::allocator type for it. After
+we have the following template definition
+
+template <template <typename,typename> class Container,typename Data>
+struct Insertable : public Container<Data,std::allocator<Data>>
+
+Note we use the default allocator but the class
+could be easily extended to be able to use an
+arbitrary allocator. After that we only need to 
+create 2 more trivial constructor and overload 
+operator<<. Since we inherit publically from the 
+container we have all of its public members and 
+we can use them.
