@@ -1,0 +1,4 @@
+We create a Trait class with multiple
+specializations in order to determine the
+type that is passed in and return values from 
+1 to 4. 
