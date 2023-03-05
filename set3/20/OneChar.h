@@ -1,18 +1,11 @@
-#ifndef ONE_CHAR_H
-#define ONE_CHAR_H
+#ifndef SET3_ONECHAR_H
+#define SET3_ONECHAR_H
 
-template <char Character>
+                        // Simple type promotion class from char.
+template <char c>
 struct OneChar
 {
-    static constexpr char value = Character;
-
-    constexpr operator char() const;
+  enum {value = c };
 };
 
-template <char Character>
-constexpr OneChar<Character>::operator char() const
-{
-    return value;
-}
-
-#endif
+#endif //SET3_ONECHAR_H

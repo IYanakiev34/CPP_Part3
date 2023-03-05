@@ -1,4 +1,0 @@
-explain.txt
-
-Bit.h
-main.cc

@@ -1,0 +1,4 @@
+#include "../Bin/Bin.h"
+#include <iostream>
+
+using namespace std;
