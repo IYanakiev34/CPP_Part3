@@ -1,0 +1,1 @@
+In this exercise, we define an operator that can concatenate two tuples.

@@ -1,2 +1,2 @@
-./base.h
-./summary.txt
+base.h
+summary.txt

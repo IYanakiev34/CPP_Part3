@@ -1,0 +1,2 @@
+In this exercise, we design a trait class that determines whether the supplied
+type is a plain type, a pointer type, a lvalue reference or a rvalue reference.

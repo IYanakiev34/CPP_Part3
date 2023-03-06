@@ -1,7 +1,7 @@
 #ifndef MERGE_H
 #define MERGE_H
 
-#include "../19/Chars.h"
+#include "Chars.h"
 #include "OneChar.h"
 
 template <typename First, typename Second>

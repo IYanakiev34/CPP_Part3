@@ -1,5 +1,4 @@
 explain.txt
-- ../19/Chars.h
-Merge.h
 OneChar.h
-main.cc
+Merge.h
+-Chars.h

@@ -1,0 +1,4 @@
+In this exercise, we write a member template for a class that stores
+a vector of string representations of numbers. This member template takes in
+a type (as a template argument) and an index and returns the number in the
+vector, converted to that type.
