@@ -6,7 +6,8 @@
 template <size_t N, char... Chars>
 struct I2C
 {
-    static constexpr char const *s_ntbs = I2C<(N / 10), (N % 10), Chars...>::s_ntbs;
+    static constexpr char const *s_ntbs =
+      I2C<(N / 10), (N % 10), Chars...>::s_ntbs;
 };
 
 template <char... Chars>

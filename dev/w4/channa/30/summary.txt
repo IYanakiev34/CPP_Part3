@@ -1,0 +1,1 @@
+In this exercise, we design a generic iterator class.

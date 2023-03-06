@@ -1,5 +1,5 @@
-#include "../OneChar/OneChar.h"
-#include "../Merge/Merge.h"
+#include "../OneChar.h"
+#include "../Merge.h"
 #include <iostream>
 
 using namespace std;

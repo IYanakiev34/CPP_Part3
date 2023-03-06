@@ -1,2 +1,2 @@
-./Storage/Storage.h
-./summary.txt
+Storage/Storage.h
+summary.txt

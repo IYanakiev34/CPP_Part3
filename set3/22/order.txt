@@ -1,14 +1,13 @@
 summary.txt
 
-./Chars/Chars.h
-./Chars/convertToNTBS.f
-./Chars/Tail.h
+- Chars/Chars.h
+Chars/convertToNTBS.f
+Chars/Tail.h
 
-./Convert/Convert.h
-./Convert/GenerateRep.h
-./Convert/GenerateRepRec.h
+IfElse/IfElse.h
 
-./IfElse/IfElse.h
+Rep/Rep.h
 
-./Rep/Rep.h
-
+Convert/GenerateRepRec.h
+Convert/GenerateRep.h
+Convert/Convert.h

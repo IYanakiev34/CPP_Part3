@@ -1,8 +1,8 @@
 #ifndef MERGE_H
 #define MERGE_H
 
-#include "../19/Chars.h"
-#include "OneChar.h"
+#include "../Chars/Chars.h"
+#include "../OneChar/OneChar.h"
 
 template <typename First, typename Second>
 struct Merge;

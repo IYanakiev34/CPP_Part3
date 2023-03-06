@@ -6,7 +6,6 @@
 template <size_t val>
 struct NrTrait
 {
-
   enum
   {
     value = val,

@@ -2,6 +2,7 @@
 
 int main()
 {
+  deque<string> ds = {"kilo", "lima", "mike"};
   vector<int> vi {1, 2, 3, 4, 5};
 
   using InsertableVector = Insertable<vector, int>;
@@ -17,5 +18,12 @@ int main()
 
   iv3.push_back(123);
   cout << iv3 << '\n';
+
+  Insertable<deque, string> sd(ds);
+  sd.push_back("november");
+
+  cout << "sd has " << sd.size() << " elements and contains:\n"
+       << sd << '\n';
+
 }
 

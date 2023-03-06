@@ -1,0 +1,4 @@
+In this exercise, we write an interface for a template class that is
+used for Storage of elements that can be inserted into an ostream. This
+template class is configurable by a policy that determines its storage
+strategy.
