@@ -1,2 +1,8 @@
-explain.txt
-Type.h
+./explain.txt
+
+./Type/Type.h
+./Type/generalCase.f
+./Type/foundCase.f
+./Type/notFoundCase.f
+
+./main.cc

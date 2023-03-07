@@ -1,5 +1,6 @@
-summary.txt
-NrTrait/NrTrait.h
+./summary.txt
 
-main.ih
-main.cc
+./NrTrait/NrTrait.h
+
+./main.ih
+./main.cc
