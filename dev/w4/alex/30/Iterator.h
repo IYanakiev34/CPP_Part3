@@ -3,6 +3,21 @@
 
 #include <iterator>
 
+template <typename IData, template<typename, typename> class Container>
+struct Iterator;
+
+template<typename IData, template <typename, typename> class Container>
+bool operator==(Iterator<IData, Container> const &lhs,
+        Iterator<IData, Container> const &rhs);
+
+template<typename IData, template <typename, typename> class Container>
+auto operator<=>(Iterator<IData, Container> const &lhs,
+        Iterator<IData, Container> const &rhs);
+
+template<typename IData, template <typename, typename> class Container>
+std::ptrdiff_t operator-(Iterator<IData, Container> const &lhs,
+        Iterator<IData, Container> const &rhs);
+
 template<typename IData, template<typename, typename> class Container>
 struct Iterator
 {
@@ -17,17 +32,14 @@ struct Iterator
     Iterator(typename Container<IData *,
             std::allocator<IData *>>::iterator const &current);
 
-    template<typename IData2, template<typename, typename> class Container2>
-    friend bool operator==(Iterator<IData2, Container2> const &lhs,
-                           Iterator<IData2, Container2> const &rhs);
+    friend bool operator==<IData, Container>(Iterator<IData, Container> const &lhs,
+                           Iterator<IData, Container> const &rhs);
 
-    template<typename IData2, template<typename, typename> class Container2>
-    friend auto operator<=>(Iterator<IData2, Container2> const &lhs,
-                            Iterator<IData2, Container2> const &rhs);
+    friend auto operator<=><IData, Container>(Iterator<IData, Container> const &lhs,
+                            Iterator<IData, Container> const &rhs);
 
-    template<typename IData2, template<typename, typename> class Container2>
-    friend difference_type operator-(Iterator<IData2, Container2> const &lhs,
-                                     Iterator<IData2, Container2> const &rhs);
+    friend difference_type operator-<IData, Container>(
+            Iterator<IData, Container> const &lhs, Iterator<IData, Container> const &rhs);
 
     Iterator &operator++();
 
@@ -37,13 +49,13 @@ struct Iterator
 
     Iterator operator--(int);
 
-    Iterator operator+(difference_type n) const;
+    Iterator operator+(difference_type diff) const;
 
-    Iterator operator-(difference_type n) const;
+    Iterator operator-(difference_type diff) const;
 
-    Iterator &operator+=(difference_type n);
+    Iterator &operator+=(difference_type diff);
 
-    Iterator &operator-=(difference_type n);
+    Iterator &operator-=(difference_type diff);
 
     reference operator*() const;
 
@@ -70,29 +82,29 @@ inline typename ItType::pointer ItType::operator->() const
 }
 
 ItTemplate
-ItType &ItType::operator-=(Iterator::difference_type n)
+ItType &ItType::operator-=(Iterator::difference_type diff)
 {
-    d_current -= n;
+    d_current -= diff;
     return *this;
 }
 
 ItTemplate
-ItType &Iterator<IData, Container>::operator+=(Iterator::difference_type n)
+ItType &Iterator<IData, Container>::operator+=(Iterator::difference_type diff)
 {
-    d_current += n;
+    d_current += diff;
     return *this;
 }
 
 ItTemplate
-inline ItType ItType::operator-(Iterator::difference_type n) const
+inline ItType ItType::operator-(Iterator::difference_type diff) const
 {
-    return Iterator(d_current - n);
+    return Iterator(d_current - diff);
 }
 
 ItTemplate
-inline ItType ItType::operator+(Iterator::difference_type n) const
+inline ItType ItType::operator+(Iterator::difference_type diff) const
 {
-    return Iterator(d_current + n);
+    return Iterator(d_current + diff);
 }
 
 ItTemplate
@@ -132,13 +144,13 @@ inline std::ptrdiff_t operator-(ItType const &lhs, ItType const &rhs)
 }
 
 ItTemplate
-auto operator<=>(const ItType &lhs, const ItType &rhs)
+auto operator<=>(ItType const &lhs, ItType const &rhs)
 {
     return lhs.d_current <=> rhs.d_current;
 }
 
 ItTemplate
-bool operator==(const ItType &lhs, const ItType &rhs)
+bool operator==(ItType const &lhs, ItType const &rhs)
 {
     return lhs.d_current == rhs.d_current;
 }
