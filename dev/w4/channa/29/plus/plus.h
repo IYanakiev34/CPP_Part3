@@ -1,6 +1,10 @@
 #ifndef SET4_PLUS_H
 #define SET4_PLUS_H
 
+                                        // Plus is a template functor that
+                                        // performs addition between two
+                                        // types (assuming such an operation is
+                                        // available).
 template <typename Type>
 struct plus
 {

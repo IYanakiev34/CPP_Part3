@@ -4,8 +4,8 @@ std::ostream &operator<<(
 )
 {
   copy(
-  insertable.begin(), insertable.end(),
-  std::ostream_iterator<Data>(out, " ")
+    insertable.begin(), insertable.end(),
+    std::ostream_iterator<Data>(out, " ")
   );
   return out;
 }

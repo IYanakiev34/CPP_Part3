@@ -1,12 +1,25 @@
 #ifndef SET4_TRAIT_H
 #define SET4_TRAIT_H
 
+                              // This is a trait class used to determine whether
+                              // a Type is a plain type, a pointer type, a
+                              // lvalue reference or a rvalue reference.
+
+                              // Puts 1,2,3,4 in value, respectively
+enum
+{
+  PLAIN = 1,
+  POINTER,
+  LVALUE,
+  RVALUE
+};
+
 template <typename Type>
 struct Trait
 {
   enum
   {
-    value = 1
+    value = PLAIN
   };
 };
 
@@ -15,7 +28,7 @@ struct Trait<Type *>
 {
   enum
   {
-    value = 2
+    value = POINTER
   };
 };
 
@@ -24,7 +37,7 @@ struct Trait<Type &>
 {
   enum
   {
-    value = 3
+    value = LVALUE
   };
 };
 template <typename Type>
@@ -32,7 +45,7 @@ struct Trait<Type &&>
 {
   enum
   {
-    value = 4
+    value = RVALUE
   };
 };
 

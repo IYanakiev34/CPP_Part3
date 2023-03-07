@@ -5,6 +5,17 @@
 #include <cstddef>
 #include <utility>
 
+                            // Operator to create new tuple, with the elements
+                            // of tuple rhs appended to the elements of tuple
+                            // lhs.
+template <typename ...Lhs, typename ...Rhs>
+auto operator+(std::tuple<Lhs ...> lhs, std::tuple<Rhs ...> rhs);
+
+                              // TupleMod is a class that allows tuples to be
+                              // "modified" to contain extra items.
+
+                              // Tuple is the base tuple, and via add, you can
+                              // add other items to it.
 template <typename Tuple>
 class TupleMod
 {
@@ -13,74 +24,26 @@ class TupleMod
   public:
     TupleMod(Tuple const &tuple);
 
+                            // Add takes in a series of arguments and returns a
+                            // tuple that is d_tuple with the supplied arguments
+                            // appended to it.
     template <typename ...AddParams>
     auto add(AddParams &&...addParams);
   private:
-    template <typename ...AddParams>
-    auto mergeTuple(std::tuple<AddParams...> tToAdd);
-
+                            // Workhorse function which merges two tuples.
     template <typename ...AddParams, size_t ...thisIdxs, size_t ...addedIdxs>
-    auto mergeTupleAux(
+    auto mergeTuple(
       std::index_sequence<thisIdxs...>,
       std::tuple<AddParams...> tToAdd, std::index_sequence<addedIdxs...>
     );
 };
-
 
 template <typename Tuple>
 TupleMod<Tuple>::TupleMod(Tuple const &tuple)
   : d_tuple(tuple)
 {}
 
-template <typename Tuple>
-template <typename ...AddParams, size_t ...thisIdxs, size_t ...addedIdxs>
-auto TupleMod<Tuple>::mergeTupleAux(
-  std::index_sequence<thisIdxs...>,
-  std::tuple<AddParams...> tToAdd,
-  std::index_sequence<addedIdxs...>
-)
-{
-  return std::tuple<
-    typename std::tuple_element<thisIdxs, Tuple>::type ...,
-    AddParams...
-  >{
-    std::get<thisIdxs>(d_tuple)...,
-    std::get<addedIdxs>(tToAdd)...
-  };
-}
-
-template <typename Tuple>
-template <typename ...AddParams>
-auto TupleMod<Tuple>::mergeTuple(std::tuple<AddParams...> tToAdd)
-{
-  return mergeTupleAux(
-    std::make_index_sequence<std::tuple_size<Tuple>::value>{},
-    tToAdd, std::make_index_sequence<sizeof... (AddParams)>{}
-  );
-}
-
-template<typename Tuple>
-template<typename ...AddParams>
-auto TupleMod<Tuple>::add(AddParams &&...addParams)
-{
-  return mergeTuple(std::tuple<AddParams...>(addParams...));
-}
-
-template <typename ...Lhs, typename ...Rhs, size_t ...idxs>
-auto addToTuple(
-  std::tuple<Lhs ...> lhs, std::tuple<Rhs ...> rhs,
-  std::index_sequence<idxs...>
-)
-{
-  TupleMod<std::tuple<Lhs...>> tModL{lhs};
-  return tModL.add(std::get<idxs>(rhs) ...);
-}
-
-template <typename ...Lhs, typename ...Rhs>
-auto operator+(std::tuple<Lhs ...> lhs, std::tuple<Rhs ...> rhs)
-{
-  return addToTuple(lhs, rhs, std::index_sequence_for<Rhs ...>{});
-}
-
+#include "add.f"
+#include "operatorAdd.f"
 
 #endif //SET4_TUPLEMOD_H

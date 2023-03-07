@@ -1,2 +1,6 @@
 In this exercise, we convert a decimal number to a number in radix 2 <= n <= 36
 via template meta programming.
+
+We tested the program against
+  values: 100, 57005, 0, SIZE_MAX
+  radixs: 2, 8, 16, 32, 6

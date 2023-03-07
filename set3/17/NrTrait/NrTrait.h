@@ -20,7 +20,10 @@ struct NrTrait<0>
 {
   enum
   {
-    width = 1
+    value = 0,
+    width = 1,
+    even = true,
+    by3 = false,
   };
 };
 

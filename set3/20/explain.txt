@@ -1,0 +1,4 @@
+In this exercise, we create a Merge template class that can merge two Chars
+template classes (or a Chars template class and a OneChar template class) into
+one Chars template class (stored as nested type CP) containing all the chars
+in both Chars, preserving left-to-right order.

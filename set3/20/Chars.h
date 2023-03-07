@@ -1,26 +1,22 @@
 #ifndef SET3_CHARS_H
 #define SET3_CHARS_H
 
+#include <ostream>
+
+                              // Type promotion for a series of characters
 template<char ...chars>
 struct Chars
-{
-                          // contexpr is important, if we want to access the
-                          // characters pass to this template at compile-time.
-
-                          // We create s_str by unpacking chars and appending
-                          // the null byte to it. The compiler is smart enough
-                          // to determine the length, so we can use [] here.
-  static constexpr char const s_str[] = {chars..., '\0'};
-
-  Chars() = default;
-
-  constexpr operator char const *() const;
-};
+{};
 
 template <char ...chars>
-inline constexpr Chars<chars...>::operator char const *() const
+std::ostream &operator<<(std::ostream &out, Chars<chars...> charsObj)
 {
-  return s_str;
+                          // We unwrap chars, with each char having it's own
+                          // insertion expression. Basically (though this is not
+                          // valid syntax:
+                          // out << chars[0], out << chars[1], ...
+  ((out << chars), ...);
+  return out;
 }
 
 #endif //SET3_CHARS_H

@@ -3,35 +3,36 @@
 
 #include <cstddef>
 
-                              // The idea is to store the binary representation
-                              // in the bits variadic template parameter.
+                                    // Bin is a template class that converts
+                                    // an decimal value into "binary" value,
+                                    // held in the enum: binary.
 
-                              // cont keeps track of whether we have to keep
-                              // adding to bits, or if we write the actual
-                              // expression out.
-template <size_t val, bool cont = true, size_t ...bits>
+                                    // value is an integer but it visually
+                                    // looks like the corresponding binary num.
+template <size_t val>
 struct Bin
 {
-                                // Every step down the template instantiation
-                                // we determine the right-most bit and add it
-                                // to the front of the existing bits (since bits
-                                // would contain all bits after the current
-                                // bit)
   enum
   {
-    afterShift = val >> 1
+                                    // We compute the rightmost bit of val via
+                                    // val % 2. The rest of the binary would
+                                    // then be in val >> 1. We then compute the
+                                    // rest of the binary via
+                                    // Bin<(val >> 1)>::value, which we multiply
+                                    // by 10 to put leftmost rest in the right
+                                    // decimal place.
+    value = Bin<(val >> 1)>::value * 10 + val % 2
   };
-  static constexpr char const *value =
-    Bin<afterShift, afterShift!= 0, (val & 1ull ? 1ull : 0ull), bits...>::value;
 };
 
-template<size_t val, size_t ...bits>
-struct Bin<val, false, bits...>
+                                    // Base case: val = 0, "binary" is also 0
+template <>
+struct Bin<0>
 {
-                                // In the base case where we have evaluated
-                                // all the bits, we actually write the
-                                // value into the static constexpr.
-  static constexpr char const value[] = {('0' + bits)..., '\0'};
+  enum
+  {
+    value = 0
+  };
 };
 
 #endif //SET3_BIN_H

@@ -1,20 +1,22 @@
 #ifndef SET3_CHARS_H
 #define SET3_CHARS_H
 
+#include <ostream>
+
+                              // Type promotion for a series of characters
 template<char ...chars>
-class Chars
-{
-  static constexpr char const s_str[] = {chars..., '\0'};
-  public:
-    Chars() = default;
-    constexpr operator char const *() const;
-};
+struct Chars
+{};
 
 template <char ...chars>
-inline constexpr Chars<chars...>::operator char const *() const
+std::ostream &operator<<(std::ostream &out, Chars<chars...> charsObj)
 {
-  return s_str;
+                          // We unwrap chars, with each char having it's own
+                          // insertion expression. Basically (though this is not
+                          // valid syntax:
+                          // out << chars[0], out << chars[1], ...
+  ((out << chars), ...);
+  return out;
 }
-#include "convertToNTBS.f"
 
 #endif //SET3_CHARS_H

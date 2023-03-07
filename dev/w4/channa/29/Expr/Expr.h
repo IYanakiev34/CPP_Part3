@@ -3,10 +3,12 @@
 
 #include "../plus/plus.h"
 
+                                // Forward declare Expr
 template <typename LHS, typename RHS, template <typename> class op>
 struct Expr;
 
-
+                                // Instead of using std::plus, we use our own
+                                // implementation
 template <typename LHS, typename RHS>
 auto operator+(LHS const &lhs, RHS const &rhs)
 {

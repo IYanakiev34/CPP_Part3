@@ -17,5 +17,4 @@ struct Tail<Chars<first, rest...>>
   using tail = Chars<rest...>;
 };
 
-
 #endif //SET3_TAIL_H
