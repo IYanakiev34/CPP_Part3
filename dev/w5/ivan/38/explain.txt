@@ -1,0 +1,22 @@
+In order to solve the exercise
+we define a very basic math concept that
+could handle the basic mathematical operations
+in any order of the types passed. We then
+proceed to create the operations classes
+which will be templated on the two types
+and require the concept that we have define.
+Each of them will have a static method
+which will apply the operation specified.
+In order to use the math function we will
+need a general function template,base case,
+and one where we expand the first arg. The most
+general case will be the one originally
+callled. It only needs an operations and arguments.
+Then we need one where we know the first,
+second and rest arguments. we will apply the
+operation on the first and second and 
+recursively call the function again with
+the first and the rest of the arguments.
+Once we have only the first argument left
+we simply print a new line. This is the
+base case of the function.

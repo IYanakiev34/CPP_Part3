@@ -1,0 +1,22 @@
+In order to define such a concept we need
+two template parameters for the two types
+that we will pass in. We can name them:
+        Lhs and Rhs
+After we have defined the template header
+we move on to the concept definition. We
+need to make sure that the two values of
+the types passed could perform the following
+operations:
+    lhs + rhs;
+    lhs - rhs;
+    lhs * rhs;
+    lhs / rhs;
+    -lhs;
+    -rhs;
+
+After that we could simply create a function
+template and require the concept. With the 
+main program that we have set up the compiler
+gives an error since it cannot add an integer
+and a string. The error message is clear thanks
+to the concept.
