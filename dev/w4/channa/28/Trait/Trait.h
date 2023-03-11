@@ -6,46 +6,43 @@
                               // lvalue reference or a rvalue reference.
 
                               // Puts 1,2,3,4 in value, respectively
-enum
-{
-  PLAIN = 1,
-  POINTER,
-  LVALUE,
-  RVALUE
-};
 
 template <typename Type>
 struct Trait
 {
+  using BasicType = Type;
   enum
   {
-    value = PLAIN
+    value = 1
   };
 };
 
 template <typename Type>
 struct Trait<Type *>
 {
+  using BasicType = Type;
   enum
   {
-    value = POINTER
+    value = 2
   };
 };
 
 template <typename Type>
 struct Trait<Type &>
 {
+  using BasicType = Type;
   enum
   {
-    value = LVALUE
+    value = 3
   };
 };
 template <typename Type>
 struct Trait<Type &&>
 {
+  using BasicType = Type;
   enum
   {
-    value = RVALUE
+    value = 4
   };
 };
 

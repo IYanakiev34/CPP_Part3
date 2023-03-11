@@ -1,0 +1,2 @@
+In this exercise, we implement an operator+ in the case where std::plus does not
+exist.

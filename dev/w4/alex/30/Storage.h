@@ -1,10 +1,10 @@
 #ifndef STORAGE_H
 #define STORAGE_H
 
+#include "Iterator.h"
+
 #include <vector>
 #include <iterator>
-
-#include "Iterator.h"
 
 template<typename Data>
 class Storage
@@ -18,11 +18,8 @@ public:
     void push_back(Data *data);
 
     iterator begin();
-
     iterator end();
-
     reverse_iterator rbegin();
-
     reverse_iterator rend();
 
 };

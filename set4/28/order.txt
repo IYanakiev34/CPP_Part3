@@ -1,0 +1,5 @@
+summary.txt
+makeConstPtr.h
+Trait/Trait.h
+main.ih
+main.cc

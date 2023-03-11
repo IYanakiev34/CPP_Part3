@@ -1,2 +1,2 @@
-./summary.txt
-./Bin/Bin.h
+summary.txt
+Bin/Bin.h

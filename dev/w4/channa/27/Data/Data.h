@@ -67,6 +67,7 @@ try
                     // in the correct signed result, due to overflow.
       return std::stoull(d_data[idx]);
   else
+                    // Handle floating point types.
     return std::stold(d_data[idx]);
 }
 catch (std::invalid_argument &excep)

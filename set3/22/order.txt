@@ -1,14 +1,14 @@
-./summary.txt
+summary.txt
 
-- ./Chars/Chars.h
-./Chars/Tail.h
+- Chars/Chars.h
+Chars/Tail.h
 
-./IfElse/IfElse.h
+IfElse/IfElse.h
 
-./Rep/Rep.h
+Rep/Rep.h
 
-./Convert/GenerateRepRec.h
-./Convert/GenerateRep.h
-./Convert/Convert.h
+Convert/GenerateRepRec.h
+Convert/GenerateRep.h
+Convert/Convert.h
 
 

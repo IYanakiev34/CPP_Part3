@@ -10,8 +10,16 @@ int main(int argc, char **argv)
 
   Storage<string> storage;
 
+  bool first = true;
   while (*argv)
-    storage.push_back(new string{ *argv++ });
+    if (!first)
+      storage.push_back(new string{ *argv++ });
+    else
+    {
+      storage.push_back(new string{"a.out"});
+      first = false;
+      argv++;
+    }
 
   cout << '\n';
   cout << storage.begin()->length() << ' ' << *storage.begin() << '\n';
