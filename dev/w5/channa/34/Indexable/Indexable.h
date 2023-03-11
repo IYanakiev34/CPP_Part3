@@ -3,6 +3,9 @@
 
 #include <concepts>
 
+                                // This concept ensures that a template type
+                                // is indexable and returns a reference
+                                // to the data it stores
 template <template <typename> class Container, typename Data>
 concept Indexable =
   requires(Container<Data> container)

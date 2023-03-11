@@ -1,6 +1,3 @@
-#include "IteratorConcepts/RndIterator.h"
+#include "sortWithConcepts.h"
 
-#include <iostream>
-#include <algorithm>
-#include <iterator>
 using namespace std;

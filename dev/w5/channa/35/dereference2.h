@@ -3,6 +3,8 @@
 
 #include "Dereferenceable/Dereferenceable.h"
 
+                              // An implicit function template that shows the
+                              // use a concept in the parameter list.
 auto dereference2(Dereferenceable auto toDeref)
 {
   return *toDeref;

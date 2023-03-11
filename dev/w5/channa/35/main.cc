@@ -1,11 +1,5 @@
 #include "main.ih"
-
-template<typename Type>
-requires Dereferenceable<Type> Deref<Type>::Deref(Type deref)
-  : d_deref(deref)
-{}
-
-
+                                // Demo Deref, dereference1, dereference2
 int main()
 {
   int var = 10;

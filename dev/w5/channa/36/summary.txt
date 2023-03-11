@@ -1,0 +1,2 @@
+In this exercise, we explore defining requirements without concepts, for
+template functions / classes.

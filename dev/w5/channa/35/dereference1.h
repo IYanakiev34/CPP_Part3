@@ -3,6 +3,9 @@
 
 #include "Dereferenceable/Dereferenceable.h"
 
+                                // A function template showing the use of a
+                                // concept directly when declaring the template
+                                // type parameter.
 template <Dereferenceable Deref>
 auto dereference1(Deref toDeref)
 {

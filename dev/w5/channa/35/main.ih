@@ -1,4 +1,8 @@
-#include "Dereferenceable/Dereferenceable.h"
+#include "Deref/Deref.h"
+
+#include "dereference1.h"
+#include "dereference2.h"
+
 #include <iostream>
 
 using namespace std;

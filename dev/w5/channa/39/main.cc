@@ -1,11 +1,6 @@
 #include "main.ih"
 
-template <RndIterator RAI>
-void sortWithConcepts(RAI first, RAI last)
-{
-  std::sort(first, last);
-}
-
+                        // Demo to show the use of the RndIterator concept
 int main()
 {
   vector<int> vi{1,2,3,4,3,2,1};

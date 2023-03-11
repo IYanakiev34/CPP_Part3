@@ -3,6 +3,8 @@
 
 #include "BasicMath/BasicMath.h"
 
+                                    // A demo template function to showcase
+                                    // the BasicMath concept.
 template <typename Lhs, typename Rhs>
   requires(BasicMath<Lhs, Rhs>)
 auto basicMathTest(Lhs lhs, Rhs rhs)
