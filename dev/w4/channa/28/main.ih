@@ -1,5 +1,5 @@
 #include "Trait/Trait.h"
-#include "func.h"
+#include "makeConstPtr.h"
 
 #include <iostream>
 

@@ -1,8 +1,8 @@
-./explain.txt
+explain.txt
 
-./Type/Type.h
-./Type/generalCase.f
-./Type/foundCase.f
-./Type/notFoundCase.f
+Type/Type.h
+Type/generalCase.f
+Type/foundCase.f
+Type/notFoundCase.f
 
-./main.cc
+main.cc

@@ -1,119 +1,89 @@
 #ifndef SET4_ITERATOR_H
 #define SET4_ITERATOR_H
 
-#include <vector>
+#define ItTemplate template <typename IData, \
+    template<typename> class Container>
+#define FreeFuncTemplate template <typename IData, \
+    template<typename> class Container>
+#define ItType Iterator<IData, Container>
+
 #include <iterator>
 
-template <typename Data, template <typename> class Container>
+                                        // Forward declare template for free
+                                        // operators to reference
+
+ItTemplate
+struct Iterator;
+
+                                        // Forward declare the free operators to
+                                        // bind in Iterator template
+FreeFuncTemplate
+bool operator==(Iterator<IData, Container> const &lhs,
+        Iterator<IData, Container> const &rhs);
+
+FreeFuncTemplate
+auto operator<=>(Iterator<IData, Container> const &lhs,
+        Iterator<IData, Container> const &rhs);
+
+FreeFuncTemplate
+std::ptrdiff_t operator-(Iterator<IData, Container> const &lhs,
+        Iterator<IData, Container> const &rhs);
+
+ItTemplate
 struct Iterator
 {
-  using iterator_category = std::random_access_iterator_tag;
-  using difference_type   = std::ptrdiff_t;
-  using value_type        = Data;
-  using pointer           = value_type const *;
-  using reference         = value_type const &;
-
   private:
-    typename Container<Data *>::iterator d_current;
+    typename Container<IData *>::iterator d_current;
   public:
-    Iterator(typename Container<Data *>::iterator const &current);
+                                          // Using declarations needed for
+                                          // random access iterators
+    using difference_type = std::ptrdiff_t;
+    using value_type = IData;
+    using pointer = IData *;
+    using reference = IData &;
+    using iterator_category = std::random_access_iterator_tag;
 
-                      // TODO: Make free
-    auto operator<=>(Iterator const &rhs) const;
-    bool operator==(Iterator const &rhs) const;
-    int operator-(Iterator const &rhs) const;
-    int operator+(Iterator const &rhs) const;
-
-    Iterator operator+(int step) const;
-    Iterator operator-(int step) const;
-    Iterator &operator+=(int step);
-    Iterator &operator-=(int step);
+    Iterator() = default;
+    Iterator(typename Container<IData *>::iterator const &current);
 
 
-    Iterator &operator--();
-    Iterator operator--(int);
+                                          // Specialize the operators with
+                                          // this template's type args to
+                                          // bind them.
+    friend bool operator==<IData, Container>(
+      Iterator<IData, Container> const &lhs,
+      Iterator<IData, Container> const &rhs
+    );
+
+    friend auto operator<=><IData, Container>(
+      Iterator<IData, Container> const &lhs,
+      Iterator<IData, Container> const &rhs
+    );
+
+    friend difference_type operator-<IData, Container>(
+      Iterator<IData, Container> const &lhs,
+      Iterator<IData, Container> const &rhs
+    );
+
+                                    // Standard operations needed for Rand.
+                                    // access iterators
     Iterator &operator++();
     Iterator operator++(int);
+    Iterator &operator--();
+    Iterator operator--(int);
 
+    Iterator operator+(difference_type diff) const;
+    Iterator operator-(difference_type diff) const;
 
-    Data &operator*();
-    Data *operator->();
+    Iterator &operator+=(difference_type diff);
+    Iterator &operator-=(difference_type diff);
 
+    reference operator*() const;
+    pointer operator->() const;
 };
 
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container>::Iterator(
-  typename Container<Data *>::iterator const &current
-)
-  : d_current(current)
-{}
+#include "iteratorImpl.f"
 
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> Iterator<Data, Container>::operator+(int step) const
-{
-  Iterator ret{*this};
-  ret.d_current += step;
-  return ret;
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> Iterator<Data, Container>::operator-(int step) const
-{
-  Iterator ret{*this};
-  ret.d_current -= step;
-  return ret;
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> &Iterator<Data, Container>::operator+=(int step)
-{
-  d_current += step;
-  return *this;
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> &Iterator<Data, Container>::operator-=(int step)
-{
-  d_current -= step;
-  return *this;
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> Iterator<Data, Container>::operator++(int)
-{
-  return iterator(d_current++);
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> Iterator<Data, Container>::operator--(int)
-{
-  return iterator(d_current--);
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> &Iterator<Data, Container>::operator++()
-{
-  ++d_current;
-  return *this;
-}
-
-template <typename Data, template <typename> class Container>
-Iterator<Data, Container> &Iterator<Data, Container>::operator--()
-{
-  --d_current;
-  return *this;
-}
-
-template <typename Data, template <typename> class Container>
-Data &Iterator<Data, Container>::operator*()
-{
-  return **d_current;
-}
-
-template <typename Data, template <typename> class Container>
-Data *Iterator<Data, Container>::operator->()
-{
-  return *d_current;
-}
-
-#endif //SET4_ITERATOR_H
+#undef ItTemplate
+#undef ItType
+#endif

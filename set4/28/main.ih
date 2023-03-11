@@ -1,0 +1,6 @@
+#include "Trait/Trait.h"
+#include "makeConstPtr.h"
+
+#include <iostream>
+
+using namespace std;

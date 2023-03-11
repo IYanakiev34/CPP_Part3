@@ -1,4 +1,4 @@
-./explain.txt
-./OneChar.h
-./Chars.h
-./Merge.h
+explain.txt
+OneChar.h
+Chars.h
+Merge.h

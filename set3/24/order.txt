@@ -1,2 +1,2 @@
-./explain.txt
-./I2C.h
+explain.txt
+I2C.h

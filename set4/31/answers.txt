@@ -1,0 +1,4 @@
+It will be a temporary VI (say tmp) objects, who has N elements with
+tmp[i] == v1[i] + v2[i] + v3[i] + v4[i].
+
+There are 4 * (4 + 1) = 20 index operations.

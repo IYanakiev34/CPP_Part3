@@ -1,0 +1,6 @@
+#include "../Storage/Storage.h"
+
+#include <iostream>
+#include <iterator>
+
+using namespace std;

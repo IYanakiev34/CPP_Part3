@@ -1,6 +1,6 @@
-./summary.txt
+summary.txt
 
-./Type/Type.h
+Type/Type.h
 
-./main.ih
-./main.cc
+main.ih
+main.cc

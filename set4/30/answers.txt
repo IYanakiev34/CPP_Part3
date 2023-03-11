@@ -1,0 +1,6 @@
+Running the program asked for in the exericse, we have the following output:
+
+5 a.out
+a.out april february january june march may
+======
+may march june january february april a.out
