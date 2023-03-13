@@ -1,4 +1,5 @@
 #include "main.ih"
+
 int main(int argc, char **argv)
 {
   Storage<std::string> storage;
