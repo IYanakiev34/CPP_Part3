@@ -1,0 +1,12 @@
+In order to solve the exercise we define
+two simple concepts: Add and Mul.
+If we want to use either one of them
+or both we could create a concept: AddMul
+and utilize "or" operator on concepts.
+This will allow us to have a concept like
+    Add<Type> or Mul<Type>
+In order to have a concept when only one
+of the conditions is valid we could
+define it like this:
+    (Mul<Type> and not Add<Type>) or
+    (Add<Type> and not Mul<Type>)

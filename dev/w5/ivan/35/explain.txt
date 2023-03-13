@@ -1,0 +1,23 @@
+In this exercise we need to develop
+a concept which checks if we could
+dereference a type. To do this we
+need to check if we could use the
+"*" operator on the type. In order
+to enforce the template on a class
+we could simply use the 
+    requires <concept name> <types...>
+syntax on the class after the template
+header. This will require the concept.
+On function template we have more than 
+once option. We could either use:
+    template < <conceptName> Name>
+    void fun(Name data)
+        or
+
+    template <typename Data>
+    requires <concept-name> <Data>
+    void fun(Data data)
+
+There is also the option of implicit
+function template declaration but I did
+not go for it.

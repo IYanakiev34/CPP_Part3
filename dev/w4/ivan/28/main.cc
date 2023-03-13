@@ -1,6 +1,10 @@
 #include "Trait/Trait.h"
 #include <iostream>
 
+#include <vector>
+
+// TODO function for type traits
+
 int main()
 {
     int x = 5;
@@ -15,5 +19,7 @@ int main()
 
     // I dont get the function template thing
 
+    std::vector<int> vi;
+    vi.push_back(10);
     return 0;
 }
