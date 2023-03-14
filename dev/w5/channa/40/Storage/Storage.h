@@ -1,54 +1,39 @@
 #ifndef SET4_STORAGE_H
 #define SET4_STORAGE_H
 
-#include "../Iterator/Iterator.h"
+#include "NormalIterator.h"
 
 #include <vector>
+
+                                      // Free operator declarations for Storage
+                                      // to reference as friends.
+int operator-(NormalIter auto const &lhs, NormalIter auto const &rhs);
+bool operator==(NormalIter auto const &lhs, NormalIter auto const &rhs);
+auto operator<=>(NormalIter auto const &lhs, NormalIter auto const &rhs);
+auto operator+(NormalIter auto const &lhs, int step);
 
 template <typename Data>
 class Storage
 {
-  std::vector<Data *> d_storage;  // store the pointers to the data
+  std::vector<Data *> d_storage;
+
   public:
-    using iterator = Iterator<Data, std::vector>;
+                                            // Iterators for d_storage
+    struct iterator;
     using reverse_iterator = std::reverse_iterator<iterator>;
 
+                                            // Add to d_storage
     void push_back(Data *data);
-
+                                            // Get iterators for d_storage
     iterator begin();
     iterator end();
     reverse_iterator rbegin();
     reverse_iterator rend();
 };
 
-template<typename Data>
-inline void Storage<Data>::push_back(Data *data)
-{
-  d_storage.push_back(data);
-}
-
-template <typename Data>
-inline typename Storage<Data>::iterator Storage<Data>::begin()
-{
-  return iterator(d_storage.begin());
-}
-
-template <typename Data>
-inline typename Storage<Data>::iterator Storage<Data>::end()
-{
-  return iterator(d_storage.end());
-}
-
-template <typename Data>
-inline typename Storage<Data>::reverse_iterator Storage<Data>::rbegin()
-{
-  return reverse_iterator(d_storage.rbegin());
-}
-
-template <typename Data>
-inline typename Storage<Data>::reverse_iterator Storage<Data>::rend()
-{
-  return reverse_iterator(d_storage.rend());
-}
+#include "Iterator.f"
+#include "StorageImpl.f"
+#include "IteratorImpl.f"
+#include "IteratorFreeOpImpl.f"
 
 #endif //SET4_STORAGE_H

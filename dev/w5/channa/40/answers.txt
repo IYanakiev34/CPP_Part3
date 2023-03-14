@@ -1,0 +1,12 @@
+The program in the exercise sorts the command line arguments (incl. the program
+name). We slightly modify to also output the (space separated) results of the
+sort, right after each sort.
+
+We separate the results of each sort with a newline.
+
+With the arguments:
+these are not 1 but several (>2) command line arguments, and a program named
+a.out, we have the following results:
+
+(>2) a.out 1 are arguments but command line not several these
+these several not line command but arguments are 1 a.out (>2)
