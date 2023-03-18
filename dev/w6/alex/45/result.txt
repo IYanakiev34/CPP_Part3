@@ -1,0 +1,33 @@
+1: #include <iostream>
+2: #include "scanner.h"
+3: 
+4: using namespace std;
+5: 
+6: int main()
+7: {
+8:     size_t idCount = 0;
+9:     size_t intCount = 0;
+10:     size_t doubleCount = 0;
+11:     size_t singleCharTokenCount = 0;
+12:     size_t lineNumber = 1;    Scanner scanner;
+42:     int tok = scanner.lex();
+43:     cout << "1: ";
+44:     while (tok)
+45:     {
+46:         switch (tok)
+47:         {
+48:             case IDENTIFIER: ++idCount; cout << scanner.matched(); break;
+49:             case INTEGRAL: ++intCount; cout << scanner.matched(); break;
+50:             case DOUBLE: ++doubleCount; cout << scanner.matched(); break;
+51:             case LINENR:
+52:                 lineNumber = stoul(scanner.matched().substr(
+53:                     3, scanner.matched().size())) - 1;
+54:                 break;
+55:             case WHITESPACE: cout << scanner.matched(); break;
+56:             case NEWLINE: lineNumber++; cout << '\n' << lineNumber << ": "; break;
+57:             default: ++singleCharTokenCount; cout << static_cast<char>(tok); break;
+58:         }
+59:         tok = scanner.lex();
+60:     }
+61:     cout << '\n';
+62: }
