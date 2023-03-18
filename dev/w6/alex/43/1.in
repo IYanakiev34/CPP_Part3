@@ -1,0 +1,7 @@
+this is a file with some text
+
+it has blank lines
+but also some eol comments // like this one
+it even has /* multiline
+comments that
+span multiple lines */ like just now

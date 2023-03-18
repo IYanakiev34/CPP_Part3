@@ -3,3 +3,4 @@
 **/cmake-build-debug/
 ./dev/*/ivan/build/**
 dev/**/**/**/build/**
+*scannerbase.h

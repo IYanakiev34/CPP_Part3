@@ -1,0 +1,4 @@
+this is a file with some text
+it has blank lines
+but also some eol comments 
+it even has like just now
