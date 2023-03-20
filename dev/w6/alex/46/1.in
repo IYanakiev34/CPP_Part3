@@ -1,0 +1,1 @@
+Provide a small scanner specification file showing how you could match, e.g., house if it is part of the word houseboat or household but matching all other words (either or not starting with the word house, e.g., brick-house, houseboats, housebreaking, houses, house's or any other word) as individual, unit words. 

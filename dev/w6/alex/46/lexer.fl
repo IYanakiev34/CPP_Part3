@@ -1,0 +1,21 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+house           [Hh][Oo][Uu][Ss][Ee]
+hold            [Hh][Oo][Ll][Dd] 
+boat            [Bb][Oo][Aa][Tt]
+ws              [ \t\r\n]+
+notWs           [^ \t\r\n]
+
+%%
+
+{ws}
+
+/* send hold/boat back */
+{house}{hold}   { accept(5); echo(); writeChar(' '); }
+{house}{boat}   { accept(5); echo(); writeChar(' '); }
+
+/* this is preferred if it includes either above 2 */
+{notWs}+        { echo(); writeChar(' '); } 
+
+/* is there a way to write a space without messing with scanner? */

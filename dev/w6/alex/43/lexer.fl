@@ -1,0 +1,23 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+%x comment lineStart
+
+eolComment                  "//".*
+whitespace                  [ \t\n]+
+
+%%
+
+"/*"                        begin(StartCondition__::comment);
+<comment>"*/"               begin(StartCondition__::INITIAL);
+<comment>"*/ "              begin(StartCondition__::INITIAL);
+<comment>.
+<comment>\n
+
+\n                          { begin(StartCondition__::lineStart); return matched()[0]; } 
+<lineStart>{whitespace}     begin(StartCondition__::INITIAL);
+<lineStart>.                { begin(StartCondition__::INITIAL); return matched()[0]; }
+
+{eolComment}
+\n
+.               return matched()[0];
