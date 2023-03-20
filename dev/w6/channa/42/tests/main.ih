@@ -1,0 +1,6 @@
+#include "../Scanner/Scanner.h"
+
+#include <iostream>
+
+using namespace std;
+void writeMatched(ostream &out, string matched, size_t token);

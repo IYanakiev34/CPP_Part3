@@ -1,0 +1,13 @@
+#include "Scanner/Scanner.h"
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+
+vector<string> sortWordsFromStream(istream &in);
+void outputSortedStream(istream &in);
+void outputWordsSorted(string const &streamName);

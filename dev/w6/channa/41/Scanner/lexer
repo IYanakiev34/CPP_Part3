@@ -1,0 +1,4 @@
+word    [[:alpha:]]+
+%%
+{word}  return WORD;    // Get word
+.|\n                    // Skip newlines, non-words

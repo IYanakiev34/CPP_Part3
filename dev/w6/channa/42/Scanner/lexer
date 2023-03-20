@@ -1,0 +1,44 @@
+%x string
+word            [_[:alpha:]][_[:alnum:]]*
+integral        [[:digit:]]+
+real            [[:digit:]]*\.[[:digit:]]+
+
+scope           ::
+access          -\>|\.
+math            \+|\-|\/|\*|%
+logical         !|&&|\|\|
+bitwise         &|~|\^|\|
+shift           \>\>|\<\<
+comp            \<=\>|\<|\<=|\>|\>=|==|!=
+assign          ({math}|{shift}|{bitwise})?=
+operator   {scope}|{access}|{math}|{logical}|{bitwise}|{shift}|{comp}|{assign}|,
+
+escChar         ['"?\\abfnrtv]
+charConst       \'([[:alpha:]]|\\{escChar})\'
+%%
+{word}        return WORD;
+{integral}    return INTEGRAL;
+{real}        return REAL;
+{operator}    return OPERATOR;
+
+\"            {
+                more();
+                begin(StartCondition_::string);
+              }
+<string>
+{
+  \"\"        {
+                std::string match = matched();
+                match.pop_back();
+                setMatched(match);
+              }
+  \"          {
+                more();
+                begin(StartCondition_::INITIAL);
+              }
+  .           more();
+}
+
+
+{charConst}   return CHARCONST;
+.|\n          return matched()[0];

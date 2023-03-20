@@ -1,0 +1,81 @@
+%x line string mlCom
+%%
+                            // Ignore initial whitespace
+^[[:space:]]+
+                            // Ignore chars after hash-mark
+#.*$
+\/\/.*$                       // Ignore chars after EOL comment
+
+. {
+    push(matched());
+    push(StartCondition_::line);
+  }
+
+<string>
+{
+  \"  {
+        more();
+        popStartCondition();
+      }
+  .   {more();}
+}
+
+<mlCom>{
+  \n {
+    newLineInML = true;
+  }
+
+  .
+
+  \*\/[[:space:]]? {
+    if (matched().back() == ' ' && beforeML.back() == ' ')
+      beforeML.pop_back();
+
+    if (newLineInML)
+      push('\n');
+
+    setMatched(beforeML.append(" "));
+    more();
+    popStartCondition();
+  }
+}
+
+<line>
+{
+                            // Ignore trailing whitespace
+  [[:space:]]+$
+                            // Line finished, go to top level to consume rest
+  ./# {
+        popStartCondition();
+        return LINE;
+      }
+  ./\/\/ {
+          popStartCondition();
+          return LINE;
+  }
+
+                          // We have a string, start string mini-scanner
+  \" {
+      more();
+      push(StartCondition_::string);
+    }
+                          // We have a multi-line comment
+  \/\* {
+    newLineInML = false;
+    std::string const &match = matched();
+    beforeML = match.substr(0, match.size() - 2);
+    push(StartCondition_::mlCom);
+  }
+
+                        // Just add to line
+  . {
+      more();
+    }
+                        // Line done.
+  $ {
+      popStartCondition();
+      return LINE;
+    }
+}
+
+\n                      // Skip newlines after line

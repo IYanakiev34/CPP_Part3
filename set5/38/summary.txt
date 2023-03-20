@@ -1,0 +1,1 @@
+In this exercise, we apply concepts to variadic template directly.

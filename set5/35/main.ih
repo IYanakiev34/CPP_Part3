@@ -1,0 +1,9 @@
+#include "Deref1/Deref1.h"
+#include "Deref2/Deref2.h"
+
+#include "dereference1.h"
+#include "dereference2.h"
+
+#include <iostream>
+
+using namespace std;

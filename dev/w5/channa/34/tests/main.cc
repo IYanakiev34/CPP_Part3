@@ -10,4 +10,5 @@ void test(Container<Data> cd)
 int main()
 {
 //  test(10);
+    test(std::vector<int>{});
 }

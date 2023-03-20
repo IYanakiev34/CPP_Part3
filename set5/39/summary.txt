@@ -1,0 +1,2 @@
+In this exercise, we define a robust Concept to check that an iterator is a
+random access iterator.

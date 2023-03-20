@@ -3,10 +3,14 @@
 
                             // template function declaration which uses Lhs /
                             // Rhs such that they should be comparable.
+
 template <typename Lhs, typename Rhs>
   requires
     requires(Lhs lhs, Rhs rhs)
     {
+                            // We have to compare lhs / rhs to ensure
+                            // commutativity of application (though not of
+                            // result)
       lhs == rhs;
       rhs == lhs;
 

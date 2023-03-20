@@ -1,0 +1,11 @@
+summary.txt
+
+Storage/NormalIterator.h
+
+Storage/Storage.h
+Storage/Iterator.f
+Storage/StorageImpl.f
+Storage/IteratorImpl.f
+Storage/IteratorFreeOpImpl.f
+
+answers.txt

@@ -40,6 +40,7 @@ do
   find -type f -not -path "./.idea/*" -not -path "./cmake-build-debug/*" \
   -not -path "./order.txt" -not -path "./CMakeLists.txt" \
   -not -path "./tests/*" \
+  -not -path "./Scanner/Scannerbase.h" -not -path "./Scanner/lex.cc" \
   > order.txt
   cd ..
 done

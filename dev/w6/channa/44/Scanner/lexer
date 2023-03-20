@@ -1,0 +1,19 @@
+%x string
+%%
+\"                      {
+                          beforeEndQuote = "\"";
+                          begin(StartCondition_::string);
+                        }
+<string>
+{
+  \"[[:space:]]*\"
+  \"                    {
+                          begin(StartCondition_::INITIAL);
+                          setMatched(beforeEndQuote.append("\""));
+                          return STRING;
+                        }
+  .                     {
+                          beforeEndQuote.append(matched());
+                        }
+}
+(.|\n)                  return matched()[0];

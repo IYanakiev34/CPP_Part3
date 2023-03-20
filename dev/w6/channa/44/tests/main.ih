@@ -1,0 +1,13 @@
+#include "../Scanner/Scanner.h"
+#include <iostream>
+#include <fstream>
+#include <filesystem>
+
+using namespace std;
+using namespace filesystem;
+
+enum
+{
+  SOURCE_FILE = 1,
+  SOURCE_EXT_LEN = 2
+};
