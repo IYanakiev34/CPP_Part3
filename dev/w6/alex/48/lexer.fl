@@ -1,0 +1,23 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+%x comment
+
+qInclusion           "#include <"[^\r\n]*">"
+bInclusion           "#include \""[^\r\n]*"\""
+inclusion            {qInclusion}|{bInclusion}
+eolComment           "//".*
+
+%%
+
+/* Avoid matching commented includes */
+"/*"                        { echo(); begin(StartCondition__::comment); }
+<comment>"*/"               { echo(); begin(StartCondition__::INITIAL); }
+<comment>.
+<comment>\n
+{eolComment}                echo();
+
+{inclusion}                 return INCLUSION;
+
+.                           echo();
+\n                          echo();
