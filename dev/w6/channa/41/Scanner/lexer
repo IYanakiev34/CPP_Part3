@@ -1,4 +1,4 @@
-word    [[:alpha:]]+
+word                          [[:alpha:]]+
 %%
-{word}  return WORD;    // Get word
-.|\n                    // Skip newlines, non-words
+{word}                        return WORD;    // Get word
+.|\n                          // Skip newlines, non-words

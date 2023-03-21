@@ -1,81 +1,93 @@
 %x line string mlCom
 %%
-                            // Ignore initial whitespace
+                                      // Ignore initial whitespace
 ^[[:space:]]+
-                            // Ignore chars after hash-mark
+                                      // Ignore chars after hash-mark
 #.*$
-\/\/.*$                       // Ignore chars after EOL comment
+                                      // Ignore characters after comment
+\/\/.*$
 
-. {
-    push(matched());
-    push(StartCondition_::line);
-  }
+                                      // If we come across character, start line
+.                   {
+                      push(matched());
+                      push(StartCondition_::line);
+                    }
 
+                                      // If we are in a string
 <string>
 {
-  \"  {
-        more();
-        popStartCondition();
-      }
-  .   {more();}
+                                      // We have parsed a string
+  \"                {
+                      more();
+                      popStartCondition();
+                    }
+.                   more();
 }
 
-<mlCom>{
-  \n {
-    newLineInML = true;
-  }
-
+                                    // We are in a multi-line comment
+<mlCom>
+{
+                                    // There's a newline in our ML comment
+  \n                {
+                      newLineInML = true;
+                    }
+                                    // We do not add anything that's in our
+                                    // ML comment, so ignore
   .
 
-  \*\/[[:space:]]? {
-    if (matched().back() == ' ' && beforeML.back() == ' ')
-      beforeML.pop_back();
+                                    // At the end of our comment
+  \*\/[[:space:]]?  {
+                                    // Check spacing
+                      if (matched().back() == ' ' && beforeML.back() != ' ')
+                        beforeML.append(" ");
 
-    if (newLineInML)
-      push('\n');
+                                    // Check if we need to separate lines
+                      if (newLineInML)
+                        push('\n');
+                                    // Exit comment as if we never had ML
+                      more();
 
-    setMatched(beforeML.append(" "));
-    more();
-    popStartCondition();
-  }
+                      setMatched(beforeML);
+                      popStartCondition();
+                    }
 }
 
 <line>
 {
-                            // Ignore trailing whitespace
+                              // Ignore trailing whitespace
   [[:space:]]+$
-                            // Line finished, go to top level to consume rest
-  ./# {
-        popStartCondition();
-        return LINE;
-      }
-  ./\/\/ {
-          popStartCondition();
-          return LINE;
-  }
+                              // Line finished, go to top level to consume rest
+  ./#               {
+                      popStartCondition();
+                      return LINE;
+                    }
+  ./\/\/            {
+                      popStartCondition();
+                      return LINE;
+                    }
 
-                          // We have a string, start string mini-scanner
-  \" {
-      more();
-      push(StartCondition_::string);
-    }
-                          // We have a multi-line comment
-  \/\* {
-    newLineInML = false;
-    std::string const &match = matched();
-    beforeML = match.substr(0, match.size() - 2);
-    push(StartCondition_::mlCom);
-  }
+                            // We have a string, start string mini-scanner
+  \"                {
+                      more();
+                      push(StartCondition_::string);
+                    }
+
+                          // We have a multi-line comment, start ML scanner
+  \/\*              {
+                      newLineInML = false;
+                      std::string const &match = matched();
+                      beforeML = match.substr(0, match.size() - 2);
+                      push(StartCondition_::mlCom);
+                    }
 
                         // Just add to line
-  . {
-      more();
-    }
+  .                 more();
+
                         // Line done.
-  $ {
-      popStartCondition();
-      return LINE;
-    }
+  $                 {
+                      popStartCondition();
+                      return LINE;
+                    }
 }
 
 \n                      // Skip newlines after line

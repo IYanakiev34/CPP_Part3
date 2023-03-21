@@ -12,7 +12,7 @@ add_custom_command(
             ${CMAKE_CURRENT_SOURCE_DIR}/lexer/lex.cc
         COMMAND flexc++ lexer
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/lexer/lexer
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lexer
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Scanner
 )
 
 add_custom_target(

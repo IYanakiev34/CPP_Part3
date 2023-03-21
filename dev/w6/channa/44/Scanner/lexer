@@ -1,19 +1,72 @@
-%x string
+                                    // rsl = raw string literal
+%x string rsl delim
+word                    [[:graph:]]+
 %%
+                                    // Detected normal string
 \"                      {
-                          beforeEndQuote = "\"";
+                          d_stringContent = "\"";
                           begin(StartCondition_::string);
                         }
+                                    // Detected RSL
+R\"                     {
+                          d_stringContent = "\"";
+                          begin(StartCondition_::delim);
+                        }
+
+<delim>
+{
+  {word}?\(               {
+                          d_delim = matched();
+                                      // Remove '('
+                          d_delim.pop_back();
+                                      // Insert ')' which is used to denote end
+                                      // of RSL
+                          d_delim.insert(0, 1, ')');
+                                      // Now parse RSL
+                          begin(StartCondition_::rsl);
+                        }
+
+}
+<rsl>
+{
+  \"                    {
+                              // Check if we need to leave rsl by checking delim
+                          if (d_stringContent.ends_with(d_delim))
+                          {
+                                // If so, remove )delim from content, add ending
+                                // quote and return rsl
+                            d_stringContent.erase(
+                              d_stringContent.size() - d_delim.size()
+                            );
+                            d_stringContent.append("\"");
+
+                            setMatched(d_stringContent);
+                            begin(StartCondition_::INITIAL);
+                            return STRING;
+                          }
+                          else
+                                    // If not, add to d_stringContent and cont
+                            d_stringContent.append("\"");
+                        }
+
+  .                     d_stringContent.append(matched());
+}
 <string>
 {
+                                  // If we can concat strings, skip quotes
+                                  // intermediate spacing
   \"[[:space:]]*\"
+                                  // If there is no further comments to
+                                  // concat, return string
   \"                    {
                           begin(StartCondition_::INITIAL);
-                          setMatched(beforeEndQuote.append("\""));
+                          setMatched(d_stringContent.append("\""));
                           return STRING;
                         }
+                                  // We caught a char inside a string
   .                     {
-                          beforeEndQuote.append(matched());
+                          d_stringContent.append(matched());
                         }
 }
+                                    // Matched non-string input
 (.|\n)                  return matched()[0];

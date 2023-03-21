@@ -1,3 +1,30 @@
+%x lineNr
+integer               [[:digit:]]+
+lineNrPrefix          #\>
 %%
+                                // We have a line number directive
+{lineNrPrefix}            {
+                            begin(StartCondition_::lineNr);
+                          }
 
-.
+                              // We are processing a line number directive
+<lineNr>
+{
+                              // We get the new line number and update
+                              // line number
+  {integer}\n             {
+                            begin(StartCondition_::INITIAL);
+                            updateLineNr();
+                            return LINENR;
+                          }
+}
+                              // A normal line, add it to the eventual
+                              // matched string
+.                         more();
+
+                              // At a new line, increment our line number count
+                              // and return our line
+\n                        {
+                            ++d_lineNr;
+                            return LINE;
+                          }

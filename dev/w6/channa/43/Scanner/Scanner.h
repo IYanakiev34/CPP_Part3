@@ -12,7 +12,11 @@
 // $insert classHead
 class Scanner: public ScannerBase
 {
+                                        // The string contents before we entered
+                                        // a multi-line comment
     std::string beforeML;
+                                        // Whether the multi-line comment we are
+                                        // in spans multiple lines
     bool newLineInML = false;
 
     enum
@@ -42,7 +46,11 @@ class Scanner: public ScannerBase
                             // re-implement this function for code that must 
                             // be exec'ed after the rules's actions.
 
+                            // Pushes the state we are in into a stack and
+                            // starts next as the current state.
         void push(StartCondition_ next);
+                            // Starts the state that is at the top of the state
+                            // stack
         void popStartCondition();
 };
 
@@ -76,21 +84,6 @@ inline void Scanner::print()
 {
     print_();
 }
-
-// TODO: Make into own files
-
-inline void Scanner::push(StartCondition_ next)
-{
-  d_scStack.push(startCondition()); // push the current SC.
-  begin(next);                      // switch to the next
-}
-
-inline void Scanner::popStartCondition()
-{
-  begin(d_scStack.top());
-  d_scStack.pop();
-}
-
 
 #endif // Scanner_H_INCLUDED_
 

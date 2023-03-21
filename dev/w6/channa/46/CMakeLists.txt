@@ -6,30 +6,30 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
 
 add_custom_command(
         OUTPUT
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/Scanner.h
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/Scannerbase.h
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/Scanner.ih
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/lex.cc
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/Scanner.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/Scannerbase.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/Scanner.ih
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/lex.cc
         COMMAND flexc++ lexer
-        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/lexer/lexer
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lexer
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/lexer
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Scanner
 )
 
 add_custom_target(
         LEX_GEN_FILES
         DEPENDS
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/Scanner.h
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/Scannerbase.h
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/Scanner.ih
-            ${CMAKE_CURRENT_SOURCE_DIR}/lexer/lex.cc
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/Scanner.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/Scannerbase.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/Scanner.ih
+            ${CMAKE_CURRENT_SOURCE_DIR}/Scanner/lex.cc
 
 )
 
 FILE(GLOB SOURCES
-        lexer/lex.cc
-        lexer/Scanner.ih
-        lexer/Scannerbase.h
-        lexer/Scannerbase.h
+        Scanner/lex.cc
+        Scanner/Scanner.ih
+        Scanner/Scannerbase.h
+        Scanner/Scannerbase.h
         tests/*
         *
 )

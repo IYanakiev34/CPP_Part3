@@ -8,6 +8,5 @@
 
 using namespace std;
 
-vector<string> sortWordsFromStream(istream &in);
 void outputSortedStream(istream &in);
-void outputWordsSorted(string const &streamName);
+void outputSortedFile(string const &streamName);

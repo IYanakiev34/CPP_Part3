@@ -2,20 +2,12 @@
 
 int main(int argc, char *argv[])
 {
-                                          // Handle edge case of argc == 1
-                                          // (no file to sort specified).
-                                          // Use cin, instead.
-  if (argc == 1)
-  {
-    outputSortedStream(cin);
-    return 0;
-  }
-
-                                          // If we have streams, sort each
-                                          // stream
+                                // Handle edge case of no file to sort specified
   size_t argCount = argc;
-  for (size_t idx = 1; idx != argCount; ++idx)
-  {
-    outputWordsSorted(argv[idx]);
-  }
+  if (argc == 1)
+    outputSortedStream(cin);
+  else
+    for (size_t idx = 1; idx != argCount; ++idx)
+                                // If we have streams, sort each stream
+      outputSortedFile(argv[idx]);
 }

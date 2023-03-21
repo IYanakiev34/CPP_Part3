@@ -1,8 +1,12 @@
 %x string
+                                            // C++ style identifier
 word            [_[:alpha:]][_[:alnum:]]*
+                                            // C++ style integer literal
 integral        [[:digit:]]+
+                                            // C++ style double literal
 real            [[:digit:]]*\.[[:digit:]]+
 
+                                            // C++ operators
 scope           ::
 access          -\>|\.
 math            \+|\-|\/|\*|%
@@ -13,6 +17,12 @@ comp            \<=\>|\<|\<=|\>|\>=|==|!=
 assign          ({math}|{shift}|{bitwise})?=
 operator   {scope}|{access}|{math}|{logical}|{bitwise}|{shift}|{comp}|{assign}|,
 
+                                          // C++ strings, with concat
+                                          // spacing for strings that concat
+concatSpacing   [[:space:]]{-}[\n]
+stringPart      \".*\"
+string          {stringPart}({concatSpacing}*{stringPart})*
+                                          // C++ character constants
 escChar         ['"?\\abfnrtv]
 charConst       \'([[:alpha:]]|\\{escChar})\'
 %%
@@ -20,25 +30,6 @@ charConst       \'([[:alpha:]]|\\{escChar})\'
 {integral}    return INTEGRAL;
 {real}        return REAL;
 {operator}    return OPERATOR;
-
-\"            {
-                more();
-                begin(StartCondition_::string);
-              }
-<string>
-{
-  \"\"        {
-                std::string match = matched();
-                match.pop_back();
-                setMatched(match);
-              }
-  \"          {
-                more();
-                begin(StartCondition_::INITIAL);
-              }
-  .           more();
-}
-
-
+{string}      return STRING;
 {charConst}   return CHARCONST;
 .|\n          return matched()[0];

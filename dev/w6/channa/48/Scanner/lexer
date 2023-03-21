@@ -1,2 +1,38 @@
+%x include
+inc                 #include
+path                [^\0\n]+
 %%
-.
+{inc}               begin(StartCondition_::include);
+<include>
+{
+  \"{path}\"        {
+                      d_includePath = matched();
+                                          // Remove quotes
+                      d_includePath.pop_back();
+                      d_includePath.erase(0, 1);
+
+                      std::vector<std::string>::iterator end =
+                        d_currentlyScanning.end();
+                      if (
+                        std::find(
+                          d_currentlyScanning.begin(), end, d_includePath
+                        ) != end
+                      )
+                        throw d_includePath + " is recursively included";
+
+                      d_currentlyScanning.push_back(d_includePath);
+
+                      try
+                      {
+                        pushStream(d_includePath);
+                        d_currentFile = d_includePath;
+                      }
+                      catch (std::exception &excep)
+                      {
+                        throw d_includePath + " does not exist";
+                      }
+                      begin(StartCondition_::INITIAL);
+                    }
+  .                         // Ignore everything before path name.
+}
+(.|\n)                   std::cout << matched();

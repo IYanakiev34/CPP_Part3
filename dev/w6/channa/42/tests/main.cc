@@ -2,7 +2,7 @@
 
 int main()
 {
-  Scanner scanner;
+  Scanner scanner{"test", "out"};
 
   size_t token;
   while ((token = scanner.lex()))

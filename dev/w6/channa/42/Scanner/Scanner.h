@@ -16,7 +16,8 @@ class Scanner: public ScannerBase
       INTEGRAL,
       REAL,
       OPERATOR,
-      CHARCONST
+      CHARCONST,
+      STRING
     };
     public:
         explicit Scanner(std::istream &in = std::cin, std::ostream &out = std::cout, bool keepCwd = true);
