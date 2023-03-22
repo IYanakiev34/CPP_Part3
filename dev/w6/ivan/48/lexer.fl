@@ -11,19 +11,19 @@ include               {compInclude}|{normInclude}
 
 %%
 
-/* Avoid matching commented includes */
-"/*"                        { echo(); begin(StartCondition__::comment); }
-<comment>"*/"               { echo(); begin(StartCondition__::INITIAL); }
+"/*"                        { 
+                                echo();
+                                begin(StartCondition__::comment); 
+                            } 
+<comment>"*/"               { 
+                                echo();
+                                begin(StartCondition__::INITIAL);
+                            }
 <comment>.
 <comment>\n
 {slc}                       echo();
 
-{include}                   { 
-                                std::string matched = matched();
-                                std::string inc = matched.substr(10,matched.size() - 11);
-                                addInclude(inc);
-                                std::cout << "Included: " << inc << '\n';
-                            }
+{include}                   addInclude(inc);
 
 .                           echo();
 \n                          echo();

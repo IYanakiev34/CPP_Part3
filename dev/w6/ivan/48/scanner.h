@@ -20,8 +20,6 @@ public:
     // $insert lexFunctionDecl
     int lex();
 
-    void addInclude(std::string const &include);
-
 private:
     int lex_();
     int executeAction_(size_t ruleNr);
@@ -29,6 +27,8 @@ private:
     void print();
     void preCode(); // re-implement this function for code that must
                     // be exec'ed before the patternmatching starts
+
+    void addInclude(std::string const &include);
 
     void postCode(PostEnum_ type);
     // re-implement this function for code that must
@@ -43,6 +43,9 @@ void Scanner::addInclude(std::string const &include)
         std::cerr << "Error: recursive inclusion of file: " << include << '\n';
         exit(1);
     }
+
+    std::string matched = matched();
+    std::string inc = matched.substr(10, matched.size() - 11);
     pushStream(include);
 }
 
