@@ -1,0 +1,36 @@
+%x string
+                                            // C++ style identifier
+word            [_[:alpha:]][_[:alnum:]]*
+                                            // C++ style integer literal
+integral        [[:digit:]]+
+                                            // C++ style double literal
+real            [[:digit:]]*\.{integral}
+
+                                            // C++ operators
+scope           ::
+access          "->"|"."
+math            "+"|"-"|"/"|"*"|"%"
+logical         !|&&|\|\|
+bitwise         &|~|\^|\|
+shift           ">>"|"<<"
+comp            "<=>"|"<"|"<="|">"|">="|"=="|"!="
+assign          ({math}|{shift}|{bitwise})?=
+operator   {scope}|{access}|{math}|{logical}|{bitwise}|{shift}|{comp}|{assign}|,
+
+                                          // C++ strings, with concat
+                                          // spacing for strings that concat
+stringPart      \".*\"
+strSpacing      [[:space:]]+|[[:space:]]*\+[[:space:]]*
+string          {stringPart}({strSpacing}{stringPart})*
+                                          // C++ character constants
+escChar         ['"?\\abfnrtv]
+charConst       \'([[:alpha:]]|\\{escChar})\'
+%%
+[[:space:]]+                              // Ignore whitespace
+{word}          return WORD;
+{integral}      return INTEGRAL;
+{real}          return REAL;
+{operator}      return OPERATOR;
+{string}        return STRING;
+{charConst}     return CHARCONST;
+.               return matched()[0];

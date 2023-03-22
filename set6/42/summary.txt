@@ -1,0 +1,8 @@
+In this exercise, we tokenize our input stream according to C++ identifiers,
+integers, doubles, etc. We then output the token values followed by the
+text that resulted in the tokens.
+
+Note that the scanner, when tokenizing a STRING token, does not process the
+matched text to result in an actual string. This is because the program wants
+to output the _actual text_ that resulted in the token, and not the string that
+the matched text would create after concatenation.
