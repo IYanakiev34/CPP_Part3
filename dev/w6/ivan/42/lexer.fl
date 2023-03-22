@@ -1,0 +1,27 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+ident       [_a-zA-Z][_a-zA-Z0-9]*
+int         [0-9]+
+real        {int}\.{int}
+comp        ==|!=|\<-|\>=|\<|\>
+bitwise     &|\||\^|\<\<|\>\>|~
+logic       &&|\|\|
+arith       \+|-|\*|\/
+assignment  =
+operator    {comp}|{logic}|{assignment}|{arith}|{bitwise}
+string      \"[^\"]*\"
+char        \'[^\']\'
+white       [ \t]+
+
+%%
+
+{ident}     return IDENTIFIER;
+{int}       return INTEGRAL;
+{real}      return REAL;
+{operator}  return OPERATOR;
+{char}      return CHARACTER;
+{string}    return STRING;
+{white}     /* skip whitespaces */
+\n          return NEWLINE;
+.           return matched()[0];

@@ -1,0 +1,9 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+word [[:alpha:]]+
+
+%%
+{word}  {return WORD;}
+.
+\n

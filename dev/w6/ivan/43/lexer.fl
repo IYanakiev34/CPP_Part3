@@ -1,0 +1,22 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+%x comment customLine
+
+sCom    "//".*
+white   [ \t\n]+
+
+%%
+
+"/*"                begin(StartCondition__::comment);
+<comment>"*/"       begin(StartCondition__::INITIAL);
+<comment>"*/ "      begin(StartCondition__::INITIAL);
+<comment>.
+<comment>\n
+
+\n                  { begin(StartCondition__::customLine); return matched()[0]; }
+<customLine>{white}      begin(StartCondition__::INITIAL);
+<customLine>.            { begin(StartCondition__::customLine); return matched()[0]; }
+
+{sCom}
+.                   {return matched()[0];};

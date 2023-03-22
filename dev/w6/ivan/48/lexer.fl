@@ -1,0 +1,29 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+%x comment
+
+normInclude           "#include \""[^\r\n]*"\""
+compInclude           "#include <"[^\r\n]*">"
+
+slc                   "//".*
+include               {compInclude}|{normInclude}
+
+%%
+
+/* Avoid matching commented includes */
+"/*"                        { echo(); begin(StartCondition__::comment); }
+<comment>"*/"               { echo(); begin(StartCondition__::INITIAL); }
+<comment>.
+<comment>\n
+{slc}                       echo();
+
+{include}                   { 
+                                std::string matched = matched();
+                                std::string inc = matched.substr(10,matched.size() - 11);
+                                addInclude(inc);
+                                std::cout << "Included: " << inc << '\n';
+                            }
+
+.                           echo();
+\n                          echo();

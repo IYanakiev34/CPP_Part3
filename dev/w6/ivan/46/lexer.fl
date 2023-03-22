@@ -1,0 +1,12 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+
+word [[:graph:]]+
+%%
+house/(boat|hold)   {
+                        std::cout << matched() << '\n';
+                    }
+
+{word}              {
+                        std::cout << natched() << '\n';
+                    }
