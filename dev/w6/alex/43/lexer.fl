@@ -1,7 +1,7 @@
 %class-name = "Scanner"
 %filenames = "scanner"
 
-%x comment lineStart
+%x comment lineStart inString
 
 eolComment                  "//".*
 whitespace                  [ \t\n]+
@@ -13,6 +13,10 @@ whitespace                  [ \t\n]+
 <comment>"*/ "              begin(StartCondition__::INITIAL);
 <comment>.
 <comment>\n
+
+\"                          { begin(StartCondition__::inString); echo(); }
+<inString>\"                { begin(StartCondition__::INITIAL); echo(); }
+<inString>(.|\n)            echo();
 
 \n                          { begin(StartCondition__::lineStart); return matched()[0]; } 
 <lineStart>{whitespace}     begin(StartCondition__::INITIAL);
