@@ -18,9 +18,15 @@ whitespace                  [ \t\n]+
 <inString>\"                { begin(StartCondition__::INITIAL); echo(); }
 <inString>(.|\n)            echo();
 
-\n                          { begin(StartCondition__::lineStart); return matched()[0]; } 
+\n                          {
+                              begin(StartCondition__::lineStart);
+                              return matched()[0];
+                            }
 <lineStart>{whitespace}     begin(StartCondition__::INITIAL);
-<lineStart>.                { begin(StartCondition__::INITIAL); return matched()[0]; }
+<lineStart>.                {
+                              begin(StartCondition__::INITIAL);
+                              return matched()[0];
+                            }
 
 {eolComment}
 \n

@@ -1,0 +1,2 @@
+In this exercise, we tokenize the input from cin (or files if specified in the
+arguments) and sorts them.
