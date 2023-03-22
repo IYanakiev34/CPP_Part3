@@ -8,16 +8,36 @@ whitespace                  [ \t\n]+
 
 %%
 
+/* Use a separate state for multiline comments. The opener enters
+the start state, and we can only leave the state by seeing the 
+closer. We eat any character in the multiline comment, so it 
+won't appear in the final output. If the multiline comment is followed 
+by a space, that is also eaten to preserve the spacing after it is 
+removed.*/
 "/*"                        begin(StartCondition__::comment);
 <comment>"*/"               begin(StartCondition__::INITIAL);
 <comment>"*/ "              begin(StartCondition__::INITIAL);
 <comment>.
 <comment>\n
 
-\"                          { begin(StartCondition__::inString); echo(); }
-<inString>\"                { begin(StartCondition__::INITIAL); echo(); }
+/* We need a string state to protect comments in a state. While inside 
+of the 'inString' state, we cannot trigger comment, so comments in strings 
+will not be removed.*/
+\"                          {
+                                begin(StartCondition__::inString); 
+                                return matched()[0]; 
+                            }
+<inString>\"                {
+                                begin(StartCondition__::INITIAL);
+                                return matched()[0]; 
+                            }
 <inString>(.|\n)            echo();
 
+/* This state is responsible for clearing whitespace at the beginning of 
+a line. It is triggered by a newline, which of course indicates that a new 
+line follows. While in the state, we eat whitespace until we find something 
+that isn't whitespace, at which point we return what we find and leave 
+this state. */
 \n                          {
                               begin(StartCondition__::lineStart);
                               return matched()[0];
@@ -28,6 +48,8 @@ whitespace                  [ \t\n]+
                               return matched()[0];
                             }
 
+/* Eat single line comment and newline */
 {eolComment}
 \n
+
 .               return matched()[0];
