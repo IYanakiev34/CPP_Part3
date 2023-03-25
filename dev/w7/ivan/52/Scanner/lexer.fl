@@ -1,0 +1,14 @@
+%filenames = "scanner"
+%namespace tn
+%interactive
+
+integral        [[:digit:]]+
+real            [[:digit:]]*\.[[:digit:]]+
+
+white           [\t ]+
+
+%%
+"!="        return Tokens::NOTEQ;
+{real}      return Tokens::NUMBER;
+{white}     /* eat white */
+.\n\r       /* nothing */

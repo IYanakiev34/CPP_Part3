@@ -1,8 +1,7 @@
 For the "!=" we can just add a token
 and return in in the lexer. We then
 proceed to place the %left NOTEQ above
-the multiplication sign (assuming that
-"!=" is left associative). For the "^"
+the multiplication sign. For the "^"
 we can just keep it as a symbol and define
 if like %right '^' this should be above the
 unary minus rule and below the multiplication.
