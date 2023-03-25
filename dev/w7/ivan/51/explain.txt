@@ -8,3 +8,4 @@ R/R conflicts could be solved easily by resolving
 ambiguity in the grammar. In our case this could be
 done by either remove NUMBER or number. Since both
 produce the same expression effectively which is NUMBER.
+Shift-reduce conflicts can be solved by adding %left '+' '-'.
