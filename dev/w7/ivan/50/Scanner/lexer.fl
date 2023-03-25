@@ -1,0 +1,13 @@
+%filenames = "scanner"
+%interactive
+%namespace = "tn"
+
+integral        [[:digit:]]+
+real            [[:digit:]]*\.[[:digit:]]+
+
+white           [\t ]+
+
+%%
+{real}      return Tokens::NUMBER;
+{white}     /* eat white */
+.\n\r       /* nothing */
