@@ -1,0 +1,15 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+%interactive
+%namespace = "tn"
+
+word    [a-zA-Z]+
+integral        [[:digit:]]+
+write           [Ww][Rr][Ii][Tt][Ee]
+
+%%
+{write}             return Tokens::WRITE;
+{word}              return Tokens::IDENT;
+{integral}          return Tokens::NUMBER;
+.                   return matched()[0];
+\n                  return Tokens::NEWLINE; 
