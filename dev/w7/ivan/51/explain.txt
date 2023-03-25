@@ -1,0 +1,10 @@
+The grammar given to us had a reduce reduce conflict.
+This is due to the fact that we have a reduction
+based on the terminal NUMBER and the non-terminal
+number. The non terminal number expands to NUMBER,
+this creates confusion in the parser if it should
+go in the rule for the non terminal or reduce.
+R/R conflicts could be solved easily by resolving
+ambiguity in the grammar. In our case this could be
+done by either remove NUMBER or number. Since both
+produce the same expression effectively which is NUMBER.
