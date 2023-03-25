@@ -1,0 +1,11 @@
+%filenames = "scanner"
+%interactive
+%namespace = "tn"
+
+word            [a-zA-Z]+
+integral        [[:digit:]]+
+
+%%
+{word}              return Tokens::IDENT;
+{integral}          return Tokens::NUMBER;
+.\n\r               return matched()[0];
