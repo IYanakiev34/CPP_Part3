@@ -19,3 +19,4 @@ expr
     | '-' expr
     | expr '[' expr ']'
     ;
+1+a[1][2]

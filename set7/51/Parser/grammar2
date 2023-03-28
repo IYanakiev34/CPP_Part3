@@ -1,0 +1,18 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+                          // Added right associativity to '+' and '-' to remove
+                          // S/R conflict as bisonc++ would resolve the conf.
+                          // On same line therefore same prio.
+%right '+' '-'
+%token NUMBER
+%%
+                          // Removed number: NUMBER; rule to remove R/R conflict
+                          // Also how bisonc++ would do it.
+expr:
+  NUMBER
+|
+  expr '+' expr
+|
+  expr '-' expr
+;

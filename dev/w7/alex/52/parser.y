@@ -2,9 +2,9 @@
 %filenames parser
 %token-path tokens.h
 
-%token NR INEQ
+%token NR
 
-%left INEQ_PREC
+%left INEQ
 %left '+'
 %left '*'
 %left '^'
@@ -18,7 +18,7 @@ expr
     | expr '+' expr
     | expr '*' expr
     | expr '^' expr
-    | expr INEQ expr %prec INEQ_PREC
+    | expr INEQ expr
     ;
 
 /* There's a second way:

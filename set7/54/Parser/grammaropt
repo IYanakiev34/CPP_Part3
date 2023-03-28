@@ -1,0 +1,38 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token WORD
+%%
+list:
+                              // A list of no words
+|
+                              // A list of 1 word
+  WORD
+|
+                              // 2 WORDs that are separated by a space
+                              // Which means our subsequent list of 0 or more
+                              // WORDs has to be space separated
+  WORD WORD plain
+|
+                              // 2 WORDs that are separated by a comma
+                              // Which means our subsequent list of 0 or more
+                              // WORDs has to comma separated
+  WORD ',' WORD separated
+;
+
+                              // A space separated list of 0 or more WORDs
+plain:
+  plain
+  WORD
+|
+  // empty
+;
+
+                              // A comma separated list of 0 or more WORDs
+separated:
+  separated
+  ','
+  WORD
+|
+  // empty
+;

@@ -1,0 +1,24 @@
+There are two issues:
+  1) There is a reduce/reduce conflict, i.e: two or more rules can apply to the
+    same sentence. In this case, to match a NUMBER token, either the number
+    rule or the expr rule can be used (the latter through a reduction to
+    NUMBER).
+
+    In grammar1, we fix this by removing the unnecessary expr -> NUMBER; rule.
+
+    bisonc++ resolves the conflict by selecting the first rule that applies
+    through the grammar (which is the expr rule for NUMBER in this case), so for
+    grammar2, we remove the number -> NUMBER rule.
+
+  2) The other error is the shift/reduce conflict, due to the rules involving
+  '+' / '-'. This means that if the parser reads expr op expr op,
+  where op is either '+' or '-', and with the second op just being read,
+  "expr op expr" is in the exact and can be _reduced_. Alternatively, the latter
+  op can be _shifted_ into the stack as well. Hence, the conflict.
+
+  To fix this, we can define associativity rules. We have fixed grammar1 for
+  standard mathematical reading (i.e: left associativity).
+
+  However, bisonc++ prefers to shift, meaning that the operators are right
+  associative, (as the stack gets reduced top down, using the rightmost
+  operators first). Thus, we specify right associativity in grammar2.

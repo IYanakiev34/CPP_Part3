@@ -1,0 +1,37 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token DOUBLE INTEGRAL EMPTY
+
+%%
+
+commands:
+  commands command
+|
+  command
+;
+
+command:
+  EMPTY
+  {
+    ACCEPT();
+  }
+|
+  'm' number '\n'
+|
+  's' number '\n'
+|
+  score '\n'
+;
+
+score:
+  DOUBLE
+|
+  DOUBLE INTEGRAL
+;
+
+number:
+  DOUBLE
+|
+  INTEGRAL
+;

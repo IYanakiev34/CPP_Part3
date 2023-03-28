@@ -1,0 +1,9 @@
+ident             [_[:alpha:]][_[:alnum:]]*
+integral          [[:digit:]]+
+real              [[:digit:]]*\.{integral}
+number            {real}|{integral}
+%%
+[[:space:]]+      // ignore whitespace
+{ident}           return Tokens::VAR;
+{number}          return Tokens::NR;
+.                 return matched()[0];
