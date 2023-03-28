@@ -3,9 +3,11 @@
 
 %token VAR
 %token NR
+
 %left '+'
 %left '*'
 %right '-'
+
 %%
 expr:
   NR
@@ -28,11 +30,6 @@ indexedExpr:
 ;
                           // We can modify to remove indexable: NR; in the
                           // future if we wish to disallow things like 3[4].
-                          // Note: If we wish to index the result of an
-                          // expression, an alternative to the below would be:
-                          // indexable: expr and making the oneIndex rule
-                          // have the highest precedence that is right
-                          // associative
 indexable:
   VAR
 |
@@ -47,14 +44,5 @@ indexingList:
 ;
                           // A single indexing
 oneIndex:
-  '[' index ']'
-;
-                          // What we can index by. If (in the future) we wish to
-                          // index by the result of an expression, an
-                          // alternative to the rule below would be:
-                          // index: expr;
-index:
-  VAR
-|
-  NR
+  '[' expr ']'
 ;

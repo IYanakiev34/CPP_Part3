@@ -42,6 +42,8 @@ do
   -not -path "./tests/*" \
   > order.txt
   sed -i "s/.\/Scanner\/Scannerbase.h/-.\/Scanner\/Scannerbase.h/" order.txt
+  sed -i "s/.\/Parser\/Parserbase.h/-.\/Parser\/Parserbase.h/" order.txt
   sed -i "s/.\/Scanner\/lex.cc/-.\/Scanner\/lex.cc/" order.txt
+  sed -i "s/.\/Parser\/parse.cc/-.\/Parser\/parse.cc/" order.txt
   cd ..
 done

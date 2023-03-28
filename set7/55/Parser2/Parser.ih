@@ -24,12 +24,14 @@ inline int Parser::lex()
 
     size_t token;
     token = d_scanner.lex();
-                          // newline reached, so we should display prompt next
     if (token == '\n')
     {
+                              // Two newlines in a row -> should exit
         if (d_lastToken == '\n')
             return Tokens_::EMPTY;
         else
+                              // Otherwise, note that we should disp. prompt
+                              // next
           d_prompt = true;
     }
 

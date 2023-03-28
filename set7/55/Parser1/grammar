@@ -4,9 +4,10 @@
 %token DOUBLE INTEGRAL
 
 %%
-
+                                // Display the prompt, and then take in commands
 start: prompt commands;
 
+                                // A one or more list of commands
 commands:
   commands command
 |
@@ -14,6 +15,7 @@ commands:
 ;
 
 command:
+                              // No more commands
   '\n'
   {
     ACCEPT();

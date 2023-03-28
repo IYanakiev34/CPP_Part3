@@ -3,4 +3,10 @@ calculates z-scores.
 
 Parser in Parser1/Parser.h provides a prompt via the rule prompt.
 Parser in Parser2/Parser.h provides a prompt via a slight modification to
-Parser::lex.
+Parser::lex (in Parser2/Parser.ih).
+
+Note: For Parser1, we do not submit the Parser.h or Parser.ih files since we
+do not make any modifications to it after bisonc++ generates them. For both
+parsers, we do not include the Scanner/tokens.h file it generates it, for the
+same reason. For Scanner, we only submit Scanner.ih since that is the only
+file we modify from those that flexc++ generates.

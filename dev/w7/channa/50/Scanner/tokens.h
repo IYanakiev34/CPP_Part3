@@ -8,7 +8,7 @@ struct Tokens
     {
         NUM = 257,
         NEG,
-        FUNC,
+        OP,
     };
 
 };

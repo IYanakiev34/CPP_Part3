@@ -1,9 +1,9 @@
-func              "$"
+operation         "$"
 integral          [[:digit:]]+
 real              [[:digit:]]*\.{integral}
 number            {real}|{integral}
 %%
 [[:space:]]+      // ignore whitespace
 {number}          return Tokens::NUM;
-{func}            return Tokens::FUNC;
+{operation}       return Tokens::OP;
 .                 return matched()[0];
