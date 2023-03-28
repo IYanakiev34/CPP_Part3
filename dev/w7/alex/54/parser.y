@@ -8,6 +8,7 @@
 
 optionalList
     : WORD list
+    | WORD
     | /* empty */
     ;
 
