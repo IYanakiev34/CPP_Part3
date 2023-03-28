@@ -1,0 +1,12 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+%interactive
+
+word            [a-zA-Z]+
+whitespace      [ \t\n\r]+
+
+%%
+
+{word}          return Tokens::WORD;
+{whitespace}
+.               return matched()[0];

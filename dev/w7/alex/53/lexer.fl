@@ -1,0 +1,16 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+%interactive
+
+variable            [a-zA-Z_][a-zA-Z_0-9]*
+integral            [0-9]+
+floating            {integral}\.{integral}
+number              {integral}|{floating}
+whitespace          [ \t\n\r]+
+
+%%
+
+{variable}          return Tokens::VAR;
+{number}            return Tokens::NR;
+.                   return matched()[0];
+{whitespace}

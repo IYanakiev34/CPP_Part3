@@ -1,0 +1,27 @@
+Simply calling bisonc++ on this file provides ample information:
+[Warning] 4 Shift/Reduce conflict(s)
+   rule 3 (parser.y, line 12): shifts at '+', '-',
+   rule 4 (parser.y, line 13): shifts at '+', '-',
+[Warning] 3 Reduce/Reduce conflict(s)
+   keeping rule 1 (parser.y, line 10), dropping
+        rule 5 (parser.y, line 17)
+
+The first conflict is caused by the lack of information regarding the 
+precedence of plus and minus, which can be resolved by adding
+%left '+' '-'
+Without this specification, bisonc++ will assume the first rule has 
+greater precedence.
+
+The second conflict is caused by the fact that the parser has two ways 
+to reduce an expression when presented with a NUMBER token. The parser
+does exactly as it states, removing the rule from non-terminal number. 
+As a result, non-terminal number has no matchable rules, effectively 
+removing it as well. Thus, bisonc++ effectively does:
+expr
+    : NUMBER
+    | number
+    | expr '+' expr
+    | expr '-' expr
+    ;
+
+I provide a conflict-free version of the grammar in parser.y.

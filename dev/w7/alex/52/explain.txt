@@ -1,0 +1,5 @@
+The simplest way is to add new priorities for the operations.
+Alternatively, you can define grammar rules that only allow low 
+priority operations to be performed on operands consisting of 
+items produced after considering higher priority operators. I 
+demonstrate both.

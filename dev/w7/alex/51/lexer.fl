@@ -1,0 +1,14 @@
+%class-name = "Scanner"
+%filenames = "scanner"
+%interactive
+
+integral            [0-9]+
+floating            {integral}\.{integral}
+number              {integral}|{floating}
+ws                  [ \t\n\r]+
+
+%%
+
+{number}            return Tokens::NUMBER;
+{ws}
+.                   return matched()[0];
