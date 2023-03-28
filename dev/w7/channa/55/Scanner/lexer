@@ -1,0 +1,11 @@
+empty             [[:space:]]+
+integral          [[:digit:]]+
+double1           -?[[:digit:]]+\.?[[:digit:]]*
+double2           -?\.[[:digit:]]+
+double            {double1}|{double2}
+%%
+^\n$                  {std::cout << "EMPTY\n"; return Tokens::EMPTY;}
+{integral}          {std::cout << "INTEGRAL\n"; return Tokens::INTEGRAL;}
+{double}            {std::cout << "DOUBLE\n";return Tokens::DOUBLE;}
+[[:space:]]{-}[\n]  // ignore whitespace
+.                   {std::cout << "OTHER\n";return matched()[0];}

@@ -1,0 +1,7 @@
+integral          [[:digit:]]+
+real              [[:digit:]]*\.{integral}
+number            {real}|{integral}
+%%
+[[:space:]]+      // ignore whitespace
+{number}          return Tokens::NR;
+.                 return matched()[0];

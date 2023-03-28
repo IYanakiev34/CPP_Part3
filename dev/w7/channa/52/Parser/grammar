@@ -1,0 +1,29 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token NR
+                              // Supported operations, INEQ uses != operator
+%right INEQ
+%left '+'
+%left '*'
+%right '^'
+                              // No need for NEG / UMINUS etc., since there is
+                              // no subtraction. Can define precedence on '-'
+                              // immediately.
+%right '-'
+
+%%
+
+expr:
+  NR
+|
+  expr '!''=' expr %prec INEQ
+|
+  '-' expr
+|
+  expr '+' expr
+|
+  expr '*' expr
+|
+  expr '^' expr
+;

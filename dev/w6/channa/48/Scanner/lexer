@@ -2,6 +2,7 @@
 inc                 #include
 path                [^\0\n]+
 %%
+                              // We are about to include a file
 {inc}               begin(StartCondition_::include);
 <include>
 {

@@ -1,0 +1,4 @@
+
+%%
+[[:alpha:]]+        return Tokens::WORD;
+(.|\n)              // Ignore rest

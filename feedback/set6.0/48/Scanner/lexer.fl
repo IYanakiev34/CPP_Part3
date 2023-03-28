@@ -1,0 +1,30 @@
+%x comment
+
+//JB: The matcher is greedy, and doublequotes are neither \r nor \n.
+normInclude           "#include \""[^\r\n]*"\""
+compInclude           "#include <"[^\r\n]*">"
+
+slc                   "//".*
+include               {compInclude}|{normInclude}
+
+%%
+
+"/*"                        { 
+                                echo();
+                                begin(StartCondition_::comment);
+                            } 
+<comment>"*/"               { 
+                                echo();
+                                begin(StartCondition_::INITIAL);
+                            }
+<comment>.
+<comment>\n
+{slc}                       echo();
+
+//JB: Q: Nice that the scanner handles includes with '<>' too, but they should
+//JB: be handled differently from includes with '""', and it seems the
+//JB: distinction is lost here.
+{include}                   addInclude();
+
+.                           echo();
+\n                          echo();

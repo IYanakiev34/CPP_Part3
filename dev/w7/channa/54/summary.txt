@@ -1,0 +1,8 @@
+In this exercise, we construct a grammar to accept either:
+- A list of WORD tokens that are separated by spaces
+- A list of WORD tokens that are separated by commas
+
+However, we do not accept lists that separate by both spaces and commas.
+
+grammaropt contains a grammar for lists that can have 0 or more words
+grammarreq contains a grammar for lists that can have 1 or more words.

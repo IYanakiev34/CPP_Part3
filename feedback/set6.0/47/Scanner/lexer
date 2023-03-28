@@ -1,0 +1,8 @@
+//JB: 1
+
+%input-interface = "../Input/Input.interface" JB: Why?
+%input-implementation = "../Input/Input.implementation"
+
+%%
+.
+\n                        return '\n';

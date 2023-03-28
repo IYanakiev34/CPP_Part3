@@ -1,11 +1,8 @@
-summary.txt
-
 IteratorConcepts/BasicIterators.h
-IteratorConcepts/FwdIterator.h
 IteratorConcepts/BiIterator.h
+IteratorConcepts/FwdIterator.h
 IteratorConcepts/RndIterator.h
-
-sortWithConcepts.h
-
-main.ih
 main.cc
+main.ih
+sortWithConcepts.h
+summary.txt

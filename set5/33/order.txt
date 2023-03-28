@@ -1,7 +1,5 @@
-summary.txt
-
 BasicMath/BasicMath.h
 basicMathTest.h
-
-main.ih
 main.cc
+main.ih
+summary.txt

@@ -1,0 +1,26 @@
+We extend the following grammar:
+
+  %token VAR
+  %token NR
+  %left '+'
+  %left '*'
+  %right '-'
+
+  %%
+
+  expr:
+    NR
+  |
+    VAR
+  |
+    '-' expr
+  |
+    expr '+' expr
+  |
+    expr '*' expr
+  ;
+
+to support indexing operations. It is not yet know whether constructions like
+3[4] can be considered a valid indexable expression, thus we design our grammar
+to take a choice to disallow this into account (i.e: make it easy to modify for
+this choice).

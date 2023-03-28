@@ -1,0 +1,5 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+%%
+dummy:
+;

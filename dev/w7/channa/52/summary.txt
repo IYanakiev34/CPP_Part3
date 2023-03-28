@@ -1,0 +1,22 @@
+In this exercise, we extend the following grammar:
+
+  %token NR
+  %left '+'
+  %left '*'
+  %right '-'
+
+  %%
+
+  expr:
+    NR
+  |
+    '-' expr
+  |
+    expr '+' expr
+  |
+    expr '*' expr
+  ;
+
+to also support inequality checks (!=) and exponentiation (^). The former has
+less priority than addition (+) and the latter has higher priority than
+multiplication (*) but less than unary negation (-).

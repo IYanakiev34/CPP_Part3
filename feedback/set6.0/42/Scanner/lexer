@@ -1,0 +1,54 @@
+//JB: 0
+%x string
+//JB: It doesn't seem you're using this miniscanner?
+
+                                            // C++ style identifier
+word            [_[:alpha:]][_[:alnum:]]*
+                                            // C++ style integer literal
+integral        [[:digit:]]+
+                                            // C++ style double literal
+real            [[:digit:]]*\.{integral}
+//JB: That doesn't handle the exponent.
+
+                                            // C++ operators
+scope           ::
+access          "->"|"."
+math            "+"|"-"|"/"|"*"|"%"
+logical         !|&&|\|\|
+bitwise         &|~|\^|\|
+shift           ">>"|"<<"
+comp            "<=>"|"<"|"<="|">"|">="|"=="|"!="
+assign          ({math}|{shift}|{bitwise})?=
+operator   {scope}|{access}|{math}|{logical}|{bitwise}|{shift}|{comp}|{assign}|,
+
+                                          // C++ strings, with concat
+                                          // spacing for strings that concat
+//JB: What about escaped doublequotes in strings?
+stringPart      \".*\"
+
+//JB: One or more whitespace, or alternatively zero or more whitespace,
+//JB: followed by a '+', followed by again zero or more whitespace... ?
+//JB: I don't understand this. Since when are null terminated byte strings
+//JB: concatenated by pluses?
+strSpacing      [[:space:]]+|[[:space:]]*\+[[:space:]]*
+string          {stringPart}({strSpacing}{stringPart})*
+                                          // C++ character constants
+//JB: What about numerically specified literal characters, like '\13'?
+escChar         ['"?\\abfnrtv]
+charConst       \'([[:alpha:]]|\\{escChar})\'
+%%
+[[:space:]]+                              // Ignore whitespace
+{word}          return WORD;
+{integral}      return INTEGRAL;
+{real}          return REAL;
+{operator}      return OPERATOR;
+{string}        return STRING;
+{charConst}     return CHARCONST;
+.               return matched()[0];
+
+
+/* JB:
+   I like the attempt to keep the action section clean.
+   But I suspect some complexity will have to be transferred to it from the
+   definition section.
+*/

@@ -1,0 +1,6 @@
+%input-interface = "../Input/Input.interface"
+%input-implementation = "../Input/Input.implementation"
+
+%%
+.
+\n                        return '\n';

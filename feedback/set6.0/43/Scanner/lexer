@@ -1,0 +1,107 @@
+//JB: ?
+%x line string mlCom
+%%
+                                      // Ignore initial whitespace
+^[[:space:]]+
+                                      // Ignore chars after hash-mark
+#.*$
+                                      // Ignore characters after comment
+\/\/.*$
+
+                                      // If we come across character, start line
+.                   {
+		      //JB: This may work, but it's TC.
+                      push(matched());
+                      push(StartCondition_::line);
+                    }
+
+                                      // If we are in a string
+<string>
+{
+                                      // We have parsed a string
+  \"                {
+                      more();
+                      popStartCondition();
+                    }
+.                   more();
+}
+
+                                    // We are in a multi-line comment
+<mlCom>
+{
+                                    // There's a newline in our ML comment
+  \n                {
+                      newLineInML = true;
+                    }
+                                    // We do not add anything that's in our
+                                    // ML comment, so ignore
+  .
+
+                                    // At the end of our comment
+  \*\/[[:space:]]?  {
+                                    // Check spacing
+                      if (matched().back() == ' ' && beforeML.back() != ' ')
+                        beforeML.append(" ");
+
+                                    // Check if we need to separate lines
+                      if (newLineInML)
+                        push('\n');
+                                    // Exit comment as if we never had ML
+                      more();
+
+                      setMatched(beforeML);
+                      popStartCondition();
+                    }
+}
+
+<line>
+{
+                              // Ignore trailing whitespace
+  [[:space:]]+$
+                              // Line finished, go to top level to consume rest
+  ./#               {
+                      popStartCondition();
+                      return LINE;
+                    }
+  ./\/\/            {
+                      popStartCondition();
+                      return LINE;
+                    }
+
+                            // We have a string, start string mini-scanner
+  \"                {
+                      more();
+                      push(StartCondition_::string);
+                    }
+
+                          // We have a multi-line comment, start ML scanner
+  \/\*              {
+                          // Initialize state
+                      newLineInML = false;
+                      std::string const &match = matched();
+                      beforeML = match.substr(0, match.size() - 2);
+                          // Start ML scanner
+                      push(StartCondition_::mlCom);
+                    }
+
+                        // Just add to line
+  .                 more();
+
+                        // Line done.
+  $                 {
+                      popStartCondition();
+                      return LINE;
+                    }
+}
+
+\n                      // Skip newlines after line
+
+/* JB:
+   The contrast with the previous exercise is rather stark.
+   This scanner specification is much less readable.
+
+   See if you can make the regular expressions more readable,
+   have fewer statements in the scanner's actions,
+   and try to write comment that less states what happens in this particular
+   line, and more guides the reader through the file.
+*/

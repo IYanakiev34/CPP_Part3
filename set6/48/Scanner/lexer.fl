@@ -1,0 +1,26 @@
+%x comment
+
+normInclude           "#include \""[^\r\n]*"\""
+compInclude           "#include <"[^\r\n]*">"
+
+slc                   "//".*
+include               {compInclude}|{normInclude}
+
+%%
+
+"/*"                        { 
+                                echo();
+                                begin(StartCondition_::comment);
+                            } 
+<comment>"*/"               { 
+                                echo();
+                                begin(StartCondition_::INITIAL);
+                            }
+<comment>.
+<comment>\n
+{slc}                       echo();
+
+{include}                   addInclude();
+
+.                           echo();
+\n                          echo();

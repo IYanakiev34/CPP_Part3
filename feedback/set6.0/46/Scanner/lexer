@@ -1,0 +1,11 @@
+//JB: 1
+
+word        [[:graph:]]+
+%%
+house/(boat|hold)           {
+                              std::cout << matched() << '\n';
+                            }
+{word}                        {
+                              std::cout << matched() << '\n';
+                            }
+.

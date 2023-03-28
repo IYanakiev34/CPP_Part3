@@ -1,11 +1,8 @@
-summary.txt
-Dereferenceable/Dereferenceable.h
-
 Deref1/Deref1.h
 Deref2/Deref2.h
-
 dereference1.h
 dereference2.h
-
-main.ih
+Dereferenceable/Dereferenceable.h
 main.cc
+main.ih
+summary.txt

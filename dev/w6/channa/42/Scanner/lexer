@@ -4,32 +4,33 @@ word            [_[:alpha:]][_[:alnum:]]*
                                             // C++ style integer literal
 integral        [[:digit:]]+
                                             // C++ style double literal
-real            [[:digit:]]*\.[[:digit:]]+
+real            [[:digit:]]*\.{integral}
 
                                             // C++ operators
 scope           ::
-access          -\>|\.
-math            \+|\-|\/|\*|%
+access          "->"|"."
+math            "+"|"-"|"/"|"*"|"%"
 logical         !|&&|\|\|
 bitwise         &|~|\^|\|
-shift           \>\>|\<\<
-comp            \<=\>|\<|\<=|\>|\>=|==|!=
+shift           ">>"|"<<"
+comp            "<=>"|"<"|"<="|">"|">="|"=="|"!="
 assign          ({math}|{shift}|{bitwise})?=
 operator   {scope}|{access}|{math}|{logical}|{bitwise}|{shift}|{comp}|{assign}|,
 
                                           // C++ strings, with concat
                                           // spacing for strings that concat
-concatSpacing   [[:space:]]{-}[\n]
 stringPart      \".*\"
-string          {stringPart}({concatSpacing}*{stringPart})*
+strSpacing      [[:space:]]+|[[:space:]]*\+[[:space:]]*
+string          {stringPart}({strSpacing}{stringPart})*
                                           // C++ character constants
 escChar         ['"?\\abfnrtv]
 charConst       \'([[:alpha:]]|\\{escChar})\'
 %%
-{word}        return WORD;
-{integral}    return INTEGRAL;
-{real}        return REAL;
-{operator}    return OPERATOR;
-{string}      return STRING;
-{charConst}   return CHARCONST;
-.|\n          return matched()[0];
+[[:space:]]+                              // Ignore whitespace
+{word}          return WORD;
+{integral}      return INTEGRAL;
+{real}          return REAL;
+{operator}      return OPERATOR;
+{string}        return STRING;
+{charConst}     return CHARCONST;
+.               return matched()[0];

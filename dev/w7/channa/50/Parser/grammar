@@ -1,0 +1,33 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token NUM
+                            // supported operations
+%left '-' '+'
+%left '*' '/'
+                            // NEG uses '-' but we already define '-' prec.
+                            // Therefore we use NEG to define its precedence
+                            // with %prec later.
+%right NEG
+                            // Need to define FUNC to give it precedence
+                            // as strongest binding
+%right FUNC
+
+%%
+exp:
+  NUM
+|
+  exp '+' exp
+|
+  exp '-' exp
+|
+  exp '*' exp
+|
+  exp '/' exp
+|
+  '-' exp %prec NEG
+|
+  FUNC exp
+|
+  '(' exp ')'
+;

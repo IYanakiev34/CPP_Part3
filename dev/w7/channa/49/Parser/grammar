@@ -1,0 +1,27 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+%token WRITE IDENT NUMBER
+%%
+                            // Zero or more calls to write
+opt_write_calls:
+  opt_write_calls write_call
+|
+  // empty
+;
+                            // A call to write
+write_call:
+  WRITE '(' args_list ')'
+;
+
+                            // One or more args in a list, with seperator
+args_list:
+  args_list ',' arg
+|
+  arg
+;
+
+arg:
+  IDENT
+|
+  NUMBER
+;

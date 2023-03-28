@@ -36,7 +36,11 @@ do
   echo "Making folder for: $folderName/"
   mkdir $folderName
   cd $folderName
+  mkdir Scanner
+  mkdir Parser
   touch summary.txt
+  cp ../../common/lexer ./Scanner/lexer
+  cp ../../common/grammar ./Parser/grammar
   cp ../../common/CMakeLists.txt ./CMakeLists.txt
   sed -i "s/Z/set$1/" CMakeLists.txt
   mkdir tests

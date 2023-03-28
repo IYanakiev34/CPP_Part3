@@ -1,0 +1,24 @@
+In this exercise, we discuss the grammar ambiguities introduced by the following
+grammar:
+  %token NUMBER
+  %%
+  expr:
+    NUMBER
+  |
+    number
+  |
+    expr '+' expr
+  |
+    expr '-' expr
+  ;
+
+  number:
+    NUMBER
+  ;
+
+We correct the grammar (grammar1) to remove the conflicts with all the
+priorities of the operators being the same.
+
+We also correct the grammar (grammar2) file according to how bisonc++ would
+implicitly fix them (i.e: making it right associative), and removing a specific
+rule to resolve R/R conflicts.

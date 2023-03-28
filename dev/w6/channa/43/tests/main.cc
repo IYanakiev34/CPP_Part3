@@ -4,7 +4,7 @@
 
 int main()
 {
-  Scanner scanner{"test", "null"};
+  Scanner scanner;
 
   while(scanner.lex())
     cout << "Scanned: " << scanner.matched() << '\n';

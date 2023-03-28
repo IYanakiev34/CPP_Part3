@@ -1,0 +1,5 @@
+In this exercise, we define a grammar for a calculator that does: parentheses,
+operations, negation, multiplication, division, addition, subtraction, in that
+order of precedence.
+
+The parser only defines tokens of things that can be returned by the parser.
