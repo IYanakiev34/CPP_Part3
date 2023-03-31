@@ -5,3 +5,4 @@
 dev/**/**/**/build/**
 *scannerbase.h
 *lex.cc
+**/*.out
