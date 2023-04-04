@@ -6,7 +6,7 @@
 // $insert baseclass
 #include "Parserbase.h"
 // $insert scanner.h
-#include "../Scanner/scanner.h"
+#include "../Scanner2/scanner.h"
 
 
 
