@@ -1,0 +1,7 @@
+In this exercise, we extend an existing calculator to contain commands
+"quit" and "exit" to quit the calculator and the command "list" to list the
+variables and their associated values.
+
+We only provide the (decorated) grammar and lexer to support this program, and
+not the implementation of the decorator functions (as we are only asked for
+specification files).

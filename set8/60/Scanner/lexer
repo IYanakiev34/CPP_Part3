@@ -1,0 +1,25 @@
+%filenames scanner
+%interactive
+
+digits      [0-9]+
+optdigits   [0-9]*
+exp         [eE][-+]?{digits}
+func        "exp"|"ln"|"sin"|"asin"|"sqrt"|"abs"
+constants   "e"|"pi"
+angleCmd    "rad"|"deg"|"grad"
+
+%%
+
+[ \t]+
+
+{digits}                                |
+{digits}"."{optdigits}{exp}?            |
+{optdigits}"."{digits}{exp}?            return Tokens::NUMBER;
+{constants}                             return Tokens::CONSTANT;
+{func}                                  return Tokens::FUNC;
+{angleCmd}                              return Tokens::ANGLE_CMD;
+
+[[:alpha:]_][[:alnum:]_]*               return Tokens::IDENT;
+
+
+\n|.                                    return matched()[0];

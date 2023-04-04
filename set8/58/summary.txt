@@ -1,0 +1,6 @@
+In this exericse, we construct a calculator with the usual basic arithmetic
+operators, except we modify the underlying operations as well as their
+priority.
+
+To save on paper, we do not submit any files from the demo parser (except if we
+have modified them).

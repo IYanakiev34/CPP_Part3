@@ -1,0 +1,17 @@
+%filenames scanner
+%interactive
+
+digits      [0-9]+
+
+%%
+
+[ \t]+
+
+                                              // We only take integers as input
+{digits}                                return Tokens::NUMBER;
+
+[[:alpha:]_][[:alnum:]_]*               return Tokens::IDENT;
+
+'('|')'                                 // Ignore parentheses
+
+\n|.                                    return matched()[0];

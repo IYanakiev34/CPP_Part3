@@ -1,0 +1,74 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%baseclass-preinclude "../Rules/Rules.h"
+
+%token  TOKEN
+        NAME
+
+%polymorphic  STRING:   std::string;
+              PRODUC:   Production;
+              PRODUCS:  std::vector<Production>;
+              RULE:     Rule;
+              RULES:    Rules
+
+%type <STRING>  TOKEN
+%type <STRING>  NAME
+%type <STRING>  name
+%type <PRODUC>  production
+%type <PRODUCS> productions
+%type <RULE>    rule
+%type <RULES>   rules
+
+%%
+rules:
+  rules rule
+  {
+    $$ = addToRules($2);
+  }
+|
+  // empty
+  {
+    $$ = Rules{};
+  }
+;
+
+rule:
+  name ':' productions ';'
+  {
+    $$ = Rule{$1, $3};
+  }
+|
+  error ';'
+;
+
+productions:
+  productions '|' production
+  {
+    $$ = addToProductions($1, $3);
+  }
+|
+  production
+  {
+    $$ = std::vector<Production>{$1};
+  }
+;
+
+production:
+  production TOKEN
+  {
+    $$ = addToProduction($1);
+  }
+|
+  // empty
+  {
+    $$ = Production{};
+  }
+;
+
+name:
+  NAME
+  {
+    $$ = d_scanner.matched();
+  }
+;

@@ -1,0 +1,130 @@
+%class-name Parser
+
+%filenames parser
+%parsefun-source parse.cc
+
+%baseclass-preinclude rulevalue.h
+%stype RuleValue
+
+%scanner ../scanner/scanner.h
+%token-path ../scanner/tokens.h
+
+%token  NUMBER
+        IDENT
+        FUNC
+        CONSTANT
+        ANGLE_CMD
+
+%right  '='
+%left   '+' '-'
+%left   '*' '/'
+%right  uMinus
+
+// %debug
+
+%%
+
+lines:
+    lines line
+|
+    line
+;
+
+
+line:
+    expr '\n'
+    {
+        display($1);
+    }
+|
+    error '\n'    
+    {
+        prompt();
+    }
+|
+    angle_cmd '\n'
+|
+    '\n'
+    {
+        prompt();
+    }
+;
+
+angle_cmd:
+  ANGLE_CMD
+  {
+                      // Changes global state in the parser to use the
+                      // specified angle mode in d_scanner.matched()
+    changeAngleMode();
+  }
+;
+
+expr:
+    CONSTANT
+    {
+      $$ = constant();
+    }
+|
+    NUMBER
+    {
+        $$ = value();
+    }
+|
+    IDENT
+    {
+        $$ = variable();
+    }
+|
+    '-' expr            %prec uMinus
+    {
+        $$ = negate($2);
+    }
+|
+    expr '*' expr
+    {
+        $$ = mul($1, $3);
+    }
+|
+    expr '/' expr
+    {
+        $$ = div($1, $3);
+    }
+|
+    expr '+' expr
+    {
+        $$ = add($1, $3);
+    }    
+|
+    expr '-' expr
+    {
+        $$ = sub($1, $3);
+
+    }    
+|
+    '(' expr ')'
+    {
+        $$ = $2;
+    }
+|
+    expr '=' expr
+    {
+        $$ = assign($1, $3);
+    }
+|
+    func '(' expr ')'
+    {
+                              // We return a RuleValue based on the result of
+                              // applying the value in expr to the function
+                              // `func'.
+      $$ = applyFunction($1, $3);
+    }
+;
+
+func:
+  FUNC
+  {
+                            // We return the function that corresponds to
+                            // the function name in d_scanner.matched();
+    $$ = function();
+  }
+;

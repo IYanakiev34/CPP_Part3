@@ -1,0 +1,21 @@
+In this exericse, we convert a grammar using a %union directive into a grammar
+that uses the %polymorphic directive.
+
+Parser1/grammar and Scanner1/lexer is the grammar (and supporting lexer) that
+results from a simple conversion.
+
+Parser2/grammar and Scanner2/lexer is the grammar (and supporting lexer) that
+results from making the lexer more simple (i.e: not making QUIT a special token)
+
+Note: lines (which is the start rule) is defined as:
+
+lines:
+  lines '\n' lines
+|
+  // empty
+;
+
+Meaning that any valid sentence in this grammar needs to start with a newline.
+We're not sure if the lexer is meant to handle this (resulting in a complex
+lexer) and if the second parser provides a proper definition (via the building
+blocks) which makes lexer the lexer we currently provide in Parser1.

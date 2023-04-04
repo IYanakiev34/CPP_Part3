@@ -1,0 +1,40 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token WORD
+%%
+list:
+  opt_word
+|
+  plainList
+|
+  separatedList
+;
+
+opt_word:
+  // empty
+|
+  WORD
+;
+
+                              // A space separated list of 0 or more WORDs
+plainList:
+  WORD WORD plainRest
+;
+
+plainRest:
+  // empty
+|
+  plainRest WORD
+;
+
+                              // A comma separated list of 0 or more WORDs
+separatedList:
+  WORD ',' WORD sepRest
+;
+
+sepRest:
+  // empty
+|
+  sepRest ',' WORD
+;

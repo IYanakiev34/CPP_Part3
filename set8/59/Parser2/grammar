@@ -1,0 +1,39 @@
+%scanner ../Scanner/scanner.h
+%token-path ../Scanner/tokens.h
+
+%token INT STRING DOUBLE
+
+%polymorphic  INT: int;
+              DOUBLE: double;
+              STRING: std::string
+
+%type <INT>     INT
+%type <DOUBLE>  DOUBLE
+%type <STRING>  STRING
+
+%%
+
+lines:
+    lines '\n' line
+|
+    // empty
+;
+
+line:
+    INT
+    {
+        showInt($1);
+    }
+|
+    STRING
+    {
+        showStringOrQuit($1);
+    }
+|
+    DOUBLE
+    {
+        showDouble($1);
+    }
+|
+    '\n'
+;

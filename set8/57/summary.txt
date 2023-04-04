@@ -1,0 +1,6 @@
+In this exericse, we extend a calculator with multiple arithmetic operators,
+assignments and shifts.
+
+We only provide the (decorated) grammar and lexer to support this program, and
+not the implementation of the decorator functions (as we are only asked for
+specification files).

@@ -1,0 +1,3 @@
+In this exericse, we create a parser for a DST specification file, except that
+the separator used in the file is run-time configurable (i.e: received from the
+command line arguments).

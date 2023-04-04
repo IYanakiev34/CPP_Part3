@@ -1,0 +1,30 @@
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token  NAME
+        TRUE
+        FALSE
+        NUMBER
+        SEPERATOR
+%%
+lines:
+  lines line
+|
+  line
+;
+
+line:
+  NAME ':' bool
+|
+  NAME ':' TRUE SEPERATOR NUMBER
+|
+  NAME ':' NUMBER SEPERATOR NUMBER
+|
+  NAME ':' NUMBER SEPERATOR NUMBER SEPERATOR NUMBER
+;
+
+bool:
+  TRUE
+|
+  FALSE
+;
