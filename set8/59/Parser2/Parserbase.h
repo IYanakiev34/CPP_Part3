@@ -10,7 +10,7 @@
 // $insert polyincludes
 #include <memory>
 // $insert preincludes
-#include "../Scanner/tokens.h"
+#include "../Scanner2/tokens.h"
 
 // hdr/baseclass
 
