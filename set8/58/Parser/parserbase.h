@@ -9,7 +9,7 @@
 #include <iostream>
 // $insert preincludes
 #include "rulevalue.h"
-#include "../scanner/tokens.h"
+#include "../Scanner/tokens.h"
 
 // hdr/baseclass
 

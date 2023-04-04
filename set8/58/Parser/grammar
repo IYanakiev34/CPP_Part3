@@ -6,8 +6,8 @@
 %baseclass-preinclude rulevalue.h
 %stype RuleValue
 
-%scanner ../scanner/scanner.h
-%token-path ../scanner/tokens.h
+%scanner ../Scanner/scanner.h
+%token-path ../Scanner/tokens.h
 
 %token  NUMBER
         IDENT

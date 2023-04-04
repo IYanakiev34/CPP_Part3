@@ -6,7 +6,7 @@
 // $insert baseclass
 #include "parserbase.h"
 // $insert scanner.h
-#include "../scanner/scanner.h"
+#include "../Scanner/scanner.h"
 
 #include <vector>
 #include <unordered_map>
