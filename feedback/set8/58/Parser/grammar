@@ -1,0 +1,102 @@
+//JB: ?
+%class-name Parser
+
+%filenames parser
+%parsefun-source parse.cc
+
+%baseclass-preinclude rulevalue.h
+%stype RuleValue
+
+%scanner ../Scanner/scanner.h
+%token-path ../Scanner/tokens.h
+
+%token  NUMBER
+        IDENT
+
+%right  uMinus
+%left   '+'
+%right  '*'
+%left   '/'
+%right  '-'
+
+// %debug
+
+%%
+
+lines:
+    lines line
+|
+    line
+;
+
+
+line:
+    expr '\n'
+    {
+        display($1);
+    }
+|
+    error '\n'    
+    {
+        prompt();
+    }
+|
+    '\n'
+    {
+      done();
+    }
+;
+
+
+expr:
+    NUMBER
+    {
+        $$ = value();
+    }
+|
+    IDENT
+    {
+        $$ = variable();
+    }
+|
+    '-' expr            %prec uMinus
+    {
+        $$ = negate($2);
+    }
+|
+    expr '+' expr
+    {
+        $$ = mul($1, $3);
+    }    
+|
+    expr '-' expr
+    {
+        $$ = add($1, $3);
+
+    }    
+|
+    expr '*' expr
+    {
+        $$ = div($1, $3);
+
+    }
+|
+    expr '/' expr
+    {
+        $$ = sub($1, $3);
+
+    }
+|
+    '(' expr ')'
+    {
+        $$ = $2;
+    }
+;
+
+/* JB:
+   Argh! This exercise is the worst to rate :-p
+   NAE. You messed up the operator precedence all right, but there is still
+   order to the way you treat parentheses: they must match, and because they
+   must, the expresion within the parentheses takes precedence.
+   Please do still worse ;-)
+ */

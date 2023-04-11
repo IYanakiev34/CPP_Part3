@@ -1,0 +1,27 @@
+%x rules tokens
+name                    [^[:space:]:]+
+token                   [^[:space:]]+
+%%
+                        // Skip everything upto and incl. grammar spec separator
+(.|\n)*"%%"             begin(StartCondition_::rules);
+<rules>
+{
+  {name}                return Tokens::NAME;
+  ":"                   {
+                          begin(StartCondition_::tokens);
+                          return matched().front();
+                        }
+
+  [[:space:]]           // Ignore whitespace
+}
+<tokens>
+{
+  ";"                   {
+                          begin(StartCondition_::rules);
+                          return matched().front();
+                        }
+  "|"                   return matched().front();
+  {token}               return Tokens::TOKEN;
+  [[:space:]]           // Ignore whitespace
+}
+.

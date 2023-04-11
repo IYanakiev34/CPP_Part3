@@ -1,0 +1,2 @@
+In this exercise, we create a parser for a (undecorated) bisonc++ parser
+specification file.

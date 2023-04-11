@@ -1,0 +1,15 @@
+int                       [[:digit:]]+
+double1                   {int}?.{int}
+double2                   {int}(.{int})?
+double                    {double1}|{double2}
+string                    [^\n]+
+
+%%
+
+\n                                return matched().front();
+[[:space:]]                       // Ignore other whitespace
+
+{int}                             return Tokens::INT;
+{double}                          return Tokens::DOUBLE;
+"quit"                            return Tokens::QUIT;
+{string}                          return Tokens::STRING;

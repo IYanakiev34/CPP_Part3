@@ -1,0 +1,39 @@
+//JB: 1
+
+%scanner ../Scanner/Scanner.h
+%token-path ../Scanner/tokens.h
+
+%token  NAME
+        TRUE
+        FALSE
+        NUMBER
+        SEPERATOR
+%%
+lines:
+  lines line
+|
+  line
+;
+
+line:
+  NAME ':' bool
+|
+  NAME ':' TRUE SEPERATOR NUMBER
+|
+  NAME ':' NUMBER SEPERATOR NUMBER
+|
+  NAME ':' NUMBER SEPERATOR NUMBER SEPERATOR NUMBER
+;
+
+bool:
+  TRUE
+|
+  FALSE
+;
+
+/* JB:
+   This is different from out solution.
+   But I like it: the scanner knows when to return tokens, whether
+   non-whitespace separators are used or not.
+   The grammar therefore can remain simple. It just expects separators.
+ */

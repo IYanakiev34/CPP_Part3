@@ -1,0 +1,36 @@
+%x  spec
+name                      [A-Z]+
+number                    [[:digit:]][[:digit:]]
+%%
+{name}                    return Tokens::NAME;
+
+                           // Skip all whitespace till we get to spec def'n
+:[[:space:]]*             {
+                            begin(StartCondition_::spec);
+                            return ':';
+                          }
+[[:space:]]               // Ignore whitespace not in spec definition
+
+                          // All other characters to be returned to parser to
+                          // detect syntax errors
+.                         return matched().front();
+
+                          // Inside specification
+<spec>
+{
+  "true"                  return Tokens::TRUE;
+  "false"                 return Tokens::FALSE;
+  {number}                return Tokens::NUMBER;
+  ([[:space:]]{-}[\n])+   {
+                            if (d_sep == ' ')
+                              return Tokens::SEPERATOR;
+                            // Otherwise, skip as this is just whitespace
+                          }
+  .                       {
+                            if (d_sep == matched().front())
+                              return Tokens::SEPERATOR;
+                            else
+                              return matched().front();
+                          }
+  '\n'                    begin(StartCondition_::INITIAL);
+}

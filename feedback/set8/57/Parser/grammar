@@ -1,0 +1,197 @@
+//JB: 1
+%class-name Parser
+
+%filenames parser
+%parsefun-source parse.cc
+
+%baseclass-preinclude rulevalue.h
+%stype RuleValue
+
+%scanner ../scanner/scanner.h
+%token-path ../scanner/tokens.h
+
+%token  NUMBER
+        IDENT
+%right  '='
+%left   '|'
+%left   '^'
+%left   '&'
+%left   LSHIFT
+        RSHIFT
+%left   '+' '-'
+%left   '*' '/' '%'
+%right  uMinus '~'
+
+%%
+
+lines:
+    lines line
+|
+    line
+;
+
+
+line:
+    expr '\n'
+    {
+        display($1);
+    }
+|
+    error '\n'    
+    {
+        prompt();
+    }
+|
+    '\n'
+    {
+        prompt();
+    }
+;
+
+                      // expr actions use the following functions:
+                      // value(): sets the value based on the scanned token
+                      // variable(): sets a variable based on the scanned token
+                      // calcBinary(op, arg1, arg2):  Returns arg1 op arg2
+                      // calcUnary(op, arg):          Returns op arg
+                      // assign(op, lval, rval):  Assigns (lval op rval) to lval
+                      // assign(lval, rval):      Assigns rval to lval
+                      // All these operations are performed upon RuleValue
+                      // objects, that encapsulate values (or variables with
+                      // values).
+
+expr:
+    NUMBER
+    {
+        $$ = value();
+    }
+|
+    IDENT
+    {
+        $$ = variable();
+    }
+|
+    '(' expr ')'
+    {
+        $$ = $2;
+    }
+|
+                              // Binary operators have different precedence, so
+                              // we need to separate them in our production
+                              // rules
+    expr '+' expr
+    {
+      $$ = calcBinary('+', $1, $3);
+    }
+|
+    expr '-' expr
+    {
+      $$ = calcBinary('-', $1, $3);
+    }
+|
+    expr '*' expr
+    {
+      $$ = calcBinary('*', $1, $3);
+    }
+|
+    expr '/' expr
+    {
+      $$ = calcBinary('/', $1, $3);
+    }
+|
+    expr '%' expr
+    {
+      $$ = calcBinary('%', $1, $3);
+    }
+|
+    expr '&' expr
+    {
+      $$ = calcBinary('&', $1, $3);
+    }
+|
+    expr '|' expr
+    {
+      $$ = calcBinary('|', $1, $3);
+    }
+|
+    expr '^' expr
+    {
+      $$ = calcBinary('^', $1, $3);
+    }
+|
+    expr LSHIFT expr
+    {
+      $$ = calcBinary('>', $1, $3);
+    }
+|
+    expr RSHIFT expr
+    {
+      $$ = calcBinary('<', $1, $3);
+    }
+|
+    '-' expr %prec uMinus
+    {
+      $$ = calcUnary('-', $2);
+    }
+|
+    '~' expr
+    {
+      $$ = calcUnary('~', $2);
+    }
+                                    // Assignments have same precedence, so we
+                                    // can generalize them into 2 rules.
+|
+    expr '=' expr
+    {
+      $$ = assign($1, $3);
+    }
+|
+    expr '+' '=' expr %prec '='
+    {
+      $$ = assign('+', $1, $4);
+    }
+|
+    expr '-' '=' expr %prec '='
+    {
+      $$ = assign('-', $1, $4);
+    }
+|
+    expr '*' '=' expr %prec '='
+    {
+      $$ = assign('*', $1, $4);
+    }
+|
+    expr '/' '=' expr %prec '='
+    {
+      $$ = assign('/', $1, $4);
+    }
+|
+    expr '%' '=' expr %prec '='
+    {
+      $$ = assign('%', $1, $4);
+    }
+|
+    expr LSHIFT '=' expr %prec '='
+    {
+      $$ = assign('<', $1, $4);
+    }
+|
+    expr RSHIFT '=' expr %prec '='
+    {
+      $$ = assign('>', $1, $4);
+    }
+|
+    expr '&' '=' expr %prec '='
+    {
+      $$ = assign('&', $1, $4);
+    }
+|
+    expr '^' '=' expr %prec '='
+    {
+      $$ = assign('^', $1, $4);
+    }
+|
+    expr '|' '=' expr %prec '='
+    {
+      $$ = assign('|', $1, $4);
+    }
+;

@@ -1,0 +1,45 @@
+//JB: 1
+%scanner ../Scanner/scanner.h
+%token-path ../Scanner/tokens.h
+
+%token INT STRING DOUBLE QUIT
+
+%polymorphic  INT: int;
+              DOUBLE: double;
+              STRING: std::string
+
+%type <INT>     INT
+%type <DOUBLE>  DOUBLE
+%type <STRING>  STRING
+
+%%
+
+lines:
+    lines  line
+|
+    line
+;
+
+line:
+    INT
+    {
+        showInt($1);
+    }
+|
+    STRING
+    {
+        showString($1);
+    }
+|
+    DOUBLE
+    {
+        showDouble($1);
+    }
+|
+    QUIT
+    {
+        quit();
+    }
+|
+    '\n'
+;
